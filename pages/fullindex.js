@@ -78,6 +78,7 @@ className='bla bla bla'
             <a href="/categories/storm-delarverie">Storm DeLarverie</a>
             <a href="/categories/NYC">Cockettes</a>
             <a href="/categories/pacific-northwest">Power Exchange</a>
+            <a href="/categories/sissy-spaceout">Sissy Spaceout</a>
             {/* <a href="/categories/san-francisco">San Francisco</a>
             <a href="/categories/south">South</a>
             <a href="/categories/1960s">1960s</a>
