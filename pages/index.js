@@ -5,6 +5,7 @@ import unquote from 'unquote';
 
 
 
+
 function HomePage() {
 
   var randomTag1 = randomItem([
@@ -36,6 +37,15 @@ function HomePage() {
     '<div><a href="/category/Photo">Photo</a></div>'
   ]);
 
+  var randomTag1 =[
+    '<div><a href="/category/midwest">Midwest</a></div>', 
+    '<div><a href="/category/NYC">NYC</a></div>', 
+    '<div><a href="/category/pacific-northwest">Pacific Northwest</a></div>', 
+    '<div><a href="/category/san-francisco">San Francisco</a></div>', 
+    '<div><a href="/category/south">South</a></div>'
+  ]
+  var randomFact = Math.floor(Math.random() * randomTag1.length);
+
 
     return (
       <div className="homePage">
@@ -47,8 +57,9 @@ function HomePage() {
       <div className="cloud">
 
         <div className="tag-gr">
+
         <div
-      suppressHydrationWarning className="tag region" dangerouslySetInnerHTML={{__html: randomTag1}}
+      suppressHydrationWarning className="tag region" dangerouslySetInnerHTML={{__html: randomTag1[randomFact]}}
     />
     <div
       suppressHydrationWarning className="tag time" dangerouslySetInnerHTML={{__html: randomTag2}}
