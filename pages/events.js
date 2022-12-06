@@ -2,6 +2,7 @@ import Header from "../components/Header"
 import { urlFor, sanityClient } from '../sanity'
 import PortableText from '@sanity/block-content-to-react'
 import Link from "next/link"
+import Footer from "../components/Footer"
 
 
 
@@ -54,7 +55,7 @@ const events = ({ mainproperties, properties }) => {
                 </h3>
 
                 {properties.map(post => (
-           <div className="eventGrid" key={post._id}>
+           <div className="eventGrid upcoming" key={post._id}>
                 {post.upcoming && post.upcoming.map(({ _id, name = '', date = '', rsvptext = '', rsvpurl = '' }) => (
                 <div className="singleevent" key={_id}>
                   <div className="eventTitle" aria-selected="true" >
@@ -140,6 +141,8 @@ const events = ({ mainproperties, properties }) => {
 
       
     </div>
+    <Footer />
+
     </div>
 
     )

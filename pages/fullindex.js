@@ -17,6 +17,7 @@
  import { LazyLoadImage } from "react-lazy-load-image-component";
  import Arrow from '../public/Arrowdown.svg';
  import Missing from '../public/Missingcard.png';
+ import Footer from "../components/Footer"
 
 
  
@@ -143,7 +144,7 @@ className='bla bla bla'
 <div className="drawerpreview" onClick={toggleDrawer}  style={{
         transform: isUp ? 'scaleY(1)' : '',
       }}></div>
-
+<Footer />
   </div>
    )
  

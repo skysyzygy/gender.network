@@ -27,11 +27,11 @@
         <div  className="right">
         <div className="footerheader">Contact</div>
         <div className="contactlinks">
-        <div><Link href="/fullindex"><span><Image src='/Email.png' height={93} width={150}/></span></Link></div>
-        <div><Link href="/fullindex"><span><Image src='/Fb.png' height={93} width={250}/></span></Link></div>
-        <div><Link href="/fullindex"><span><Image src='/Instagram.png' height={93} width={275}/></span></Link></div>
-        <div><Link href="/fullindex"><span><Image src='/Live Chat.png' height={93} width={260}/></span></Link></div>
-        <div><Link href="/fullindex"><span><Image src='/Add Inspiration.png' height={93} width={410}/></span></Link></div>
+        <div><Link href="/fullindex"><span><Image src='/Email.png' height={74} width={120}/></span></Link></div>
+        <div><Link href="/fullindex"><span><Image src='/Fb.png' height={74} width={200}/></span></Link></div>
+        <div><Link href="/fullindex"><span><Image src='/Instagram.png' height={74} width={220}/></span></Link></div>
+        <div><Link href="/fullindex"><span><Image src='/Live Chat.png' height={74} width={208}/></span></Link></div>
+        <div><Link href="/fullindex"><span><Image src='/Add Inspiration.png' height={74} width={328}/></span></Link></div>
 
             </div>
         </div>

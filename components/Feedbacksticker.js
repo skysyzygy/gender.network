@@ -9,8 +9,10 @@
  export default function Feedbacksticker() {
     return (
 
-        <div className="ovalsticker">
+        <div className="ovalsticker hvr-pulse">
+            <Link href="/about" >
             <div className="ovaltext">Feedback</div>
+            </Link>
         </div>
 
        
