@@ -518,7 +518,7 @@ height: fit-content;
 .eventsPage h2{
   color: #FF6489;
   font-family: Yale;
-  font-size:6em;
+  font-size:5em;
   font-weight:500;
   -webkit-text-stroke: 2px #FF6489;
   paint-order: stroke fill;
@@ -562,7 +562,7 @@ border-bottom:1px solid black;
 }
 
 .eventTitle, .eventTime{
-  font-size: 1.5em;
+  font-size: 1.25em;
   line-height: 1.4;
 }
 
