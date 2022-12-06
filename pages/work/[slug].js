@@ -21,7 +21,28 @@ const CloverIIIF = dynamic(() => import("@samvera/clover-iiif"), {
   ssr: false,
 });
 
-
+const options = {
+    // Primary title (Manifest label) for top level canvas.  Defaults to true
+    showTitle: false,
+    showInformationToggle: false,
+    renderAbout: false,
+  
+    // IIIF Badge and popover containing options.  Defaults to true
+    showIIIFBadge: false,
+  
+    // Ignore supplementing canvases by label value that are not for captioning
+    // ignoreCaptionLabels: ['Chapters'],
+  
+    // Override canvas background color, defaults to #1a1d1e
+    canvasHeight: "1100px",
+    canvasBackgroundColor: "#ffffff",
+    // Set canvas zooming onScoll (this defaults to false)
+    // openSeadragon: {
+    //   gestureSettingsMouse: {
+    //     scrollToZoom: true,
+    //   }
+    // }
+  }
 
 
 const Work = ({   
@@ -59,7 +80,7 @@ const Work = ({
 
 
 
- {iiifviewerurl && <CloverIIIF id={iiifviewerurl} />}
+ {iiifviewerurl && <CloverIIIF id={iiifviewerurl} options={options} />}
 
  </div>
 <div className="right">

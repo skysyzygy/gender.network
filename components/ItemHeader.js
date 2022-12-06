@@ -15,14 +15,14 @@
         <div className="itemheader">
             <div className="flex">
             <div className="checkbox"> <span>[</span> <span className="selected1"><Image src={Check} alt="Selected" /></span> <span>]</span> </div>Item View</div>        
-            {/* <div className="flex">
-            <a href="javascript:history.back()">
+             <div className="flex">
+            <a href="/fullindex">
                 <div className="checkbox2"> 
                 
                 <span>[</span> <span className="">&nbsp;Back to Index&nbsp;</span> <span>]</span> 
                 
                 </div>
-                </a></div>                        */}
+                </a></div>                        
         </div>
     );
   }

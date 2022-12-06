@@ -583,18 +583,16 @@ border-bottom:1px solid black;
 
 /* IIIF Viewer settings - start */
 
-.clover-iiif{
+/* .clover-iiif{
   height: auto !important;
-}
+} */
 
-.clover-iiif header{
-  width:72vw;
-}
+
 .clover-iiif header {
   width: 73vw;
 }
 
-.clover-content{
+/* .clover-content{
   height: 90vh;
 }
 
@@ -605,7 +603,7 @@ border-bottom:1px solid black;
 
 .openseadragon-container {
   height: 90vh !important;
-}
+} */
 
 
 /* IIIF Viewer settings - end */
