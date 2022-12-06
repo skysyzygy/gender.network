@@ -4,11 +4,11 @@
 
  import React from 'react'
  import Image from 'next/image'
+
  import { urlFor, sanityClient } from '../sanity'
  import PortableText from '@sanity/block-content-to-react'
  import Header from "../components/Header"
  import Aboutheader from "../components/Aboutheader"
- import Footer from "../components/Footer"
 
  
  const serializers = {
@@ -35,8 +35,7 @@
  const about = ({ properties }) => {
    return (
     <div className="aboutPage">
-    <Header />
-  
+    <Header/>     
     <div className="container">    
          {properties.map(post => (
            <div className="aboutshow" key={post._id}>
@@ -120,8 +119,6 @@
 
            </div>
          ))}
-
-         <Footer />
  
  
  </div>
@@ -134,8 +131,6 @@
  export const getServerSideProps = async () => {
    const query = `*[_type == "about" ]`
    const properties = await sanityClient.fetch(query)
-
-   
  
    if (!properties.length) {
      return {
