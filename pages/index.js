@@ -1,5 +1,5 @@
 import Header from "../components/Header"
-
+import Feedbacksticker from "../components/Feedbacksticker";
 
 
 
@@ -43,6 +43,7 @@ function HomePage() {
     return (
       <div className="homePage">
               <Header/>
+              <Feedbacksticker />
 
       <div className="homepagebg">
 
