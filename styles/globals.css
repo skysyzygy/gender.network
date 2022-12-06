@@ -47,7 +47,7 @@
 
 
   html{
-    font-size:18px;
+    font-size:16px;
   }
 
   body{
@@ -93,7 +93,7 @@ header{
     width:98vw;
     z-index:10;
     padding: 2vh 1vw;
-    align-items: center;
+    align-items: flex-start;
 }
 
 header .selected1,
