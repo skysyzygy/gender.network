@@ -378,7 +378,7 @@ height: fit-content;
 }
 
 .workGrid{
-  margin:20vh auto 5vh auto;
+  margin:220px auto 5vh auto;
   width:80vw;
 }
 
@@ -655,6 +655,10 @@ padding-left:25px;
 .itemtitle{
   font-size:2em;
   font-family: 'HelveticaB';
+}
+
+.itemtitle, .itemheader{
+  margin-bottom: 25px;
 }
 
 .itemPage h3{
