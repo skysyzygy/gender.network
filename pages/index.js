@@ -1,4 +1,10 @@
 import Header from "../components/Header"
+import randomItem from 'random-item';
+import unquote from 'unquote';
+
+
+
+
 
 function HomePage() {
 
@@ -11,29 +17,29 @@ function HomePage() {
   ]
   var randomFact = Math.floor(Math.random() * randomTag1.length);
 
-  var randomTag2 = randomItem([
+  var randomTag2 = [
     '<div><a href="/category/1960s">1960s</a></div>', 
     '<div><a href="/category/1970s">1970s</a></div>', 
     '<div><a href="/category/1980s">1980s</a></div>', 
     '<div><a href="/category/1990s">1990s</a></div>', 
     '<div><a href="/category/2000s">2000s</a></div>'
-  ]);
+  ]
 
   var randomFact2 = Math.floor(Math.random() * randomTag2.length);
 
-  var randomTag3 = randomItem([
+  var randomTag3 = [
     '<div><a href="/category/Storme-DeLarverie">Storme DeLarverie</a></div>', 
     '<div><a href="/category/Cockettes">Cockettes</a></div>', 
     '<div><a href="/category/Power-Exchange">Power Exchange</a></div>'
-  ]);
+  ]
   var randomFact3 = Math.floor(Math.random() * randomTag3.length);
 
-  var randomTag4 = randomItem([
+  var randomTag4 = [
     '<div><a href="/category/book">Book</a></div>', 
     '<div><a href="/category/flyer">Flyer</a></div>', 
     '<div><a href="/category/Newspaper">Newspaper</a></div>', 
     '<div><a href="/category/Photo">Photo</a></div>'
-  ]);
+  ]
   var randomFact4 = Math.floor(Math.random() * randomTag4.length);
 
     return (
@@ -61,7 +67,7 @@ function HomePage() {
       suppressHydrationWarning className="tag type" dangerouslySetInnerHTML={{__html: randomTag4[randomFact4]}}
     />
        
-          <div className="tag"><Link href="/fullindex">...</Link></div>
+          <div className="tag">...</div>
 
         </div>
       </div>
