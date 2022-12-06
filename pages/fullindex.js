@@ -4,6 +4,8 @@
 
  import React, { useState, useEffect } from 'react'
  import Image from 'next/image'
+ import Link from 'next/link'
+ import Exit from '../public/Xmark.svg';
 
  import { sanityClient,  urlFor } from '../sanity'
  import PortableText from '@sanity/block-content-to-react'
@@ -13,6 +15,8 @@
  import 'react-modern-drawer/dist/index.css'
  import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
  import { LazyLoadImage } from "react-lazy-load-image-component";
+ import Arrow from '../public/Arrowdown.svg';
+ import Missing from '../public/Missingcard.png';
 
 
  
@@ -42,16 +46,21 @@
     
    return (
 
-  <div className="indexPage">
-    <Header />
+    <div className={`indexPage ${isActive ? "fixed" : "normal"}`}>
     
-    <div className="filtercontainer">
+    <div className="filterscontainer">
     <Drawer
 open={isOpen}
 onClose={toggleDrawer}
 direction='bottom'
 className='bla bla bla'
 >
+<div className="arrow">
+    <Image src={Arrow} className="arrow" onClick={toggleDrawer} />
+    </div>
+    <div className="columnHeader heading">
+        Filter by:
+    </div>
 <div className="columnContainers">
     <div className="col1a">
         <div className="heading">Location</div>
@@ -63,7 +72,7 @@ className='bla bla bla'
             <a href="/categories/south">South</a>
         </div>
         <div className="heading">Decade</div>
-        <div className="list decade">
+        <div className="list time">
             <a href="/categories/1960s">1960s</a>
             <a href="/categories/1970s">1970s</a>
             <a href="/categories/1980s">1980s</a>
@@ -109,34 +118,26 @@ className='bla bla bla'
 </div>
 </Drawer>
 
-            
-       <div className="filterheaders">
-       <button id="button" 
-       style={{
-        backgroundColor: isActive ? '#9269FF' : '',
-        color: isActive ? 'black' : '',
-      }}
-      onClick={toggleDrawer} onMouseEnter={slideUp} onMouseExit={slideDown}>Categories</button>
-
-        {/* <div>Categories</div> */}
-        <div>Random</div>
-        <div>Reset</div>
-
-       </div>
+<FilterHeader isActive={isActive} toggleDrawer={toggleDrawer} slideUp={slideUp} slideDown={slideDown}/>
        </div>
        <ResponsiveMasonry className="workGrid"
                 columnsCountBreakPoints={{350: 1, 750: 2, 900: 3}}
             >
                 <Masonry columnsCount={3} gutter="5vw"> 
          {properties.map(post => (
-           <div className="workCard" key={post._id}>
-            {/* <img src={urlFor(post.coverphoto).url()} layout="fill"  alt="Cover"  
-  loading="lazy"/> */}
+                        <Link href="/work/sample" key={post._id}>
+           <div className="workCard" >
+
   <LazyLoadImage src={urlFor(post.coverphoto).url()}  />
             {post.title}
 
+           </div></Link>
+         ))}
+                    <div className="submitMore workCard">
+                    <Image src={Missing} className="missing" />
+
            </div>
-         ))}</Masonry>
+         </Masonry>
          </ResponsiveMasonry>
 
 <div className="drawerpreview" onClick={toggleDrawer}  style={{
