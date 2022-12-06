@@ -1,6 +1,4 @@
 import Header from "../components/Header"
-import randomItem from 'random-item';
-import unquote from 'unquote';
 
 
 
