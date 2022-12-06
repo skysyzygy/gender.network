@@ -1,4 +1,4 @@
-//Footer.js
+//Header.js
 
 /**
  * @jest-environment jsdom
@@ -12,7 +12,7 @@
 
  export default function Header() {
     return (
-       <header>
+<header>
         <h1 className="link"><Link href="/">Gender Network</Link></h1>
         <nav>
             <div className="gr1"><Link href="/fullindex"><div className="linkgroup lt"><div className="checkbox"> <span>[</span> <span className="selected1"><Image src={Exit} alt="Selected" /></span> <span>]</span> </div>Full Index</div></Link>
@@ -23,7 +23,9 @@
             <Link href="/events"><div className="linkgroup rt"><div className="checkbox"> <span>[</span> <span className="selected4"><Image src={Exit} alt="Selected" /></span> <span>]</span> </div>Events</div></Link>
             </div>
         </nav>
-       </header>
+       </header>   
+
+       
   
     );
   }
