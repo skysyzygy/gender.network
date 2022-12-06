@@ -55,12 +55,12 @@ onClose={toggleDrawer}
 direction='bottom'
 className='bla bla bla'
 >
-<div className="arrow">
+{/* <div className="arrow">
     <Image src={Arrow} className="arrow" onClick={toggleDrawer} />
     </div>
     <div className="columnHeader heading">
         Filter by:
-    </div>
+    </div> */}
 <div className="columnContainers">
     <div className="col1a">
         <div className="heading">Location</div>
@@ -123,7 +123,7 @@ className='bla bla bla'
        <ResponsiveMasonry className="workGrid"
                 columnsCountBreakPoints={{350: 1, 750: 2, 900: 3}}
             >
-                <Masonry columnsCount={3} gutter="5vw"> 
+                <Masonry columnsCount={3} gutter="25px"> 
          {properties.map(post => (
                         <Link href="/work/sample" key={post._id}>
            <div className="workCard" >

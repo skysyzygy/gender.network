@@ -26,17 +26,21 @@
         </nav>
        </header>   
        <div className="filterheaders">
-       <button id="button" 
+       <button id="button" className={`${isActive ? "minus" : "add"}`}
        style={{
-        backgroundColor: isActive ? '#9269FF' : '',
+        backgroundColor: isActive ? '#efd673' : '',
         color: isActive ? 'black' : '',
+  
       }}
-      onClick={toggleDrawer} onMouseEnter={slideUp} onMouseExit={slideDown}>Categories</button>
+      onClick={toggleDrawer} onMouseEnter={slideUp} onMouseExit={slideDown}>Click for Categories</button>
 
         {/* <div>Categories</div> */}
-        <div>Random</div>
-        <Link href="/fullindex"><div>Reset</div></Link>
+        <div className="b2">Random ⟳</div>
+        <Link   href="/fullindex"><div className="b3" >Reset</div></Link>
 
+       </div>
+       <div className="filterheaders">
+        <div>Jump to: </div>
        </div>
        </div>
        

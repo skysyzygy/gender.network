@@ -92,8 +92,8 @@ header{
     justify-content: space-between;
     width:98vw;
     z-index:10;
-    padding: 2vh 1vw;
-    align-items: flex-start;
+    padding: 1vh 1vw 1vh 1vw;
+    align-items: center;
 }
 
 header .selected1,
@@ -131,7 +131,7 @@ h1 a{
 
 nav{
     line-height:1.8;
-    font-size: 1.1em;
+    font-size: 1.1rem;
 }
 
 .linkgroup, .link{
@@ -219,8 +219,7 @@ height: fit-content;
     font-family: Picnic;
   }
 
-  .filtercontainer,
-  .headercontainer{
+  .filtercontainer{
     border-bottom:1px solid black;
 
   }
@@ -231,19 +230,29 @@ height: fit-content;
     background-color: #fff;
   }
 
+  .add::after{
+    content: '  ⬇ ';
+  }
+
+  .minus::after{
+    content: '  ⬆  ';
+  }
+
 .filterheaders{
   display: flex;
-  justify-content: space-around;
-  width: 50vw;
-  margin: 15px auto;
+  /* justify-content: space-around;
+  padding: 15px 25vw; */
+  border-bottom:1px solid black;
+  padding:5px 0vw;
 
 }
 
 .filterheaders div,
 .filterheaders button{
-  padding: 0.5vh 1.5vh;
+  padding: 1vh 1.5vh;
+  line-height:1;
   border-radius:1em;
-  font-family: HelveticaB;
+  /* font-family: HelveticaB; */
   font-size:1.5em;
   cursor: pointer;
   border: none;
@@ -251,10 +260,18 @@ height: fit-content;
   background-color: #ffffff;
 }
 
-.filterheaders div:hover,
 .filterheaders button:hover,
 .filterheaders button:active{
-  background-color: #9269FF;
+  background-color: #efd673;
+}
+
+.b2:hover{
+  background-color: #73ef84;
+}
+
+.b3:hover{
+  background-color: #73daef;
+
 }
 
 .drawerpreview{
@@ -264,8 +281,8 @@ height: fit-content;
   width: 100vw;
   height: 0.1vh;
   transform: scaleY(0);   
-  border-top: 50px solid #E72F2f;
-  background-color: #E72F2f;  
+  border-top: 50px solid #e4fbffeb;
+  background-color: #e4fbffeb;  
   transform-origin: bottom;
   transition: transform 0.26s ease;
   /* z-index:200 !important; */
@@ -274,32 +291,33 @@ height: fit-content;
 }
 
 .EZDrawer__overlay{
-   opacity: 0.0 !important; 
+   /* opacity: 0.0 !important;  */
    z-index: 100;
+   background-color: #cce8eb !important;
 
 }
 
 .EZDrawer .EZDrawer__container{
-  border-top: 50px solid #E72F2f;
-  background-color: #FFF8DF !important; 
-  height: 80vh !important;
+  border-top: 20px solid #e4fbffeb;
+  background-color: #e4fbffeb !important; 
+  height: 85vh !important;
   box-shadow: 0 0 14px 6px rgb(0 0 0 / 30%) !important;
   overflow:auto;
 }
 
 .columnHeader{
-  width: 92vw;
-  margin: 4vh 4vw 0vh 4vw;
-  font-size: 2em;
+  width: 98vw;
+  margin: 2vh 2vw;
+  font-size: 1.5em;
 }
 
 .columnContainers{
   display: flex;
   /* column-count: 3; */
-  width: 92vw;
+  width: 98vw;
   /* justify-content: space-around; */
-  margin: 2vh 4vw;
-  height: 65vh;
+  margin: 2vh 1vw;
+  height: 76vh;
   overflow: auto;
 }
 
@@ -352,17 +370,18 @@ height: fit-content;
 }
 
 .heading{
-  font-family: 'HelveticaB';
+  font-size: 1.5rem;
+  letter-spacing: 0.25em;
 }
 
 .list a {
   color: black;
-  font-size: 2.5em;
+  font-size: 4rem;
   line-height: 1.5;
 }
 
 .list a:hover{
-  color: #B1B1B1;
+  color: #fc5f5f;
 }
 
 .filtercontainer .list{
@@ -381,13 +400,14 @@ height: fit-content;
 
 .workGrid{
   margin:220px auto 5vh auto;
-  width:80vw;
+  width:98vw;
 }
 
 .workCard {
   display: flex;
   flex-direction: column;
     transition: all 0.25s;
+    font-size:1.4rem;
 
 }
 
@@ -395,7 +415,7 @@ height: fit-content;
 }
 
 .workCard img{
-  margin-bottom:2vh;
+  margin-bottom:10px;
   transition: all 0.25s;
   cursor:pointer;
 }
@@ -455,14 +475,17 @@ height: fit-content;
 
 .megaintro{
   padding: 1vw 0 0 1vw;
-  font-size: 2.25em;
+  font-size: 2.25rem;
   margin-right: 1vw;
   line-height: 1.4;
 }
 
+.about1columns, .textbody{
+  font-size: 1.4rem;
+}
+
 .about1columns{
   margin-right: 1vw;
-  font-size: 1.25em;
   column-count: 2;
   line-height: 1.4;
   column-gap: 30px;
@@ -476,7 +499,6 @@ height: fit-content;
 
 .textbody{
   padding: 0 1vw 1vw 1vw;
-  font-size: 1.25em;
   line-height:1.4;
 }
 
@@ -520,7 +542,7 @@ height: fit-content;
 .eventsPage h2{
   color: #FF6489;
   font-family: Yale;
-  font-size:5.5em;
+  font-size:6.5rem;
   font-weight:500;
   -webkit-text-stroke: 2px #FF6489;
   paint-order: stroke fill;
@@ -535,7 +557,7 @@ height: fit-content;
 
 .eventsPage h3{
   font-family: Yale !important;
-font-size:2em;
+font-size:4rem;
 padding: 1vw;
 border-top:1px solid black;
 border-bottom:1px solid black;
@@ -553,8 +575,8 @@ border-bottom:1px solid black;
 
 .singleevent{
   border: 1px solid #222;
-  padding: 1vw 1vw 5vw 1vw;
-  min-height: 425px;
+  padding: 1vw 1vw 2vh 1vw;
+  min-height: 400px;
   font-size: 30px;
 }
 
@@ -564,7 +586,7 @@ border-bottom:1px solid black;
 }
 
 .eventTitle, .eventTime{
-  font-size: 1.15em;
+  font-size: 2.25rem;
   line-height: 1.4;
 }
 
@@ -575,10 +597,19 @@ border-bottom:1px solid black;
   border-radius: 100px;
   color: black;
   text-align:center;
+  transition: all 0.5s;
+}
+
+.eventUrl:hover{
+  background-color:#000;
 }
 
 .eventUrl a{
   color:black;
+}
+
+.eventUrl:hover a{
+  color: #FF6489;
 }
 
 /* item page */
