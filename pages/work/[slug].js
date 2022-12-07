@@ -91,11 +91,14 @@ const Work = ({
   <h3>Similar Works</h3>
 <div className="similarContainer">
 
-          {similarWorks && similarWorks.map(({_id, coverphoto ='', slug=''}) => (
+{similarWorks && similarWorks.map(({_id, coverphoto ='', slug=''}) => (
         <div key={_id} className="similarThumb">
+          <Link passHref href="/work/sample">
             <img src={urlFor(coverphoto).url()} layout="fill" />
-
+            </Link>
           </div> ) )}
+
+          
           </div>
           </div>
 </div>
