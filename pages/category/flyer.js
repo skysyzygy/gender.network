@@ -5,18 +5,17 @@
  import React, { useState, useEffect } from 'react'
  import Image from 'next/image'
  import Link from 'next/link'
- import Exit from '../public/Xmark.svg';
-
- import { sanityClient,  urlFor } from '../sanity'
+ import Exit from '../../public/Xmark.svg';
+ import { sanityClient,  urlFor } from '../../sanity'
  import PortableText from '@sanity/block-content-to-react'
- import Header from "../components/Header"
- import FilterHeader from "../components/FilterHeader"
+ import Header from "../../components/Header"
+ import FilterHeader from "../../components/FilterHeader"
  import Drawer from 'react-modern-drawer'
  import 'react-modern-drawer/dist/index.css'
  import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
- import Arrow from '../public/Arrowdown.svg';
- import Missing from '../public/Missingcard.png';
- import Footer from "../components/Footer"
+ import Arrow from '../../public/Arrowdown.svg';
+ import Missing from '../../public/Missingcard.png';
+ import Footer from "../../components/Footer"
 
 // Pixel GIF code adapted from https://stackoverflow.com/a/33919020/266535
 const keyStr =
@@ -35,7 +34,7 @@ const rgbDataURL = (r, g, b) =>
 
  
  
- const fullindex = ({ properties }) => {
+ const flyer = ({ properties }) => {
 
     const [isOpen, setIsOpen] = React.useState(false)
     const [isActive, setIsActive] = useState(false);
@@ -164,7 +163,7 @@ className='bla bla bla'
  }
  
  export const getServerSideProps = async () => {
-   const query = `*[_type=="work"] | order(title asc) `
+   const query = `*[_type=="work" && "Flyer" in categories] | order(title asc) `
    const properties = await sanityClient.fetch(query)
  
    if (!properties.length) {
@@ -182,4 +181,4 @@ className='bla bla bla'
    }
  }
  
- export default fullindex;
+ export default flyer;

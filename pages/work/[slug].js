@@ -13,7 +13,6 @@
  import Drawer from 'react-modern-drawer'
  import 'react-modern-drawer/dist/index.css'
  import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
- import { LazyLoadImage } from "react-lazy-load-image-component";
  import Footer from "../../components/Footer"
  import dynamic from "next/dynamic";
 

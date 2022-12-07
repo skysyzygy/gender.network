@@ -8,12 +8,13 @@
  import { useRouter } from 'next/router'
  import Image from 'next/image'
  import Exit from '../public/Xmark.svg';
+ import Typing from 'react-typing-animation';
 
 
  export default function Footer() {
     return (
 <footer>
-    <div className="footertitle">Gender Network is a growing ecosystem . . . We greatly appreciate your messages and feedback.</div>
+    <div className="footertitle"><Typing startDelay={1000}>Gender Network is a growing ecosystem . . . We greatly appreciate your messages and feedback.</Typing></div>
     <div className="flex">
         <div className="left">
             <div className="footerheader">Menu</div>

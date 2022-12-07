@@ -161,6 +161,9 @@
     font-family: 'Helvetica';
     margin:0;
   }
+  a{
+    color:#000;
+  }
 
   .fixed{
     left: 0;
@@ -251,6 +254,16 @@ nav{
     width: 50px;
     margin-right: 1vw;
 
+}
+
+.checkbox img{
+  width:30px;
+  height:30px;
+}
+
+.itemheader .checkbox img{
+  width: 20px;
+  height: 20px;
 }
 
 .checkbox2{
@@ -518,6 +531,10 @@ height: fit-content;
 
 }
 
+.workContainer{
+  width:31.66vw;
+}
+
 .workCard:hover{
 }
 
@@ -546,6 +563,7 @@ height: fit-content;
 /* about Page */
 
 .indexPage header,
+.storiesPage header,
 .itemPage header,
 .aboutPage header,
 .eventsPage header{
@@ -883,6 +901,11 @@ justify-content: center;
 cursor: pointer;
 }
 
+.ovalsticker a{
+  color: #08d8bc;
+
+}
+
 .ovaltext{
   font-size: 3.5rem;
   line-height: 1;
@@ -893,7 +916,7 @@ cursor: pointer;
   position: fixed;
   z-index: 10;
   top: 100px;
-  right: 50px;
+  left: 950px;
   cursor: pointer;
 
 }
@@ -938,7 +961,7 @@ cursor: pointer;
 }
 
 .bubble1{
-  top: 330px;
+  top: 250px;
   left: 50px;
 }
 
@@ -949,7 +972,7 @@ cursor: pointer;
 
 .bubble2{
   top: 100px;
-  left: 400px;
+  left: 360px;
 }
 
 .bubble2 .label{ 
@@ -958,8 +981,8 @@ cursor: pointer;
 }
 
 .bubble3{
-  top:300px;
-  left:800px;
+  top:250px;
+  left:720px;
 }
 
 .bubble3 .label{
@@ -968,8 +991,8 @@ cursor: pointer;
 }
 
 .bubble4{
-  top:400px;
-  right:100px;
+  top:350px;
+  left:1050px;
 }
 
 .bubble4 .label{

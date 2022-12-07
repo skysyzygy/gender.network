@@ -64,13 +64,13 @@ function HomePage() {
   ]
   var randomColor = Math.floor(Math.random() * randomHex.length);
 
-  console.log(randomHex[randomColor])
+  
 
   return (
     <div className="homePage" >
       <Header />
       <Feedbacksticker />
-      <div className="sayhi hvr-bob"><Image src="/Sayhi.png" width="250px" height="125px" /></div>
+      <div className="sayhi hvr-bob"><Image src="/Sayhi.png" width="250" height="125" /></div>
 
       <div className="homepagebg" >
 

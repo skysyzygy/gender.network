@@ -55,6 +55,7 @@
                    blocks={post.aboutcopy}
                    serializers={serializers}
                  />
+                 <a href="mailto:sky@skysyzygy.xyz" target="_blank">Sky Syzygy</a>
                  </div>
                </div>
 
