@@ -155,7 +155,7 @@ console.log(topicrecord.title)
       <div className="homepagebg" >
 
 
-        <div className="cloud" style={{ backgroundColor: randomHex[randomColor] }}>
+        <div className="cloud" style={{ backgroundColor: randomHex[randomNumber3] }}>
 
         <div className="bubbles">
 <BubbleRegion title={record.title} image={record.image}/>
