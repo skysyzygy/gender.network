@@ -9,11 +9,14 @@
  import Image from 'next/image'
  import Exit from '../public/Xmark.svg';
  import Head from 'next/head'
+ import Connect from "../components/Connect"
 
 
  export default function FilterHeader({ isActive, toggleDrawer, slideUp, slideDown }) {
     return (
 <div className="headercontainer">
+<Connect />
+
 <Head>
         <title>Gender Network</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />

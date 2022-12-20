@@ -56,11 +56,12 @@ const rgbDataURL = (r, g, b) =>
     const slideDown = () => {
         setIsDown(current => !current);
     }
+    console.log(properties)
 
     
    return (
 
-    <div className={`indexPage ${isActive ? "fixed" : "normal"}`}>
+    <div className={`indexPage ${isActive ? "fixed" : "normal"}`} >
     
     <div className="filterscontainer">
     <Drawer

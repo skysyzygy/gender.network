@@ -1,11 +1,24 @@
+import React, { useState, useEffect } from 'react'
+import { urlFor, sanityClient } from '../sanity'
+
+import HomeHeader from "../components/HomeHeader"
 import Header from "../components/Header"
+import Connect from "../components/Connect"
+import Connect2 from "../components/Connect2"
+import dynamic from "next/dynamic";
+
+const  BubbleRegion = dynamic(() => import('../components/Bubble1'), { ssr: false })
+const  BubbleTime = dynamic(() => import('../components/Bubble2'), { ssr: false })
+const  BubbleTopic = dynamic(() => import('../components/Bubble3'), { ssr: false })
+const  BubbleType = dynamic(() => import('../components/Bubble4'), { ssr: false })
+
 import Image from 'next/image'
 import Feedbacksticker from "../components/Feedbacksticker";
 
 
-function HomePage() {
 
-  // Random Tag Scripts
+const HomePage = ({ properties}) => {
+    // Random Tag Scripts
 
   // Random Region
 
@@ -62,12 +75,79 @@ function HomePage() {
     '#FBE1EB',
     '#F5BB89'
   ]
-  var randomColor = Math.floor(Math.random() * randomHex.length);
 
+  var randomColor;
+
+  function getRandom(min, max) {
+    const floatRandom = Math.random()
   
+    const difference = max - min
+  
+    // random between 0 and the difference
+    const random = Math.round(difference * floatRandom)
+  
+    const randomWithinRange = random + min
+  
+    return randomWithinRange
+  }
+
+
+
+  // React State
+
+  function shuffleArray ( array ) {
+    var counter = array.length, temp, index;
+    // While there are elements in the array
+    while ( counter > 0 ) {
+        // Pick a random index
+        index = Math.floor( Math.random() * counter );
+
+        // Decrease counter by 1
+        counter--;
+
+        // And swap the last element with it
+        temp = array[ counter ];
+        array[ counter ] = array[ index ];
+        array[ index ] = temp;
+    }
+    return array;
+}
+
+
+
+
+const regionproperties =  properties.filter(function(record) {
+    return record.group == "Region";
+  });
+
+  const timeproperties =  properties.filter(function(record) {
+    return record.group == "Time";
+  });
+
+  const topicproperties =  properties.filter(function(record) {
+    return record.group == "Topic";
+  });
+
+  const typeproperties =  properties.filter(function(record) {
+    return record.group == "Type";
+  });
+
+  const randomNumber4 = getRandom(0, 4);
+  const randomNumber3 = getRandom(0, 3);
+  const randomNumber5 = getRandom(0, 2);
+
+
+  const record= regionproperties[randomNumber4];
+  const timerecord= timeproperties[randomNumber4];
+  const topicrecord= topicproperties[randomNumber5];
+  const typerecord= typeproperties[randomNumber3];
+console.log(topicrecord.title)
+
 
   return (
-    <div className="homePage" >
+    <>
+ <div className="homePage" >
+
       <Header />
       <Feedbacksticker />
       <div className="sayhi hvr-bob"><Image src="/Sayhi.png" width="250" height="125" /></div>
@@ -78,31 +158,12 @@ function HomePage() {
         <div className="cloud" style={{ backgroundColor: randomHex[randomColor] }}>
 
         <div className="bubbles">
-        <div className="bubble bubble1" >
+<BubbleRegion title={record.title} image={record.image}/>
+<BubbleTime title={timerecord.title} image={timerecord.image}/>
+<BubbleTopic title={topicrecord.title} image={topicrecord.image}/>
+<BubbleType title={typerecord.title} image={typerecord.image}/>
 
-                        <div className="label region">Midwest</div>
-                        <div className="innerimg">
-                            <img src="/region.jpg"></img>
-                        </div>
-                        </div>
-                        <div className="bubble bubble2">
-                        <div className="label time">1960s</div>
-                        <div className="innerimg">
-                            <img src="/time.png"></img>
-                        </div>
-                        </div>
-                        <div className="bubble bubble3">
-                        <div className="label topic">Cockettes</div>
-                        <div className="innerimg">
-                            <img src="/topic.jpg"></img>
-                        </div>
-                        </div>
-                        <div className="bubble bubble4">
-                        <div className="label type">Book</div>
-                        <div className="innerimg">
-                            <img src="/medium.jpg"></img>
-                        </div>
-                        </div>
+
                     </div>
 
           <div className="tag-gr">
@@ -129,10 +190,39 @@ function HomePage() {
 
 
       </div>
-    </div>
+      </div>
+
+
+
+      </>
 
   )
+  
+
 }
 
-export default HomePage
+export const getStaticProps = async () => {
 
+
+  const query = `*[_type=="homepage"]`
+  const properties = await sanityClient.fetch(query)
+
+
+  if (!properties) {
+    return {
+      props: null,
+      notFound: true,
+    }
+  } else {
+    return {
+      props: {
+        properties,
+      },
+    }
+  }
+}
+
+
+
+
+export default HomePage

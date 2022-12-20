@@ -15,10 +15,33 @@
  import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
  import Footer from "../../components/Footer"
  import dynamic from "next/dynamic";
+ import Script from 'next/script'
 
 const CloverIIIF = dynamic(() => import("@samvera/clover-iiif"), {
   ssr: false,
 });
+
+ 
+const serializers = {
+  types: {
+    code: (props) => (
+      <pre data-language={props.node.language}>
+        <code>{props.node.code}</code>
+      </pre>
+    ),
+  },
+  marks: {
+
+    link: ({ mark, children }) => {
+      // Read https://css-tricks.com/use-target_blank/
+      const { blank, href } = mark
+      return blank ?
+        <a href={href} target="_blank" rel="noreferrer">{children}</a>
+        : <a href={href}>{children}</a>
+    }
+  }
+}
+
 
 const options = {
     // Primary title (Manifest label) for top level canvas.  Defaults to true
@@ -46,10 +69,14 @@ const options = {
 
 const Work = ({   
   title,
+  creator,
+  publisher,
+  date,
+  slug,
   coverphoto,
-  info,
-  description,
-  source,
+  notes,
+  archive,
+  collection,
   categories,
   similarWorks,
   iiifviewerurl,
@@ -58,10 +85,18 @@ const Work = ({
 
   console.log(categories.join(", "))
   const catlist = categories.join(", ")
-    
+  const baseurl = 'https://gender-network.netlify.app/work'
+  console.log(baseurl)
+  console.log(slug.current)
+const slugurl = [baseurl, '/', slug.current].join(' ');
+const newslug = slugurl.replace(/\s/g, '');
+console.log(newslug)
+
    return (
 
-    <div className="itemPage">
+    <div className="itemPage"   id="scroll-to-top">
+<div id="fb-root"></div>
+<Script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v15.0" nonce="wefkaPwQ" />
 
         <Header />
         <div className="Container">
@@ -81,13 +116,42 @@ const Work = ({
 
  {iiifviewerurl && <CloverIIIF id={iiifviewerurl} options={options} />}
 
+ <div class="fb-comments" data-href={newslug} data-width="600" data-numposts="10"></div>
+
  </div>
 <div className="right">
-<div className="metacontainer">
+{notes && <div className="metacontainer">
+    <h3>Notes</h3>
+    <PortableText
+                   blocks={notes}
+                   serializers={serializers}
+                 />
+  </div>}
+{creator && <div className="metacontainer">
+    <h3>Creator</h3>
+  {creator}
+  </div>}
+  {publisher && <div className="metacontainer">
+    <h3>Publisher</h3>
+  {publisher}
+  </div> }
+  {date && <div className="metacontainer">
+    <h3>Date</h3>
+  {date}
+  </div> }
+  {archive && <div className="metacontainer">
+    <h3>Archive</h3>
+  {archive}
+  </div> }
+  {collection && <div className="metacontainer">
+    <h3>Collection</h3>
+  {collection}
+  </div> }
+{catlist && <div className="metacontainer">
     <h3>Tags</h3>
   {catlist}
-  </div>
-  <div className="metacontainer">
+  </div> }
+  {similarWorks && <div className="metacontainer">
   <h3>Similar Works</h3>
 <div className="similarContainer">
 
@@ -100,7 +164,7 @@ const Work = ({
 
           
           </div>
-          </div>
+          </div> }
 </div>
 
 </div>
@@ -116,7 +180,7 @@ const Work = ({
   const pageSlug = pageContext.query.slug
 
   const query = `*[ _type == "work" && slug.current == $pageSlug][0]{
-    title, coverphoto, info, description, source, categories, similarWorks[]->, iiifviewerurl, slug
+    title, creator, publisher, date, coverphoto, notes, archive, collection, categories, similarWorks[]->, iiifviewerurl, slug
   }`
 
 
@@ -131,10 +195,13 @@ const Work = ({
     return {
       props: {
         title: work.title,
+        creator: work.creator,
+        publisher: work.publisher,
+        date: work.date,
         coverphoto: work.coverphoto,
-        info: work.info,
-        description: work.description,
-        source: work.source,
+        notes: work.notes,
+        archive: work.archive,
+        collection: work.collection,
         categories: work.categories,
         similarWorks: work.similarWorks,
         iiifviewerurl: work.iiifviewerurl,
