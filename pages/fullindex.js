@@ -139,17 +139,18 @@ className='bla bla bla'
                 columnsCountBreakPoints={{350: 1, 750: 2, 900: 3}}
             >
                 <Masonry columnsCount={3} gutter="25px"> 
-         {properties.map(post => (
-                        <Link href="/work/sample" key={post._id}>
+         {properties.map(({ _id, slug = '', coverphoto = '', title= '' }) => (
+         <Link passHref href="/work/[slug]" as={`/work/${slug.current}`}>
+
            <div className="workCard" >
 <div className="workContainer">
-{post.coverphoto && <Image src={urlFor(post.coverphoto).url()} placeholder="blur" blurDataURL="data:image/gif;base64,R0lGODlhAQABAPAAAOvis////yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="0" height="0" size="100vw" unoptimized style={{ width: '31.66vw', height: 'auto' }} /> }
+{coverphoto && <Image src={coverphoto} placeholder="blur" blurDataURL="data:image/gif;base64,R0lGODlhAQABAPAAAOvis////yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="0" height="0" size="100vw" unoptimized style={{ width: '31.66vw', height: 'auto' }} /> }
   {/* {coverphoto2 && 
   <Image src={post.coverphoto2}  placeholder="blur" blurDataURL="data:image/gif;base64,R0lGODlhAQABAPAAAOvis////yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="width="0" height="0" size="100vw"   unoptimized  style={{ width: '31.66vw', height: 'auto' }} />
 
   } */}
   </div>
-            {post.title}
+            {title}
 
            </div></Link>
          ))}

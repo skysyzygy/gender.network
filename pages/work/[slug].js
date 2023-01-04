@@ -121,7 +121,6 @@ console.log(newslug)
 
  </div>
 <div className="right">
-<img src={coverphoto2} layout="fill" />
 
 {notes && <div className="metacontainer">
     <h3>Notes</h3>
@@ -160,8 +159,8 @@ console.log(newslug)
 
 {similarWorks && similarWorks.map(({_id, coverphoto ='', slug=''}) => (
         <div key={_id} className="similarThumb">
-          <Link passHref href="/work/sample">
-            <img src={urlFor(coverphoto).url()} layout="fill" />
+          <Link passHref href="/work/[slug]" as={`/work/${slug.current}`}>
+            <img src={coverphoto} layout="fill" />
             </Link>
           </div> ) )}
 
