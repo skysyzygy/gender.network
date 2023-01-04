@@ -136,9 +136,9 @@ className='bla bla bla'
 <FilterHeader isActive={isActive} toggleDrawer={toggleDrawer} slideUp={slideUp} slideDown={slideDown}/>
        </div>
        <ResponsiveMasonry className="workGrid"
-                columnsCountBreakPoints={{350: 1, 750: 2, 900: 3}}
+                columnsCountBreakPoints={{350: 1, 700:2, 900: 3}}
             >
-                <Masonry columnsCount={3} gutter="25px"> 
+                <Masonry columnsCount={3} gutter="35px"> 
          {properties.map(({ _id, slug = '', coverphoto = '', title= '' }) => (
          <Link passHref href="/work/[slug]" as={`/work/${slug.current}`}>
 

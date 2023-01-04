@@ -540,7 +540,7 @@ height: fit-content;
 }
 
 .workGrid{
-  margin:220px auto 5vh auto;
+  margin:160px auto 5vh auto;
   width:98vw;
 }
 
@@ -548,12 +548,12 @@ height: fit-content;
   display: flex;
   flex-direction: column;
     transition: all 0.25s;
-    font-size:1.3rem;
+    font-size:1.2em;
 
 }
 
-.workContainer{
-  width:31.66vw;
+.workContainer, .workContainer img{
+  width: 100% !important;
 }
 
 .workCard:hover{
@@ -1232,4 +1232,12 @@ display:block;
     min-height:unset;
     padding: 5vw 1vw;
   }
+}
+
+
+@media only screen and (max-width: 700px) {
+
+  .workGrid {
+    margin: 185px auto 5vh auto;}
+
 }
