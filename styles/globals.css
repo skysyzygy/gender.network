@@ -362,7 +362,8 @@ height: fit-content;
     content: '  ⬆  ';
   }
 
-.filterheaders{
+.filterheaders,
+.filteredButtons{
   display: flex;
   /* justify-content: space-around;
   padding: 15px 25vw; */
@@ -372,7 +373,8 @@ height: fit-content;
 }
 
 .filterheaders div,
-.filterheaders button{
+.filterheaders button,
+.filteredButtons button{
   padding: 1vh 1.5vh;
   line-height:1;
   border-radius:1em;
@@ -520,6 +522,21 @@ height: fit-content;
 
 .arrow img{
   cursor:pointer;
+}
+
+.filteredButtons{
+  margin:130px auto 5vh auto;
+  width:100vw;
+  border-bottom:1px solid black;
+
+}
+
+.hiddenzero{
+  display:none;
+}
+
+.showall{
+  display:block;
 }
 
 .workGrid{
@@ -971,8 +988,8 @@ cursor: pointer;
   position: absolute;
   background-color: #A1FF99;
   z-index: 100;
-  padding: 0.75vw 1vw;
-  font-size: 2vw;
+  padding: 0.75vw;
+  font-size: 1.5vw;
   line-height: 1;
   box-shadow: 0px 8px 8px rgb(0 0 0 / 25%);
 }
@@ -1003,7 +1020,7 @@ cursor: pointer;
 
 .bubble1 .label{ 
   top: 50%;
-  left: 70%; 
+  left: 90%; 
 }
 
 .bubble1 .label,

@@ -47,9 +47,9 @@
         <Link   href="/fullindex"><div className="b3" >Reset</div></Link>
 
        </div>
-       <div className="filterheaders">
+       {/* <div className="filterheaders">
         <div>Jump to: </div>
-       </div>
+       </div> */}
        </div>
        
   

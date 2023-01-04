@@ -143,7 +143,12 @@ className='bla bla bla'
                         <Link href="/work/sample" key={post._id}>
            <div className="workCard" >
 <div className="workContainer">
-  <Image src={urlFor(post.coverphoto).url()}  placeholder="blur" blurDataURL="data:image/gif;base64,R0lGODlhAQABAPAAAOvis////yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="width="0" height="0" size="100vw"   unoptimized  style={{ width: '31.66vw', height: 'auto' }} /></div>
+{post.coverphoto && <Image src={urlFor(post.coverphoto).url()} placeholder="blur" blurDataURL="data:image/gif;base64,R0lGODlhAQABAPAAAOvis////yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="0" height="0" size="100vw" unoptimized style={{ width: '31.66vw', height: 'auto' }} /> }
+  {/* {coverphoto2 && 
+  <Image src={post.coverphoto2}  placeholder="blur" blurDataURL="data:image/gif;base64,R0lGODlhAQABAPAAAOvis////yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="width="0" height="0" size="100vw"   unoptimized  style={{ width: '31.66vw', height: 'auto' }} />
+
+  } */}
+  </div>
             {post.title}
 
            </div></Link>

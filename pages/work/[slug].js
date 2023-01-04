@@ -74,6 +74,7 @@ const Work = ({
   date,
   slug,
   coverphoto,
+  coverphoto2,
   notes,
   archive,
   collection,
@@ -83,8 +84,8 @@ const Work = ({
 }) => {
 
 
-  console.log(categories.join(", "))
-  const catlist = categories.join(", ")
+  // console.log(categories.join(", "))
+  // const catlist = categories.join(", ")
   const baseurl = 'https://gender-network.netlify.app/work'
   console.log(baseurl)
   console.log(slug.current)
@@ -120,6 +121,8 @@ console.log(newslug)
 
  </div>
 <div className="right">
+<img src={coverphoto2} layout="fill" />
+
 {notes && <div className="metacontainer">
     <h3>Notes</h3>
     <PortableText
@@ -147,10 +150,10 @@ console.log(newslug)
     <h3>Collection</h3>
   {collection}
   </div> }
-{catlist && <div className="metacontainer">
+{/* {catlist && <div className="metacontainer">
     <h3>Tags</h3>
   {catlist}
-  </div> }
+  </div> } */}
   {similarWorks && <div className="metacontainer">
   <h3>Similar Works</h3>
 <div className="similarContainer">
@@ -180,7 +183,7 @@ console.log(newslug)
   const pageSlug = pageContext.query.slug
 
   const query = `*[ _type == "work" && slug.current == $pageSlug][0]{
-    title, creator, publisher, date, coverphoto, notes, archive, collection, categories, similarWorks[]->, iiifviewerurl, slug
+    title, creator, publisher, date, coverphoto, coverphoto2, notes, archive, collection, categories, similarWorks[]->, iiifviewerurl, slug
   }`
 
 
@@ -199,6 +202,7 @@ console.log(newslug)
         publisher: work.publisher,
         date: work.date,
         coverphoto: work.coverphoto,
+        coverphoto2: work.coverphoto2,
         notes: work.notes,
         archive: work.archive,
         collection: work.collection,
