@@ -184,39 +184,39 @@ location = context.query["location"];
   q = `*[_type=="work"] | order(title asc) `
 
 
-  // if (location && decade && topic && type) {
-  //   q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades && '${topic}' in categories && '${type}' in types] | order(title asc) `
-  // }
-  // else if (location && decade && topic && !type) {
-  //   q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades && '${topic}' in categories] | order(title asc) `
-  // }
-  // else if (location && decade && !topic && !type) {
-  //   q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades] | order(title asc) `
-  // }
-  // else if (location && topic && !decade && !type) {
-  //   q = `*[_type=="work" && '${location}' in locations && '${topic}' in categories] | order(title asc) `
-  // }
-  // else if (decade && topic && !location && !type) {
-  //   q = `*[_type=="work" && '${decade}' in decades && '${topic}' in categories] | order(title asc) `
-  // }
-  // else if (location && type && !decade && !topic) {
-  //   q = `*[_type=="work" && '${location}' in locations && '${type}' in types] | order(title asc) `
-  // }
-  // else if (decade) {
-  //   q = `*[_type=="work" && '${decade}' in decades] | order(title asc) `
-  // }
-  // else if (topic) {
-  //   q = `*[_type=="work" && '${topic}' in  categories] | order(title asc) `
-  // }
-  // else if (location) {
-  //   q = `*[_type=="work" && '${location}' in  locations] | order(title asc) `
-  // }
-  // else if (type) {
-  //   q = `*[_type=="work" && '${type}' in  types] | order(title asc) `
-  // }
-  // else {
-  //   q = `*[_type=="work"] | order(title asc) `
-  // }
+  if (location && decade && topic && type) {
+    q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades && '${topic}' in categories && '${type}' in types] | order(title asc) `
+  }
+  else if (location && decade && topic && !type) {
+    q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades && '${topic}' in categories] | order(title asc) `
+  }
+  else if (location && decade && !topic && !type) {
+    q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades] | order(title asc) `
+  }
+  else if (location && topic && !decade && !type) {
+    q = `*[_type=="work" && '${location}' in locations && '${topic}' in categories] | order(title asc) `
+  }
+  else if (decade && topic && !location && !type) {
+    q = `*[_type=="work" && '${decade}' in decades && '${topic}' in categories] | order(title asc) `
+  }
+  else if (location && type && !decade && !topic) {
+    q = `*[_type=="work" && '${location}' in locations && '${type}' in types] | order(title asc) `
+  }
+  else if (decade) {
+    q = `*[_type=="work" && '${decade}' in decades] | order(title asc) `
+  }
+  else if (topic) {
+    q = `*[_type=="work" && '${topic}' in  categories] | order(title asc) `
+  }
+  else if (location) {
+    q = `*[_type=="work" && '${location}' in  locations] | order(title asc) `
+  }
+  else if (type) {
+    q = `*[_type=="work" && '${type}' in  types] | order(title asc) `
+  }
+  else {
+    q = `*[_type=="work"] | order(title asc) `
+  }
   // const q = `*[count((categories)[@ in '${tag}']) == 2] | order(title asc) `
   const properties = await sanityClient.fetch(q)
 
