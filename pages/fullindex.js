@@ -144,7 +144,10 @@ className='bla bla bla'
 
            <div className="workCard" >
 <div className="workContainer">
-{coverphoto && <Image src={coverphoto} placeholder="blur" blurDataURL="data:image/gif;base64,R0lGODlhAQABAPAAAOvis////yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="0" height="0" size="100vw" unoptimized style={{ width: '31.66vw', height: 'auto' }} /> }
+{coverphoto && <Image src={coverphoto} loading="lazy" placeholder="blur" blurDataURL="data:image/gif;base64,R0lGODlhAQABAPAAAOvis////yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="0" height="0" 
+              sizes="(max-width: 700) 98vw,
+              (max-width: 900) 48vw,
+              31vw" unoptimized style={{ width: '31vw', height: 'auto' }} /> }
   {/* {coverphoto2 && 
   <Image src={post.coverphoto2}  placeholder="blur" blurDataURL="data:image/gif;base64,R0lGODlhAQABAPAAAOvis////yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="width="0" height="0" size="100vw"   unoptimized  style={{ width: '31.66vw', height: 'auto' }} />
 

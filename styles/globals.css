@@ -551,10 +551,10 @@ height: fit-content;
     font-size:1.2em;
 
 }
-
+/* 
 .workContainer, .workContainer img{
   width: 100% !important;
-}
+} */
 
 .workCard:hover{
 }
@@ -1234,10 +1234,25 @@ display:block;
   }
 }
 
-
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 900px) {
 
   .workGrid {
     margin: 185px auto 5vh auto;}
+
+    
+.workContainer, .workContainer img{
+  width: 47vw !important;
+}
+
+}
+
+
+
+@media only screen and (max-width: 700px) {
+
+
+.workContainer, .workContainer img{
+  width: 96vw !important;
+}
 
 }
