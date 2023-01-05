@@ -539,10 +539,7 @@ height: fit-content;
   display:block;
 }
 
-.workGrid{
-  margin:160px auto 5vh auto;
-  width:98vw;
-}
+
 
 .workCard {
   display: flex;
@@ -1152,6 +1149,39 @@ display:block;
   transform: translate(-50%, -50%);
   box-shadow: inset 15px -2px 9px 11px rgb(27 27 27 / 37%);
   z-index: -1;
+}
+
+.buttoncontainer{
+  margin-top:180px;
+}
+
+.workGrid{
+  margin:160px auto 20px auto;
+  width:98vw;
+}
+
+.workGridx{
+  width:98vw;
+  margin:0 auto;
+}
+
+.buttoncontainer button{
+  font-size:1.2em;
+  padding: 10px 14px;
+  background: #F9F7F1;
+border: 1px solid #000000;
+box-shadow: inset 0px 3px 3px rgba(0, 0, 0, 0.25);
+border-radius: 26.25px;
+cursor: pointer;
+transition: all 0.25s;
+}
+
+.buttoncontainer button:hover{
+  background-color: #000;
+}
+
+#locationbtn button{
+  font-family: BrushScript; 
 }
 
 @media only screen and (min-width: 2100px) {
