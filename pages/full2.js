@@ -115,6 +115,7 @@ className='bla bla bla'
           router.replace({
             query: { ...router.query, location: 'Pacific Northwest' },
           });
+          toggleDrawer();
         }}
       >
         Pacific Northwest
@@ -125,6 +126,7 @@ className='bla bla bla'
           router.replace({
             query: { ...router.query, location: 'San Fransisco' },
           })
+          toggleDrawer();
         }}
       >
         San Fransisco
