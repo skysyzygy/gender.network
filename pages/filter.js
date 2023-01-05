@@ -10,7 +10,6 @@ function filter(q, properties) {
   const router = useRouter();
 
   const { location, decade, topic, type } = router.query;
-  console.log(type)
 
   function change_textlocation(variable) {
     document.getElementById("locationbtn").innerHTML = variable;

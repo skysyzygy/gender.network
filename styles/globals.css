@@ -1184,6 +1184,20 @@ transition: all 0.25s;
   font-family: BrushScript; 
 }
 
+#timebtn button{
+  font-family: abcSimon;
+}
+
+#catbtn button{
+  font-family: Eurostile;
+}
+
+#typebtn button{
+  font-family: Picnic;
+}
+
+
+
 @media only screen and (min-width: 2100px) {
 
   .bubble .innerimg{

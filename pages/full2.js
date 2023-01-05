@@ -39,7 +39,6 @@ const rgbDataURL = (r, g, b) =>
     const router = useRouter();
   
     const { location, decade, topic, type } = router.query;
-    console.log(type)
   
     function change_textlocation(variable) {
       document.getElementById("locationbtn").innerHTML = variable;
@@ -293,7 +292,7 @@ className='bla bla bla'
                 <Masonry columnsCount={3} gutter="35px"> 
 
       {q.properties.map(({ _id, slug = '', coverphoto = '', title= '' }) => (
-                 <Link passHref href="/work/[slug]" as={`/work/${slug.current}`}>
+                //  <Link passHref href="/work/[slug]" as={`/work/${slug.current}`}>
 
                  <div className="workCard" >
       <div className="workContainer">
@@ -305,7 +304,8 @@ className='bla bla bla'
         </div>
                   {title}
       
-                 </div></Link>
+                 </div>
+                //  </Link>
       ))}
 
 </Masonry>
@@ -338,50 +338,47 @@ className='bla bla bla'
         decade = context.query["decade"];
         topic = context.query["topic"];
         type = context.query["type"];
-        console.log(location)
-        console.log(topic)
-        console.log(type)
-      
+
       
       
         // const query = `*[_type=="work"] | order(title asc) `
         // const q = `*[_type=="work" && '${decade}' in decades] | order(title asc) `
         var q
-        q = `*[_type=="work"] | order(title asc) `
+        q = `*[_type=="work"]{slug[]->, coverphoto, title} | order(title asc) `
       
       
         if (location && decade && topic && type) {
-          q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades && '${topic}' in categories && '${type}' in types] | order(title asc) `
+          q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades && '${topic}' in categories && '${type}' in types]{slug[]->, coverphoto, title} | order(title asc) `
         }
         else if (location && decade && topic && !type) {
-          q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades && '${topic}' in categories] | order(title asc) `
+          q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades && '${topic}' in categories]{slug[]->, coverphoto, title} | order(title asc) `
         }
         else if (location && decade && !topic && !type) {
-          q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades] | order(title asc) `
+          q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades]{slug[]->, coverphoto, title} | order(title asc) `
         }
         else if (location && topic && !decade && !type) {
-          q = `*[_type=="work" && '${location}' in locations && '${topic}' in categories] | order(title asc) `
+          q = `*[_type=="work" && '${location}' in locations && '${topic}' in categories]{slug[]->, coverphoto, title} | order(title asc) `
         }
         else if (decade && topic && !location && !type) {
-          q = `*[_type=="work" && '${decade}' in decades && '${topic}' in categories] | order(title asc) `
+          q = `*[_type=="work" && '${decade}' in decades && '${topic}' in categories]{slug[]->, coverphoto, title} | order(title asc) `
         }
         else if (location && type && !decade && !topic) {
-          q = `*[_type=="work" && '${location}' in locations && '${type}' in types] | order(title asc) `
+          q = `*[_type=="work" && '${location}' in locations && '${type}' in types]{slug[]->, coverphoto, title} | order(title asc) `
         }
         else if (decade) {
-          q = `*[_type=="work" && '${decade}' in decades] | order(title asc) `
+          q = `*[_type=="work" && '${decade}' in decades]{slug[]->, coverphoto, title} | order(title asc) `
         }
         else if (topic) {
-          q = `*[_type=="work" && '${topic}' in  categories] | order(title asc) `
+          q = `*[_type=="work" && '${topic}' in  categories]{slug[]->, coverphoto, title} | order(title asc) `
         }
         else if (location) {
-          q = `*[_type=="work" && '${location}' in  locations] | order(title asc) `
+          q = `*[_type=="work" && '${location}' in  locations]{slug[]->, coverphoto, title} | order(title asc) `
         }
         else if (type) {
-          q = `*[_type=="work" && '${type}' in  types] | order(title asc) `
+          q = `*[_type=="work" && '${type}' in  types]{slug[]->, coverphoto, title} | order(title asc) `
         }
         else {
-          q = `*[_type=="work"] | order(title asc) `
+          q =`*[_type=="work"]{slug[]->, coverphoto, title} | order(title asc) `
         }
         // const q = `*[count((categories)[@ in '${tag}']) == 2] | order(title asc) `
         const properties = await sanityClient.fetch(q)
