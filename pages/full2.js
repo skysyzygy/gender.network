@@ -136,7 +136,7 @@ className='bla bla bla'
           router.replace({
             query: { ...router.query, decade: '1960s' },
           })
-
+          toggleDrawer();
         }}
       >
         1960s
@@ -147,7 +147,8 @@ className='bla bla bla'
         onClick={() => {
           router.replace({
             query: { ...router.query, type: 'Flyer' },
-          })
+          })          
+          toggleDrawer();
         }}
       >
         Flyer
@@ -159,6 +160,7 @@ className='bla bla bla'
           router.replace({
             query: { ...router.query, type: 'Book' },
           })
+          toggleDrawer();
         }}
       >
         Book
