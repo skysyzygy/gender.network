@@ -35,12 +35,14 @@ function getRandom(min, max) {
 function Bubble1(props) {
   return (
     <>
-  <div  className="bubble bubble1" style={{bottom: `${getRandom(30, 35)}vh`, left: `${getRandom(1, 5)}vw`}} >
+        <a href={`${props.indexslug}`}>
+  <div id="bubble" className="bubble bubble1" style={{bottom: `${getRandom(30, 35)}vh`, left: `${getRandom(1, 5)}vw`}} >
   <div className="label region">{props.title}</div>
 <div  className="innerimg" >
 <img src={urlFor(props.image).url()} layout="fill" />
 </div>
 </div>
+</a>
 </>
 )
 }

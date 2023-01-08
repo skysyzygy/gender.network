@@ -245,7 +245,7 @@ h1 a{
 
 nav{
     line-height:1.8;
-    font-size: 1.1rem;
+    font-size: 1.1em;
 }
 
 .linkgroup, .link{
@@ -352,6 +352,7 @@ height: fit-content;
     position: fixed;
     top: 0;
     background-color: #fff;
+    
   }
 
   .add::after{
@@ -379,7 +380,7 @@ height: fit-content;
   line-height:1;
   border-radius:1em;
   /* font-family: HelveticaB; */
-  font-size:1.3rem;
+  font-size:1.3em;
   cursor: pointer;
   border: none;
   cursor: pointer;
@@ -407,7 +408,7 @@ height: fit-content;
   width: 100vw;
   height: 0.1vh;
   transform: scaleY(0);   
-  border-top: 50px solid #e4fbffeb;
+  border-top: 30px solid #FC5F5F;
   background-color: #e4fbffeb;  
   transform-origin: bottom;
   transition: transform 0.26s ease;
@@ -416,16 +417,16 @@ height: fit-content;
 
 }
 
-.EZDrawer__overlay{
+.indexPage .EZDrawer__overlay{
    /* opacity: 0.0 !important;  */
    z-index: 100;
    background-color: #cce8eb !important;
 
 }
 
-.EZDrawer .EZDrawer__container{
-  border-top: 20px solid #e4fbffeb;
-  background-color: #e4fbffeb !important; 
+.indexPage .EZDrawer .EZDrawer__container{
+  border-top: 30px solid #FC5F5F;
+  background-color: #FFF8DF !important; 
   height: 80vh !important;
   box-shadow: 0 0 14px 6px rgb(0 0 0 / 30%) !important;
   overflow:auto;
@@ -434,7 +435,7 @@ height: fit-content;
 .columnHeader{
   width: 98vw;
   margin: 2vh 2vw;
-  font-size: 1.3rem;
+  font-size: 1.3em;
 }
 
 .columnContainers{
@@ -472,7 +473,7 @@ height: fit-content;
 
 .col1a, .col2a, .col3a{
   width:28vw;
-  height: 80vh;
+  height: 4000px;
 }
 
 .col1a{
@@ -489,20 +490,54 @@ height: fit-content;
   padding-left: 2vw;
 }
 
+.col3a img{
+  width: 20vw;
+  height: auto;
+  transform: rotate(5deg);
+}
+
 .list {
   display: flex;
   flex-direction: column;
   margin-bottom:5vh;
+  align-items: flex-start;
 }
 
-.heading{
-  font-size: 1.5rem;
-  letter-spacing: 0.25rem;
+.list button{
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  line-height: 1;
+  margin: 10px 0;
+  font-size: 1.6em;
+  cursor: pointer;
+  text-align: left;
+}
+
+.region button{
+  font-family: BrushScript;
+}
+
+.type button{
+  font-family: Picnic;
+}
+
+.time button{
+  font-family: abcSimon;
+}
+
+.topic button{
+  font-family: Eurostile;
+}
+
+.heading, .hey{
+  font-weight: bold;
+  margin-bottom:2vh;
 }
 
 .list a {
   color: black;
-  font-size: 3.5rem;
+  font-size: 3.5em;
   line-height: 1.5;
 }
 
@@ -618,13 +653,13 @@ height: fit-content;
 
 .megaintro{
   padding: 1vw 0 0 1vw;
-  font-size: 2.25rem;
+  font-size: 2.25em;
   margin-right: 1vw;
   line-height: 1.4;
 }
 
 .about1columns, .textbody{
-  font-size: 1.4rem;
+  font-size: 1.4em;
 }
 
 .about1columns{
@@ -685,11 +720,11 @@ height: fit-content;
 .eventsPage h2 {
   color: #ff6038;
   font-family: BrushScript;
-  font-size: 6rem;
+  font-size: 6em;
   font-weight: 500;
   -webkit-text-stroke: 1px #ff6038;
   paint-order: stroke fill;
-  line-height: 5rem;
+  line-height: 5em;
   padding: 1.5vw;
 }
 
@@ -700,7 +735,7 @@ height: fit-content;
 
 .eventsPage h3{
   font-family: Yale !important;
-font-size:4rem;
+font-size:4em;
 padding: 1vw;
 border-top:1px solid black;
 border-bottom:1px solid black;
@@ -733,7 +768,7 @@ border-bottom:1px solid black;
 }
 
 .eventTitle, .eventTime{
-  font-size: 2.25rem;
+  font-size: 2.25em;
   line-height: 1.4;
 }
 
@@ -814,7 +849,7 @@ border-bottom:1px solid black;
 .itemheader{
   display: flex;
   font-family: 'HelveticaB';
-  font-size:1rem;
+  font-size:1em;
 
 }
 
@@ -837,7 +872,7 @@ padding-left:25px;
 }
 
 .itemtitle{
-  font-size:2rem;
+  font-size:2em;
   font-family: 'HelveticaB';
 }
 
@@ -846,7 +881,7 @@ padding-left:25px;
 }
 
 .itemPage h3{
-  font-size:1rem;
+  font-size:1em;
   font-family: 'HelveticaB';
   padding-bottom:15px;
 }
@@ -911,12 +946,12 @@ footer .left{
 
 footer .menulinks a{
   font-family: Yale;
-  font-size:4rem;
+  font-size:4em;
   font-weight:500;
   -webkit-text-stroke: 2px #000;
   color:#000;
   paint-order: stroke fill;
-  line-height: 4rem;
+  line-height: 4em;
 }
 
 .top-to-btm img{
@@ -927,7 +962,8 @@ footer .menulinks a{
 /* Index Page */
 
 .ovalsticker{
-  width: 22vw;
+  width:auto;
+  padding: 0 5vw;
   height: 15vh;
 background: #FAEF8D;
 box-shadow: 0px 3.0666px 3.0666px rgba(0, 0, 0, 0.25);
@@ -950,7 +986,7 @@ cursor: pointer;
 }
 
 .ovaltext{
-  font-size: 4.5vw;
+  font-size: 4.5em;
   line-height: 1;
   font-weight: bold;
 }
@@ -1107,13 +1143,13 @@ display:block;
 
 .swal2-title{
   padding: 25px !important;
-  font-size:1rem !important;
+  font-size:1em !important;
   color: #000 !important;
 }
 
 .swal2-html-container{
   margin:25px !important;
-  font-size:2rem !important;
+  font-size:2em !important;
 }
 
 .swal2-actions{
@@ -1124,7 +1160,7 @@ display:block;
 
 .swal2-styled.swal2-confirm{
   color: #000 !important;
-  font-size: 2rem !important;
+  font-size: 2em !important;
 }
 
 .swal2-styled{
@@ -1153,6 +1189,11 @@ display:block;
 
 .buttoncontainer{
   margin-top:180px;
+  display:flex;
+}
+
+.buttoncontainer div{
+  margin-right:1.5vh;
 }
 
 .workGrid{
@@ -1162,7 +1203,7 @@ display:block;
 
 .workGridx{
   width:98vw;
-  margin:0 auto;
+  margin: 0 auto 10vh auto;
 }
 
 .buttoncontainer button{
@@ -1196,13 +1237,78 @@ transition: all 0.25s;
   font-family: Picnic;
 }
 
+/* Mobile Nav Button */
+
+
+.mobilenav{
+  display:none;
+}
+
+.mobilenav button{
+  height: 16px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: none;
+  background-color: transparent !important;
+  position: fixed;
+  top: 2vh;
+  left: 3vw;
+  z-index: 10000;
+  padding: 0;
+}
+
+.navGroup{
+  margin: 5vh 3vw;
+  font-size:2em;
+  line-height:1.5;
+}
+
+.bar-one,
+        .bar-two,
+        .bar-three {
+          width: 20px;
+          height: 2px;
+          background: #000;
+          transition: all 0.3s linear;
+          position: relative;
+          transform-origin: 1px;
+        }
+
+        .bar-one {
+          transform: rotate(0);
+        }
+
+        .bar-two {
+          opacity: 1;
+          transform: translateX(0);
+        }
+
+        .bar-three {
+          transform: rotate(0);
+        }
+
+        /* .open .bar-one {
+         
+          transform: rotate(46deg);
+          }
+
+          .open .bar-two {
+            opacity: 0;
+            transform: translateX(20px);
+          }
+
+          .open .bar-three {
+            transform: rotate(-45deg);
+          }
+           */
 
 
 @media only screen and (min-width: 2100px) {
 
   .bubble .innerimg{
-    width: 420px;
-    height: 420px;
+    width: 400px;
+    height: 400px;
   }
   
   
@@ -1211,8 +1317,8 @@ transition: all 0.25s;
 @media only screen and (max-width: 2100px) and (min-width: 1800px) {
 
   .bubble .innerimg{
-    width: 350px;
-    height: 350px;
+    width: 320px;
+    height: 320px;
   }
   
   
@@ -1221,8 +1327,8 @@ transition: all 0.25s;
 @media only screen and (max-width: 1800px) and (min-width: 1500px) {
 
   .bubble .innerimg{
-    width: 300px;
-    height: 300px;
+    width: 280px;
+    height: 280px;
   }
   
   
@@ -1235,13 +1341,86 @@ transition: all 0.25s;
     width: 220px;
     height: 220px;
   }
+
+  .tag-gr .topic{
+    display:none;
+  }
   
+  .bubble .label{
+    font-size:1.15em;
+  }
   
 }
 
 
 @media only screen and (max-width: 1000px) {
 
+  .mobilenav{
+    display:block;
+  }
+
+  .homePage header,
+  .indexPage header,
+  .storiesPage header,
+  .itemPage header,
+  .aboutPage header,
+  .eventsPage header{
+    flex-direction: row-reverse;
+  }
+
+  .mobilenav .EZDrawer .EZDrawer__container{
+    width:90vw !important;
+    height:100vh !important;
+    background-color: #F2EFa5 !important;
+  }
+
+  .eventsPage h2 {
+
+    font-size: 4.25em;}
+
+
+header nav{
+  display:none !important;
+}
+
+#bubble:nth-child(1),
+#bubble:nth-child(2),
+#bubble:nth-child(4){
+  display:none;
+}
+
+.bubble3{
+  top: 40vw !important;
+  right: 20vw !important;
+}
+
+.bubble3 .innerimg{
+  width: 305px;
+  height: 305px;
+}
+
+.bubble3 .label {
+  top: 20%;
+  left: 50%;
+}
+
+.tag-gr .topic,
+/* .tag-gr .region, */
+.tag-gr .time{
+  display:none;
+}
+
+.connectBtn{
+  font-size: 1.8em;
+}
+
+.sayhi{
+  right: 80px;
+}
+
+.sayhi img {
+  width: 25vw;
+}
   
   .aboutblock{
     display:block;
@@ -1298,5 +1477,14 @@ transition: all 0.25s;
 .workContainer, .workContainer img{
   width: 96vw !important;
 }
+
+.tag-gr .topic,
+.tag-gr .region,
+.tag-gr .time,
+.tag-gr .type{
+  display:none;
+}
+
+
 
 }

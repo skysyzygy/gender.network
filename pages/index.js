@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { urlFor, sanityClient } from '../sanity'
 
 import HomeHeader from "../components/HomeHeader"
@@ -23,11 +23,16 @@ const HomePage = ({ properties}) => {
   // Random Region
 
   var randomTag1 = [
-    '<div><a href="/category/midwest">Midwest</a></div>',
-    '<div><a href="/category/NYC">NYC</a></div>',
-    '<div><a href="/category/pacific-northwest">Pacific Northwest</a></div>',
-    '<div><a href="/category/san-francisco">San Francisco</a></div>',
-    '<div><a href="/category/south">South</a></div>'
+    '<div><a href="/fullindex?location=Albany">Albany</a></div>',
+    '<div><a href="/fullindex?location=Arizona">Arizona</a></div>',
+    '<div><a href="/fullindex?location=Birmingham">Birmingham</a></div>',
+    '<div><a href="/fullindex?location=Chicago">Chicago</a></div>',
+    '<div><a href="/fullindex?location=Cuba">Cuba</a></div>',
+    '<div><a href="/fullindex?location=DC">DC</a></div>',
+    '<div><a href="/fullindex?location=Detroit">Detroit</a></div>',
+    '<div><a href="/fullindex?location=Florida">Florida</a></div>'
+
+
   ]
   const out = []
   const elements = 2
@@ -132,16 +137,28 @@ const regionproperties =  properties.filter(function(record) {
     return record.group == "Type";
   });
 
-  const randomNumber4 = getRandom(0, 4);
+  // location
+  const randomNumber4 = getRandom(0, 34);
+// time
   const randomNumber3 = getRandom(0, 3);
+// type
+  const randomNumber2 = getRandom(0, 3);
+// topic
   const randomNumber5 = getRandom(0, 2);
 
 
   const record= regionproperties[randomNumber4];
-  const timerecord= timeproperties[randomNumber4];
+  const timerecord= timeproperties[randomNumber3];
   const topicrecord= topicproperties[randomNumber5];
-  const typerecord= typeproperties[randomNumber3];
+  const typerecord= typeproperties[randomNumber2];
 console.log(topicrecord.title)
+
+// const bubble = document.getElementById('bubble');
+
+// const third = document.querySelector('#bubble :nth-child(1)');
+// console.log(third); 
+
+
 
 
   return (
@@ -158,9 +175,9 @@ console.log(topicrecord.title)
         <div className="cloud" style={{ backgroundColor: randomHex[randomNumber3] }}>
 
         <div className="bubbles">
-<BubbleRegion title={record.title} image={record.image}/>
-<BubbleTime title={timerecord.title} image={timerecord.image}/>
-<BubbleTopic title={topicrecord.title} image={topicrecord.image}/>
+<BubbleRegion title={record.title} image={record.image}  indexslug={record.indexslug}/>
+<BubbleTime title={timerecord.title} image={timerecord.image} indexslug={timerecord.indexslug}/>
+<BubbleTopic  title={topicrecord.title} image={topicrecord.image}/>
 <BubbleType title={typerecord.title} image={typerecord.image}/>
 
 
