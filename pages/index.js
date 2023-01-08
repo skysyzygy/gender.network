@@ -138,7 +138,7 @@ const regionproperties =  properties.filter(function(record) {
   });
 
   // location
-  const randomNumber4 = getRandom(0, 34);
+  const randomNumber4 = getRandom(0, 33);
 // time
   const randomNumber3 = getRandom(0, 3);
 // type
