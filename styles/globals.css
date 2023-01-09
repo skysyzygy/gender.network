@@ -162,7 +162,7 @@
     font-family: 'Helvetica';
     margin:0;
   }
-  a{
+  button, a{
     color:#000;
   }
 
@@ -355,6 +355,7 @@ height: fit-content;
     position: fixed;
     top: 0;
     background-color: #fff;
+    z-index:100;
     
   }
 
@@ -1530,6 +1531,51 @@ header nav{
 
 .col3a img {
   width: 80vw;}
+
+  .filterscontainer .EZDrawer .EZDrawer__container{
+    height: 70vh !important;
+  }
+
+  /* Item detail */
+
+  .Container{
+    display:block;
+    width:96vw;
+    margin:2vw;
+  }
+
+  .left{
+    margin-top:80px;
+    width:98vw;
+  }
+
+  .itemh2{
+    display:block;
+  }
+
+  .itemPage .Container .right {
+    width: unset !important; 
+     border-top: 1px solid #000; 
+     border-left:none;
+     padding-left: 0;
+    }
+
+    .flex{
+      display:block;
+    }
+
+    .flex .left{
+      width: unset !important;
+      padding-right: 0 !important;
+      margin:50px 0;
+    }
+
+    .similarThumb{
+      width: 15vw;
+height: 15vw;
+
+    }
+
 
 }
 

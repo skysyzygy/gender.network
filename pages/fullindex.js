@@ -1860,7 +1860,7 @@ className='bla bla bla'
       <div className="hey">Hey!</div><br></br>
         <Link href="/about">
         <Image src="/contribute.png" width="395" height="286"></Image>
-        </Link>
+        </Link><br></br><br></br>
     </div>
 </div>
 </Drawer>
@@ -1983,7 +1983,7 @@ className='bla bla bla'
                 <Masonry columnsCount={3} gutter="35px"> 
 
       {q.properties.map(({ _id, slug = '', coverphoto = '', title= '' }) => (
-        <Link passHref href="/work/[slug]" as={`/work/${slug.current}`}>
+        <Link passHref href="/work/[slug]" as={`/work/${slug}`}>
 
                  <div className="workCard" >
       <div className="workContainer">
@@ -2044,37 +2044,37 @@ className='bla bla bla'
       
       
         if (location && decade && topic && type) {
-          q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades && '${topic}' in categories && '${type}' in types] | order(title asc) `
+          q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades && '${topic}' in categories && '${type}' in types]{coverphoto, "slug": slug.current, title} | order(title asc) `
         }
         else if (location && decade && topic && !type) {
-          q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades && '${topic}' in categories] | order(title asc) `
+          q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades && '${topic}' in categories]{coverphoto, "slug": slug.current, title} | order(title asc) `
         }
         else if (location && decade && !topic && !type) {
-          q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades] | order(title asc) `
+          q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades]{coverphoto, "slug": slug.current, title} | order(title asc) `
         }
         else if (location && topic && !decade && !type) {
-          q = `*[_type=="work" && '${location}' in locations && '${topic}' in categories] | order(title asc) `
+          q = `*[_type=="work" && '${location}' in locations && '${topic}' in categories]{coverphoto, "slug": slug.current, title} | order(title asc) `
         }
         else if (decade && topic && !location && !type) {
-          q = `*[_type=="work" && '${decade}' in decades && '${topic}' in categories] | order(title asc) `
+          q = `*[_type=="work" && '${decade}' in decades && '${topic}' in categories]{coverphoto, "slug": slug.current, title} | order(title asc) `
         }
         else if (location && type && !decade && !topic) {
-          q = `*[_type=="work" && '${location}' in locations && '${type}' in types]| order(title asc) `
+          q = `*[_type=="work" && '${location}' in locations && '${type}' in types]{coverphoto, "slug": slug.current, title} | order(title asc) `
         }
         else if (decade) {
-          q = `*[_type=="work" && '${decade}' in decades] | order(title asc) `
+          q = `*[_type=="work" && '${decade}' in decades]{coverphoto, "slug": slug.current, title} | order(title asc) `
         }
         else if (topic) {
-          q = `*[_type=="work" && '${topic}' in  categories] | order(title asc) `
+          q = `*[_type=="work" && '${topic}' in  categories]{coverphoto, "slug": slug.current, title} | order(title asc) `
         }
         else if (location) {
-          q = `*[_type=="work" && '${location}' in  locations]| order(title asc) `
+          q = `*[_type=="work" && '${location}' in  locations]{coverphoto, "slug": slug.current, title}| order(title asc) `
         }
         else if (type) {
-          q = `*[_type=="work" && '${type}' in  types] | order(title asc) `
+          q = `*[_type=="work" && '${type}' in  types]{coverphoto, "slug": slug.current, title} | order(title asc) `
         }
         else {
-          q =`*[_type=="work"]| order(title asc) `
+          q =`*[_type=="work"]{coverphoto, "slug": slug.current, title} | order(title asc) `
         }
         // const q = `*[count((categories)[@ in '${tag}']) == 2] | order(title asc) `
         const properties = await sanityClient.fetch(q)
