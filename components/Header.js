@@ -30,7 +30,7 @@ import 'react-modern-drawer/dist/index.css'
     } 
 
     return (
-        <div>
+        <div className="headercontainer">
                 <Connect />
        <Customhead />
       <div className="mobilenav">

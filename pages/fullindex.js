@@ -8,6 +8,8 @@ import Link from 'next/link'
 import Exit from '../public/Xmark.svg';
 import Contribute from '../public/contribute.png';
 import Connect from "../components/Connect"
+import Customhead from "../components/Customhead"
+
 import Head from 'next/head'
 
 import { sanityClient,  urlFor } from '../sanity'
@@ -93,7 +95,14 @@ const rgbDataURL = (r, g, b) =>
         setIsDown(current => !current);
     }
 
-    console.log(q)
+    const [isOpen2, setIsOpen2] = useState(false)
+    const [isActive2, setActive2] = useState(false)
+    const [show2, setShow2] = useState(false)
+    const toggleDrawer2 = () => {
+          setIsOpen2((prevState) => !prevState)
+          setActive2(!isActive);
+      } 
+
 
     return (
         <>
@@ -1856,24 +1865,55 @@ className='bla bla bla'
 </div>
 </Drawer>
 <div className="headercontainer">
-{/* <Connect /> */}
+<div>
+       <Customhead />
+      <div className="mobilenav">
 
-<Head>
-        <title>Gender Network</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
+      <button className={` ${isActive2 ? 'open': null}`} onClick={toggleDrawer2}>
+    <div className="bar-one" />
+              <div className="bar-three" />
+    </button>
+            <Drawer
+                open={isOpen2}
+                onClose={toggleDrawer2}
+                direction='left'
+                className='topnav'
+                overlayOpacity='0'
+                width='500px'
+            >
+                <div>
+                
+                {/* <h1 className="link" ><Link href="/">Gender Network</Link></h1> */}
+                 
+                  <div className="navGroup">
+                    <div>&nbsp;&nbsp;</div>
+                    <div><Link href="/">Home</Link></div>
+                    <div><Link href="/fullindex">Full Index</Link></div>
+                    <div><Link href="/stories">Stories</Link></div>
+                    <div><Link href="/about">About</Link></div>
+                    <div><Link href="/events">Events</Link></div>
+                    <div className="menuborderlast">&nbsp;&nbsp;</div>
+
+                  </div>
+                  
+                </div>
+            </Drawer>
+            </div>
 <header>
-        <h1 className="link"><Link href="/">Gender Network</Link></h1>
+
+        <h1 className="link" ><Link href="/">Gender Network</Link></h1>
         <nav>
-            <div className="gr1"><Link href="/fullindex"><div className="linkgroup lt"><div className="checkbox"> <span>[</span> <span className="selected1"><Image src={Exit} alt="Selected" /></span> <span>]</span> </div>Full Index</div></Link>
-            <Link href="/stories"><div className="linkgroup rt"><div className="checkbox"> <span>[</span> <span className="selected2"><Image src={Exit} alt="Selected" /></span> <span>]</span> </div>Stories</div></Link>
+            <div className="gr1"><Link href="/fullindex"><div className="linkgroup lt"><div className="checkbox"> <span>[</span> <span className="selected1"><Image src={Exit} alt="Selected" width="25px" height="25px" /></span> <span>]</span> </div>Full Index</div></Link>
+            <Link href="/stories"><div className="linkgroup rt"><div className="checkbox"> <span>[</span> <span className="selected2"><Image src={Exit} alt="Selected" width="25px" height="25px" /></span> <span>]</span> </div>Stories</div></Link>
             </div>
             <div className="gr2">
-            <Link href="/about"><div className="linkgroup lt"><div className="checkbox"> <span>[</span> <span className="selected3"><Image src={Exit} alt="Selected" /></span> <span>]</span> </div>About</div></Link>
-            <Link href="/events"><div className="linkgroup rt"><div className="checkbox"> <span>[</span> <span className="selected4"><Image src={Exit} alt="Selected" /></span> <span>]</span> </div>Events</div></Link>
+            <Link href="/about"><div className="linkgroup lt"><div className="checkbox"> <span>[</span> <span className="selected3"><Image src={Exit} alt="Selected" width="25px" height="25px" /></span> <span>]</span> </div>About</div></Link>
+            <Link href="/events"><div className="linkgroup rt"><div className="checkbox"> <span>[</span> <span className="selected4"><Image src={Exit} alt="Selected" width="25px" height="25px" /></span> <span>]</span> </div>Events</div></Link>
             </div>
         </nav>
-       </header>  
+
+       </header>   
+       </div>
 <div className="filterheaders">
        <button id="button" className={`${isActive ? "minus" : "add"}`}
        style={{
@@ -2034,7 +2074,7 @@ className='bla bla bla'
           q = `*[_type=="work" && '${type}' in  types] | order(title asc) `
         }
         else {
-          q =`*[_type=="work"] | order(title asc) `
+          q =`*[_type=="work"]| order(title asc) `
         }
         // const q = `*[count((categories)[@ in '${tag}']) == 2] | order(title asc) `
         const properties = await sanityClient.fetch(q)
