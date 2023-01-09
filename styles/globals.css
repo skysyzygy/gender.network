@@ -1536,9 +1536,13 @@ header nav{
     height: 70vh !important;
   }
 
+  .headercontainer .EZDrawer .EZDrawer__container{
+    height: 100vh !important;
+  }
+
   /* Item detail */
 
-  .Container{
+  .itemPage .Container{
     display:block;
     width:96vw;
     margin:2vw;
@@ -1549,15 +1553,38 @@ header nav{
     width:98vw;
   }
 
+
   .itemh2{
     display:block;
   }
+
+  .itemPage .Container .left {
+    width: unset !important; 
+    margin-right: 0 !important;
+    }
+
 
   .itemPage .Container .right {
     width: unset !important; 
      border-top: 1px solid #000; 
      border-left:none;
      padding-left: 0;
+    }
+
+    .clover-iiif header {
+      width: 73vw;
+    }
+
+    .itemheader .flex{
+      display:flex;
+    }
+
+    .similarThumb img{
+      width: 15vw;
+    }
+
+    .checkbox2{
+      justify-content: unset !important;
     }
 
     .flex{
