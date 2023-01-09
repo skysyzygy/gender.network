@@ -78,14 +78,20 @@ const Work = ({
   notes,
   archive,
   collection,
+  locations,
+  decades,
   categories,
+  types,
   similarWorks,
   iiifviewerurl,
 }) => {
 
 
-  // console.log(categories.join(", "))
-  // const catlist = categories.join(", ")
+  const loclist = locations.join(", ")
+  const declist = decades.join(", ")
+  const toplist = categories.join(", ")
+  const typelist = types.join(", ")
+
   const baseurl = 'https://gender-network.netlify.app/work'
   console.log(baseurl)
   console.log(slug.current)
@@ -116,19 +122,11 @@ console.log(newslug)
 
 
  {iiifviewerurl && <CloverIIIF id={iiifviewerurl} options={options} />}
-
- <div class="fb-comments" data-href={newslug} data-width="600" data-numposts="10"></div>
+<br></br>
+ <div className="fb-comments" data-href={newslug} data-width="600" data-numposts="10"></div>
 
  </div>
 <div className="right">
-
-{notes && <div className="metacontainer">
-    <h3>Notes</h3>
-    <PortableText
-                   blocks={notes}
-                   serializers={serializers}
-                 />
-  </div>}
 {creator && <div className="metacontainer">
     <h3>Creator</h3>
   {creator}
@@ -141,6 +139,14 @@ console.log(newslug)
     <h3>Date</h3>
   {date}
   </div> }
+{notes && <div className="metacontainer">
+    <h3>Notes</h3>
+    <PortableText
+                   blocks={notes}
+                   serializers={serializers}
+                 />
+  </div>}
+
   {archive && <div className="metacontainer">
     <h3>Archive</h3>
   {archive}
@@ -149,10 +155,23 @@ console.log(newslug)
     <h3>Collection</h3>
   {collection}
   </div> }
-{/* {catlist && <div className="metacontainer">
-    <h3>Tags</h3>
-  {catlist}
-  </div> } */}
+  {locations && <div className="metacontainer">
+    <h3>Location</h3>
+  {loclist}
+  </div> }
+  {decades && <div className="metacontainer">
+    <h3>Decade</h3>
+  {declist}
+  </div> }
+  {categories && <div className="metacontainer">
+    <h3>Topic</h3>
+  {toplist}
+  </div> }
+  {types && <div className="metacontainer">
+    <h3>Type</h3>
+  {typelist}
+  </div> }
+
   {similarWorks && <div className="metacontainer">
   <h3>Similar Works</h3>
 <div className="similarContainer">
@@ -182,7 +201,7 @@ console.log(newslug)
   const pageSlug = pageContext.query.slug
 
   const query = `*[ _type == "work" && slug.current == $pageSlug][0]{
-    title, creator, publisher, date, coverphoto, coverphoto2, notes, archive, collection, categories, similarWorks[]->, iiifviewerurl, slug
+    title, creator, publisher, date, coverphoto, coverphoto2, notes, archive, collection, locations, decades, categories, types, similarWorks[]->, iiifviewerurl, slug
   }`
 
 
@@ -205,7 +224,10 @@ console.log(newslug)
         notes: work.notes,
         archive: work.archive,
         collection: work.collection,
+        locations: work.locations,
+        decades: work.decades,
         categories: work.categories,
+        types: work.types,
         similarWorks: work.similarWorks,
         iiifviewerurl: work.iiifviewerurl,
         slug: work.slug,

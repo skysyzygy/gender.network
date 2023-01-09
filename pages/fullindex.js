@@ -1240,6 +1240,17 @@ className='bla bla bla'
         type="button"
         onClick={() => {
           router.replace({
+            query: { ...router.query, topic: 'Rat' },
+          })
+          toggleDrawer();
+        }}
+      >
+        Rat
+      </button>
+      <button
+        type="button"
+        onClick={() => {
+          router.replace({
             query: { ...router.query, topic: 'Sandy Stone' },
           })
           toggleDrawer();

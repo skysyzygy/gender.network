@@ -380,7 +380,7 @@ height: fit-content;
   line-height:1;
   border-radius:1em;
   /* font-family: HelveticaB; */
-  font-size:1.3em;
+  font-size:1.25em;
   cursor: pointer;
   border: none;
   cursor: pointer;
@@ -435,7 +435,7 @@ height: fit-content;
 .columnHeader{
   width: 98vw;
   margin: 2vh 2vw;
-  font-size: 1.3em;
+  font-size: 1.25em;
 }
 
 .columnContainers{
@@ -986,8 +986,7 @@ cursor: pointer;
 }
 
 .ovaltext{
-  font-size: 4.5em;
-  line-height: 1;
+  font-size: 3.5em;  line-height: 1;
   font-weight: bold;
 }
 
@@ -1021,7 +1020,7 @@ cursor: pointer;
   background-color: #A1FF99;
   z-index: 100;
   padding: 0.75vw;
-  font-size: 1.3em;
+  font-size: 1.25em;
   line-height: 1;
   box-shadow: 0px 8px 8px rgb(0 0 0 / 25%);
 }
@@ -1310,6 +1309,10 @@ transition: all 0.25s;
     width: 400px;
     height: 400px;
   }
+
+  .bubble .innerimg img {
+    width: 400px;
+  }
   
   
 }
@@ -1319,6 +1322,10 @@ transition: all 0.25s;
   .bubble .innerimg{
     width: 320px;
     height: 320px;
+  }
+
+  .bubble .innerimg img {
+    width: 320px;
   }
   
   
@@ -1331,6 +1338,9 @@ transition: all 0.25s;
     height: 280px;
   }
   
+  .bubble .innerimg img {
+    width: 280px;
+  }
   
 }
 
@@ -1340,6 +1350,11 @@ transition: all 0.25s;
   .bubble .innerimg{
     width: 220px;
     height: 220px;
+  }
+
+    
+  .bubble .innerimg img {
+    width: 220px;
   }
 
   .tag-gr .topic{
@@ -1390,8 +1405,9 @@ header nav{
 }
 
 .bubble3{
-  top: 40vw !important;
-  right: 20vw !important;
+  top: 20vh !important;
+  right: unset !important;
+  left: 20vw !important;
 }
 
 .bubble3 .innerimg{
@@ -1399,9 +1415,16 @@ header nav{
   height: 305px;
 }
 
+.bubble .innerimg img {
+  width: 305px;
+}
+
+.bubble .label{
+  font-size:1em;
+}
+
 .bubble3 .label {
   top: 20%;
-  left: 50%;
 }
 
 .tag-gr .topic,
