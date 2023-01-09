@@ -201,13 +201,15 @@
   }
 
 header{
-  /* font-family: 'HelveticaB'; */
+  font-family: 'HelveticaB';
     display:flex;
     justify-content: space-between;
     width:96vw;
     z-index:10;
     padding: 1vh 2vw;
     align-items: center;
+    font-weight:normal !important;
+
 }
 
 header .selected1,
@@ -237,6 +239,7 @@ h1{
     font-size:2.5em;
     margin-block-start: 0;
     margin-block-end: 0;
+    font-weight:normal !important;
 }
 
 h1 a{
@@ -1410,7 +1413,7 @@ header nav{
 .bubble3{
   top: 20vh !important;
   right: unset !important;
-  left: 20vw !important;
+  left: 2vw !important;
 }
 
 .bubble3 .innerimg{
