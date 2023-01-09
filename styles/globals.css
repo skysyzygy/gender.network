@@ -988,8 +988,9 @@ cursor: pointer;
 }
 
 .ovaltext{
-  font-size: 3.5em;  line-height: 1;
-  font-weight: bold;
+  font-size: 3em;
+  line-height: 1;
+  font-weight: 900;
 }
 
 .sayhi{
@@ -1411,7 +1412,7 @@ header nav{
 }
 
 .bubble3{
-  top: 20vh !important;
+  top: 15vh !important;
   right: unset !important;
   left: 2vw !important;
 }
