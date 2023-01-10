@@ -12,7 +12,7 @@ export default function Customhead() {
 <Head>
 <head dangerouslySetInnerHTML={{ __html: '<!--website BY ｒｉｔｕ ｇｈｉｙａ ~ ｗｗｗ.ｒ-ｉ-ｔ-ｕ.ｃｏｍ -->' }}>
       </head>
-<title>Gender Network</title>
+<title>Gender.Network</title>
         <meta property="og:title" name="twitter:title"  content="Gender Network" key="title" />
 
         <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"></meta>

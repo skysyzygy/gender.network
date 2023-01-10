@@ -712,6 +712,7 @@ height: fit-content;
   align-content: flex-start;
   align-items: center;
   margin-bottom:1vw;
+  flex-wrap:wrap;
 }
 
 .logos img{
@@ -1621,9 +1622,9 @@ height: 15vw;
       width:100% !important;
     }
 
-    .logos{
+    /* .logos{
       display:block;
-    }
+    } */
 
     /* IIIF Viewer settings - start */
 

@@ -49,7 +49,6 @@ import 'react-modern-drawer/dist/index.css'
             >
                 <div>
                 
-                {/* <h1 className="link" ><Link href="/">Gender Network</Link></h1> */}
                  
                   <div className="navGroup">
                     <div className={`menuborder ${show ? 'revealdisplay': null}`}>&nbsp;&nbsp;</div>
@@ -67,7 +66,7 @@ import 'react-modern-drawer/dist/index.css'
             </div>
 <header>
 
-        <h1 className="link" ><Link href="/">Gender Network</Link></h1>
+        <h1 className="link" ><Link href="/">Gender.Network</Link></h1>
         <nav>
             <div className="gr1"><Link href="/fullindex"><div className="linkgroup lt"><div className="checkbox"> <span>[</span> <span className="selected1"><Image src={Exit} alt="Selected" width="25px" height="25px" /></span> <span>]</span> </div>Full Index</div></Link>
             <Link href="/stories"><div className="linkgroup rt"><div className="checkbox"> <span>[</span> <span className="selected2"><Image src={Exit} alt="Selected" width="25px" height="25px" /></span> <span>]</span> </div>Stories</div></Link>

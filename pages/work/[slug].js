@@ -92,7 +92,7 @@ const Work = ({
   const toplist = categories.join(", ")
   const typelist = types.join(", ")
 
-  const baseurl = 'https://gender-network.netlify.app/work'
+  const baseurl = 'https://gender-network.com/work'
   console.log(baseurl)
   console.log(slug.current)
 const slugurl = [baseurl, '/', slug.current].join(' ');

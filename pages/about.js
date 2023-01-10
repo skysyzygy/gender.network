@@ -82,6 +82,7 @@
                        <Image src='/lmcc.png' width={184} height={93} />
                        <Image src='/nysoa.png' width={352} height={84} />
                        <Image src='/puffin.jpeg' width={80} height={125} />
+                       <Image src='/humanitiesNY.png' width={125} height={68} />
                        </div>
 
                  </div>
