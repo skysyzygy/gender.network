@@ -107,7 +107,7 @@ const rgbDataURL = (r, g, b) =>
     return (
         <>
         
-        <div className={`indexPage ${isActive ? "fixed" : "normal"}`} >
+        <div className={`storiesPage ${isActive ? "fixed" : "normal"}`} >
     
     <div className="filterscontainer">
     <Drawer
