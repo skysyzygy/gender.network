@@ -1402,9 +1402,9 @@ header nav{
   padding: 2vh 5vw 3.5vh 5vw;
 }
 
-#bubble:nth-child(1),
-#bubble:nth-child(2),
-#bubble:nth-child(4){
+.bubble1,
+.bubble2,
+.bubble4{
   display:none;
 }
 

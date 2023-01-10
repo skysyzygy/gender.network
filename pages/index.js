@@ -245,8 +245,8 @@ var randomNumber5 = Math.floor(Math.random() * topicproperties.length);
         <div className="bubbles">
 <BubbleRegion title={record.title} image={record.image}  indexslug={record.indexslug}/>
 <BubbleTime title={timerecord.title} image={timerecord.image} indexslug={timerecord.indexslug}/>
-<BubbleTopic  title={topicrecord.title} image={topicrecord.image} indexslug={timerecord.indexslug}/>
-<BubbleType title={typerecord.title} image={typerecord.image} indexslug={timerecord.indexslug}/>
+<BubbleTopic  title={topicrecord.title} image={topicrecord.image} indexslug={topicrecord.indexslug}/>
+<BubbleType title={typerecord.title} image={typerecord.image} indexslug={typerecord.indexslug}/>
 
 
                     </div>
