@@ -811,10 +811,6 @@ border-bottom:1px solid black;
 
 /* IIIF Viewer settings - start */
 
-/* .clover-iiif{
-  height: auto !important;
-} */
-
 
 .clover-iiif header {
   width: 73vw;
@@ -829,10 +825,6 @@ div[role=radiogroup]{
   flex-direction:row !important;
 }
 
-.c-heKnQH-ijqASy-css{
-  /* width:50vw; */
-  /* height: 1100px; */
-}
 
 .c-gPRcLX figure {
   margin: 0px;
@@ -843,18 +835,6 @@ div[role=radiogroup]{
   display:none !important;
 }
 
-/* .clover-content{
-  height: 90vh;
-}
-
-.c-heKnQH-ikYCTc-css {
-  background-color: rgb(230, 232, 235);
-  height: 90vh !important;
-}
-
-.openseadragon-container {
-  height: 90vh !important;
-} */
 
 
 /* IIIF Viewer settings - end */
@@ -1618,6 +1598,24 @@ height: 15vw;
     .fb_iframe_widget_fluid_desktop iframe{
       width:100% !important;
     }
+
+    /* IIIF Viewer settings - start */
+
+
+
+
+div[role=radiogroup]{
+  flex-direction: unset !important;
+  height:unset !important;
+}
+.c-gKYThq{
+  display:block !important;
+}
+.c-heKnQH-ijqASy-css{
+  height:500px !important;
+}
+
+/* IIIF Viewer settings - end */
 
 
 }
