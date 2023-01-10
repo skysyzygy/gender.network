@@ -6,6 +6,8 @@ import Header from "../components/Header"
 import Connect from "../components/Connect"
 import Connect2 from "../components/Connect2"
 import dynamic from "next/dynamic";
+import Link from 'next/link'
+
 
 const  BubbleRegion = dynamic(() => import('../components/Bubble1'), { ssr: false })
 const  BubbleTime = dynamic(() => import('../components/Bubble2'), { ssr: false })
