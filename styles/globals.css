@@ -352,7 +352,7 @@ height: fit-content;
   }
 
   .headercontainer{
-    position: fixed;
+    /* position: fixed; */
     top: 0;
     background-color: #fff;
     z-index:100;
@@ -627,10 +627,10 @@ height: fit-content;
     border-bottom:1px solid black;
 }
 
-.aboutshow,
+/* .aboutshow,
 .eventblock{
   padding-top: 90px;
-}
+} */
 
 .aboutPage .container{
   background-color: #F0FBAC;
@@ -1569,6 +1569,9 @@ header nav{
      border-top: 1px solid #000; 
      border-left:none;
      padding-left: 0;
+     margin-bottom: 50px;
+padding-top: 50px;
+}
     }
 
     .clover-iiif header {
@@ -1601,6 +1604,10 @@ header nav{
       width: 15vw;
 height: 15vw;
 
+    }
+
+    .fb_iframe_widget_fluid_desktop iframe{
+      width:100% !important;
     }
 
 
