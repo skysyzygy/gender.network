@@ -230,7 +230,10 @@ var randomNumber5 = Math.floor(Math.random() * topicproperties.length);
 
       <Header />
       <Feedbacksticker />
-      <div className="sayhi hvr-bob"><Image src="/Sayhi.png" width="250" height="125" /></div>
+      <div className="sayhi hvr-bob">
+      <Link href="/about" >
+        <Image src="/Sayhi.png" width="250" height="125" />
+        </Link></div>
 
       <div className="homepagebg" >
 
@@ -240,8 +243,8 @@ var randomNumber5 = Math.floor(Math.random() * topicproperties.length);
         <div className="bubbles">
 <BubbleRegion title={record.title} image={record.image}  indexslug={record.indexslug}/>
 <BubbleTime title={timerecord.title} image={timerecord.image} indexslug={timerecord.indexslug}/>
-<BubbleTopic  title={topicrecord.title} image={topicrecord.image}/>
-<BubbleType title={typerecord.title} image={typerecord.image}/>
+<BubbleTopic  title={topicrecord.title} image={topicrecord.image} indexslug={timerecord.indexslug}/>
+<BubbleType title={typerecord.title} image={typerecord.image} indexslug={timerecord.indexslug}/>
 
 
                     </div>
