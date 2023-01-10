@@ -1482,6 +1482,21 @@ header nav{
     display:unset;
   }
 
+  .eventsPage h2 {
+    font-size:3.2em;}
+
+    .eventsPage h3{
+      font-size: 3em;
+    }
+
+  .eventTime, .eventTitle {
+    font-size: 1em;}
+
+    .megaintro{
+      font-size: 1.25em;
+    }
+    
+
   .eventsPage h2,
   .eventsPage h3{
     padding:2vw;
@@ -1600,6 +1615,10 @@ height: 15vw;
 
     .fb_iframe_widget_fluid_desktop iframe{
       width:100% !important;
+    }
+
+    .logos{
+      display:block;
     }
 
     /* IIIF Viewer settings - start */
