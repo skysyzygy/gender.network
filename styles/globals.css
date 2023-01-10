@@ -839,8 +839,8 @@ div[role=radiogroup]{
   width: 10vw;
 }
 
-.c-JElJV button{
-  display:none;
+.c-JElJV {
+  display:none !important;
 }
 
 /* .clover-content{
