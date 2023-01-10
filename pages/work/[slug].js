@@ -8,7 +8,7 @@
  import { useRouter } from 'next/router'
  import { sanityClient,  urlFor } from '../../sanity'
  import PortableText from '@sanity/block-content-to-react'
- import Header from "../../components/Header"
+ import Headerslug from "../../components/Headerslug"
  import ItemHeader from "../../components/ItemHeader"
  import Drawer from 'react-modern-drawer'
  import 'react-modern-drawer/dist/index.css'
@@ -105,7 +105,7 @@ console.log(newslug)
 <div id="fb-root"></div>
 <Script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v15.0" nonce="wefkaPwQ" />
 
-        <Header />
+        <Headerslug title={title} coverphoto={coverphoto}  />
         <div className="Container">
         <div className="left">
 

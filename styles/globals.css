@@ -204,9 +204,9 @@ header{
   font-family: 'HelveticaB';
     display:flex;
     justify-content: space-between;
-    width:96vw;
+    width:97vw;
     z-index:10;
-    padding: 1vh 2vw;
+    padding: 1vh 1.5vw;
     align-items: center;
     font-weight:normal !important;
 
@@ -377,27 +377,29 @@ height: fit-content;
   /* justify-content: space-around;
   padding: 15px 25vw; */
   border-bottom:1px solid black;
-  padding:5px 0vw;
+  padding:8px 1.5vw;
 
 }
 
 .filterheaders div,
 .filterheaders button,
 .filteredButtons button{
-  padding: 1vh 1.5vh;
+  padding: 1vh 1vw;
   line-height:1;
   border-radius:1em;
+  background-color:#fff;
   /* font-family: HelveticaB; */
   font-size:1.25em;
   cursor: pointer;
   border: none;
   cursor: pointer;
-  background-color: #ffffff;
+  margin-right: 2vw;
+  border: 1px solid #000000;
 }
 
 .filterheaders button:hover,
 .filterheaders button:active{
-  background-color: #efd673;
+  background-color: #2cfadb;
 }
 
 .b2:hover{
@@ -441,17 +443,17 @@ height: fit-content;
 }
 
 .columnHeader{
-  width: 98vw;
-  margin: 2vh 2vw;
+  width: 97vw;
+  margin: 2vh 1.5vw;
   font-size: 1.25em;
 }
 
 .columnContainers{
   display: flex;
   /* column-count: 3; */
-  width: 98vw;
+  width: 97vw;
   /* justify-content: space-around; */
-  margin: 2vh 1vw;
+  margin: 2vh 1.5vw;
   height: 75vh;
   overflow: auto;
 }
@@ -841,8 +843,8 @@ div[role=radiogroup]{
 
 
 .itemPage .Container{
-  width: 98vw;
-  margin: 1vw;
+  width: 97vw;
+  margin: 1.5vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -890,6 +892,7 @@ padding-left:25px;
 .itemtitle{
   font-size:2em;
   font-family: 'HelveticaB';
+  width: 45vw;
 }
 
 .itemtitle, .itemheader{
@@ -1195,24 +1198,25 @@ display:block;
 }
 
 .workGrid{
-  margin:10px auto 20px auto;
-  width:98vw;
+  margin:8px auto 15px auto;
+  width:97vw;
 }
 
 .workGridx{
-  width: 98vw;
+  width: 97vw;
   margin: 0 auto 10vh auto;
 }
 
 .buttoncontainer button{
   font-size:1.2em;
   padding: 10px 14px;
-  background: #F9F7F1;
+  background: #ffeb3b;
 border: 1px solid #000000;
 box-shadow: inset 0px 3px 3px rgba(0, 0, 0, 0.25);
 border-radius: 26.25px;
 cursor: pointer;
 transition: all 0.25s;
+
 }
 
 .buttoncontainer button:hover{
@@ -1549,8 +1553,8 @@ header nav{
 
   .itemPage .Container{
     display:block;
-    width:96vw;
-    margin:2vw;
+    width:97vw;
+    margin:1.5vw;
   }
 
   .left{
@@ -1662,7 +1666,7 @@ div[role=radiogroup]{
 
 
 .workContainer, .workContainer img{
-  width: 96vw !important;
+  width: 97vw !important;
 }
 
 .tag-gr .topic,

@@ -1917,7 +1917,7 @@ className='bla bla bla'
 <div className="filterheaders">
        <button id="button" className={`${isActive ? "minus" : "add"}`}
        style={{
-        backgroundColor: isActive ? '#efd673' : '',
+        backgroundColor: isActive ? '#2cfadb' : '',
         color: isActive ? 'black' : '',
   
       }}
@@ -2001,7 +2001,7 @@ className='bla bla bla'
                   </Link>
       ))}
                     <div className="submitMore workCard">
-                    <Image src={Missing} className="missing" width="0" height="0" size="100vw"   unoptimized  style={{ width: '31.66vw', height: 'auto' }} />
+                    <Image src={Missing} className="missing" width="0" height="0" size="100vw"   unoptimized  style={{ width: '25vw', height: 'auto' }} />
 
            </div>
 </Masonry>
@@ -2049,8 +2049,20 @@ className='bla bla bla'
         else if (location && decade && topic && !type) {
           q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades && '${topic}' in categories]{coverphoto, "slug": slug.current, title} | order(title asc) `
         }
+        else if (location && decade && !topic && type) {
+          q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades && '${type}' in types]{coverphoto, "slug": slug.current, title} | order(title asc) `
+        }
+        else if (location && !decade && topic && type) {
+          q = `*[_type=="work" && '${location}' in locations && '${type}' in types && '${topic}' in categories]{coverphoto, "slug": slug.current, title} | order(title asc) `
+        }
         else if (location && decade && !topic && !type) {
           q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades]{coverphoto, "slug": slug.current, title} | order(title asc) `
+        }
+        else if (!location && decade && topic && type) {
+          q = `*[_type=="work" && '${decade}' in decades && '${topic}' in categories && '${type}' in types]{coverphoto, "slug": slug.current, title} | order(title asc) `
+        }
+        else if (!location && !decade && topic && type) {
+          q = `*[_type=="work" && '${topic}' in categories && '${type}' in types]{coverphoto, "slug": slug.current, title} | order(title asc) `
         }
         else if (location && topic && !decade && !type) {
           q = `*[_type=="work" && '${location}' in locations && '${topic}' in categories]{coverphoto, "slug": slug.current, title} | order(title asc) `
