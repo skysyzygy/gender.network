@@ -839,6 +839,10 @@ div[role=radiogroup]{
   width: 10vw;
 }
 
+.c-gKYThq button{
+  display:none;
+}
+
 /* .clover-content{
   height: 90vh;
 }
