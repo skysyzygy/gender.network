@@ -2000,8 +2000,9 @@ className='bla bla bla'
                   </Link>
       ))}
                     <div className="submitMore workCard">
+                    <Link href="/about">
                     <Image src={Missing} className="missing" width="0" height="0" size="100vw"   unoptimized  style={{ width: '25vw', height: 'auto' }} />
-
+                      </Link>
            </div>
 </Masonry>
          </ResponsiveMasonry>
