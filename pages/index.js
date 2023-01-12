@@ -25,39 +25,28 @@ const HomePage = ({ properties}) => {
   // Random Region
 
   var randomTag1 = [
-    '<div><a href="/fullindex?location=Albany">Albany</a></div>',
-    '<div><a href="/fullindex?location=Arizona">Arizona</a></div>',
-    '<div><a href="/fullindex?location=Birmingham">Birmingham</a></div>',
     '<div><a href="/fullindex?location=Chicago">Chicago</a></div>',
-    '<div><a href="/fullindex?location=Cuba">Cuba</a></div>',
     '<div><a href="/fullindex?location=DC">DC</a></div>',
     '<div><a href="/fullindex?location=Detroit">Detroit</a></div>',
     '<div><a href="/fullindex?location=Florida">Florida</a></div>',
-    '<div><a href="/fullindex?location=Illinois">Illinois</a></div>',
     '<div><a href="/fullindex?location=India">India</a></div>',
     '<div><a href="/fullindex?location=Los+Angeles">Los Angeles</a></div>',
     '<div><a href="/fullindex?location=Louisiana">Louisiana</a></div>',
-    '<div><a href="/fullindex?location=Louisville">Louisville</a></div>',
-    '<div><a href="/fullindex?location=Michigan">Michigan</a></div>',
-    '<div><a href="/fullindex?location=Milwaukee">Milwaukee</a></div>',
     '<div><a href="/fullindex?location=Minneapolis">Minneapolis</a></div>',
-    '<div><a href="/fullindex?location=New+Haven">New Haven</a></div>',
     '<div><a href="/fullindex?location=New+Jersey">New Jersey</a></div>',
     '<div><a href="/fullindex?location=New+Mexico">New Mexico</a></div>',
-    '<div><a href="/fullindex?location=New+York">New York</a></div>',
     '<div><a href="/fullindex?location=North+Carolina">North Carolina</a></div>',
+        '<div><a href="/fullindex?location=Northeast">Northeast</a></div>',
     '<div><a href="/fullindex?location=Northwest">Northwest</a></div>',
     '<div><a href="/fullindex?location=NYC">NYC</a></div>',
-    '<div><a href="/fullindex?location=Philadelphia">Philadelphia</a></div>',
-    '<div><a href="/fullindex?location=Pittsburgh">Pittsburgh</a></div>',
-    '<div><a href="/fullindex?location=Portland">Portland</a></div>',
     '<div><a href="/fullindex?location=San+Diego">San Diego</a></div>',
     '<div><a href="/fullindex?location=San+Fransisco">San Fransisco</a></div>',
     '<div><a href="/fullindex?location=Seattle">Seattle</a></div>',
-    '<div><a href="/fullindex?location=South">South</a></div>',
+    '<div><a href="/fullindex?location=Southeast">Southeast</a></div>',
+        '<div><a href="/fullindex?location=Southwest">Southwest</a></div>',
+
     '<div><a href="/fullindex?location=Tennessee">Tennessee</a></div>',
     '<div><a href="/fullindex?location=UK">UK</a></div>',
-    '<div><a href="/fullindex?location=Vancouver">Vancouver</a></div>',
     '<div><a href="/fullindex?location=Washington">Washington</a></div>'
   ]
   const out = []
@@ -82,23 +71,14 @@ const HomePage = ({ properties}) => {
 
 
   var randomTag3 = [
-    '<div><a href="/fullindex?topic=Afrodite">Afrodite</a></div>',
     '<div><a href="/fullindex?topic=Ballroom">Ballroom</a></div>',
     '<div><a href="/fullindex?topic=Beth+Elliiot">Beth Elliiot</a></div>',
-    '<div><a href="/fullindex?topic=Chrystos">Chrystos</a></div>',
-    '<div><a href="/fullindex?topic=Club+220">Club 220</a></div>',
     '<div><a href="/fullindex?topic=Cockettes">Cockettes</a></div>',
     '<div><a href="/fullindex?topic=Effeminists">Effeminists</a></div>',
-    '<div><a href="/fullindex?topic=Faygele">Faygele</a></div>',
     '<div><a href="/fullindex?topic=FBI">FBI</a></div>',
     '<div><a href="/fullindex?topic=G.L.A.D.">G.L.A.D.</a></div>',
-    '<div><a href="/fullindex?topic=Liz+Eden">Liz Eden</a></div>',
     '<div><a href="/fullindex?topic=Mo+B+Dick">Mo B Dick</a></div>',
-    '<div><a href="/fullindex?topic=Rat">Rat</a></div>',
-    '<div><a href="/fullindex?topic=Sylvester">Sylvester</a></div>',
-    '<div><a href="/fullindex?topic=Tranvestia">Tranvestia</a></div>',
     '<div><a href="/fullindex?topic=Tri-Ess">Tri-Ess</a></div>',
-    '<div><a href="/fullindex?topic=Turnabout">Turnabout</a></div>'
   ]
   var randomFact3 = Math.floor(Math.random() * randomTag3.length);
 
@@ -114,7 +94,6 @@ const HomePage = ({ properties}) => {
     '<div><a href="/fullindex?type=Collage">Collage</a></div>',
     '<div><a href="/fullindex?type=Drawing">Drawing</a></div>',
     '<div><a href="/fullindex?type=Essay">Essay</a></div>',
-    '<div><a href="/fullindex?type=Fiction">Fiction</a></div>',
     '<div><a href="/fullindex?type=Flyer">Flyer</a></div>',
     '<div><a href="/fullindex?type=Interview">Interview</a></div>',
     '<div><a href="/fullindex?type=Letter">Letter</a></div>',
@@ -125,18 +104,13 @@ const HomePage = ({ properties}) => {
     '<div><a href="/fullindex?type=Movie">Movie</a></div>',
     '<div><a href="/fullindex?type=Newsletter">Newsletter</a></div>',
     '<div><a href="/fullindex?type=Newspaper">Newspaper</a></div>',
-    '<div><a href="/fullindex?type=Notes">Notes</a></div>',
-    '<div><a href="/fullindex?type=Obituary">Obituary</a></div>',
-    '<div><a href="/fullindex?type=Petition">Petition</a></div>',
     '<div><a href="/fullindex?type=Photo">Photo</a></div>',
     '<div><a href="/fullindex?type=Poem">Poem</a></div>',
     '<div><a href="/fullindex?type=Press+Release">Press Release</a></div>',
-    '<div><a href="/fullindex?type=Print">Print</a></div>',
     '<div><a href="/fullindex?type=Program">Program</a></div>',
     '<div><a href="/fullindex?type=Reference">Reference</a></div>',
     '<div><a href="/fullindex?type=Short+Story">Short Story</a></div>',
-    '<div><a href="/fullindex?type=Speech">Speech</a></div>',
-    '<div><a href="/fullindex?type=Vinyl">Vinyl</a></div>'
+    '<div><a href="/fullindex?type=Speech">Speech</a></div>'
 
   ]
   var randomFact4 = Math.floor(Math.random() * randomTag4.length);
