@@ -88,7 +88,6 @@ const Work = ({
 
 
   const loclist = locations.join(", ")
-  const declist = decades.join(", ")
   const toplist = categories.join(", ")
   const typelist = types.join(", ")
 
@@ -159,10 +158,10 @@ console.log(newslug)
     <h3>Location</h3>
   {loclist}
   </div> }
-  {decades && <div className="metacontainer">
+   {decades && <div className="metacontainer">
     <h3>Decade</h3>
-  {declist}
-  </div> }
+  {decades}
+  </div> } 
   {categories && <div className="metacontainer">
     <h3>Topic</h3>
   {toplist}
