@@ -121,39 +121,6 @@ className='bla bla bla'
     <div className="col1a">
         <div className="heading">Location</div>
         <div className="list region">
-        <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, location: 'Albany' },
-          });
-          toggleDrawer();
-        }}
-      >
-        Albany
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, location: 'Arizona' },
-          });
-          toggleDrawer();
-        }}
-      >
-        Arizona
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, location: 'Birmingham' },
-          });
-          toggleDrawer();
-        }}
-      >
-        Birmingham
-      </button>
       <button
         type="button"
         onClick={() => {
@@ -164,17 +131,6 @@ className='bla bla bla'
         }}
       >
         Chicago
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, location: 'Cuba' },
-          });
-          toggleDrawer();
-        }}
-      >
-        Cuba
       </button>
       <button
         type="button"
@@ -214,17 +170,6 @@ className='bla bla bla'
         type="button"
         onClick={() => {
           router.replace({
-            query: { ...router.query, location: 'Illinois' },
-          });
-          toggleDrawer();
-        }}
-      >
-        Illinois
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
             query: { ...router.query, location: 'India' },
           });
           toggleDrawer();
@@ -259,39 +204,6 @@ className='bla bla bla'
         type="button"
         onClick={() => {
           router.replace({
-            query: { ...router.query, location: 'Louisville' },
-          });
-          toggleDrawer();
-        }}
-      >
-        Louisville
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, location: 'Michigan' },
-          });
-          toggleDrawer();
-        }}
-      >
-        Michigan
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, location: 'Milwaukee' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Milwaukee
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
             query: { ...router.query, location: 'Minneapolis' },
           });
           toggleDrawer();
@@ -299,17 +211,7 @@ className='bla bla bla'
       >
         Minneapolis
       </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, location: 'New Haven' },
-          });
-          toggleDrawer();
-        }}
-      >
-        New Haven
-      </button>
+
       <button
         type="button"
         onClick={() => {
@@ -332,17 +234,7 @@ className='bla bla bla'
       >
         New Mexico
       </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, location: 'New York' },
-          });
-          toggleDrawer();
-        }}
-      >
-        New York
-      </button>
+
       <button
         type="button"
         onClick={() => {
@@ -353,6 +245,17 @@ className='bla bla bla'
         }}
       >
         North Carolina
+      </button>
+      <button
+        type="button"
+        onClick={() => {
+          router.replace({
+            query: { ...router.query, location: 'Northeast' },
+          });
+          toggleDrawer();
+        }}
+      >
+        Northeast
       </button>
       <button
         type="button"
@@ -376,52 +279,6 @@ className='bla bla bla'
       >
         NYC
       </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, location: 'Philadelphia' },
-          });
-          toggleDrawer();
-        }}
-      >
-        Philadelphia
-      </button>
-
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, location: 'Pittsburgh' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Pittsburgh
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, location: 'Portland' },
-          });
-          toggleDrawer();
-        }}
-      >
-        Portland
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, location: 'Reference' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Reference
-      </button>
-
       <button
         type="button"
         onClick={() => {
@@ -461,12 +318,23 @@ className='bla bla bla'
         type="button"
         onClick={() => {
           router.replace({
-            query: { ...router.query, location: 'South' },
+            query: { ...router.query, location: 'Southeast' },
           });
           toggleDrawer();
         }}
       >
-        South
+        Southeast
+      </button>
+      <button
+        type="button"
+        onClick={() => {
+          router.replace({
+            query: { ...router.query, location: 'Southwest' },
+          });
+          toggleDrawer();
+        }}
+      >
+        Southwest
       </button>
 
       <button
@@ -493,20 +361,6 @@ className='bla bla bla'
       >
         UK
       </button>
-
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, location: 'Vancouver' },
-          });
-          toggleDrawer();
-        }}
-      >
-        Vancouver
-      </button>
-
-
       <button
         type="button"
         onClick={() => {
@@ -574,17 +428,6 @@ className='bla bla bla'
     <div className="col2a">
     <div className="heading">Topic</div>
         <div className="list topic">
-        <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, topic: 'Afrodite' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Afrodite
-      </button>
       <button
         type="button"
         onClick={() => {
@@ -611,12 +454,12 @@ className='bla bla bla'
         type="button"
         onClick={() => {
           router.replace({
-            query: { ...router.query, topic: 'Arunothai Somskul' },
+            query: { ...router.query, topic: 'Anguksuar' },
           })
           toggleDrawer();
         }}
       >
-        Arunothai Somskul
+        Anguksuar
       </button>
         <button
         type="button"
@@ -655,17 +498,6 @@ className='bla bla bla'
         type="button"
         onClick={() => {
           router.replace({
-            query: { ...router.query, topic: 'Charles Voyles' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Before Stonewall
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
             query: { ...router.query, topic: 'Beth Elliiot' },
           })
           toggleDrawer();
@@ -688,56 +520,12 @@ className='bla bla bla'
         type="button"
         onClick={() => {
           router.replace({
-            query: { ...router.query, topic: 'Candy Darling' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Candy Darling
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, topic: 'Charles Voyles' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Charles Voyles
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
             query: { ...router.query, topic: 'Christopher Street Liberation Day' },
           })
           toggleDrawer();
         }}
       >
         Christopher Street Liberation Day
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, topic: 'Chrystos' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Chrystos
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, topic: 'Club 220' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Club 220
       </button>
       <button
         type="button"
@@ -765,34 +553,12 @@ className='bla bla bla'
         type="button"
         onClick={() => {
           router.replace({
-            query: { ...router.query, topic: 'Dawn Langley Simmmons' },
+            query: { ...router.query, topic: 'Dee Farmer' },
           })
           toggleDrawer();
         }}
       >
-        Dawn Langley Simmmons
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, topic: 'Diamond Lil' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Diamond Lil
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, topic: 'Dorian Corey' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Dorian Corey
+       Dee Farmer
       </button>
       <button
         type="button"
@@ -804,17 +570,6 @@ className='bla bla bla'
         }}
       >
         Drag Magazine
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, topic: 'Dykes & Gorgons' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Dykes & Gorgons
       </button>
       <button
         type="button"
@@ -853,17 +608,6 @@ className='bla bla bla'
         type="button"
         onClick={() => {
           router.replace({
-            query: { ...router.query, topic: 'Faygele' },
-          })
-          toggleDrawer();
-        }}
-      >
-       Faygele
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
             query: { ...router.query, topic: 'FBI' },
           })
           toggleDrawer();
@@ -892,28 +636,6 @@ className='bla bla bla'
         }}
       >
         Foundation for Personality Expression
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, topic: "Franky Lymon's Nephew" },
-          })
-          toggleDrawer();
-        }}
-      >
-        Franky Lymon's Nephew
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, topic: 'Freddie Creed' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Freddie Creed
       </button>
       <button
         type="button"
@@ -952,17 +674,6 @@ className='bla bla bla'
         type="button"
         onClick={() => {
           router.replace({
-            query: { ...router.query, topic: 'Geraldine Carmichael' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Geraldine Carmichael
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
             query: { ...router.query, topic: 'Goldie Glitters' },
           })
           toggleDrawer();
@@ -996,45 +707,12 @@ className='bla bla bla'
         type="button"
         onClick={() => {
           router.replace({
-            query: { ...router.query, topic: 'Inter Tribal Berdache Spiritual and Cultural Survival Camp' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Inter Tribal Berdache Spiritual and Cultural Survival Camp
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, topic: 'International Crysis' },
-          })
-          toggleDrawer();
-        }}
-      >
-        International Crysis
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
             query: { ...router.query, topic: 'Intertribal Berdache Society' },
           })
           toggleDrawer();
         }}
       >
         Intertribal Berdache Society
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, topic: 'Jack Smith' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Jack Smith
       </button>
       <button
         type="button"
@@ -1051,6 +729,17 @@ className='bla bla bla'
         type="button"
         onClick={() => {
           router.replace({
+            query: { ...router.query, topic: 'Jamison Green' },
+          })
+          toggleDrawer();
+        }}
+      >
+       Jamison Green
+      </button>
+      <button
+        type="button"
+        onClick={() => {
+          router.replace({
             query: { ...router.query, topic: 'Johnny Science' },
           })
           toggleDrawer();
@@ -1062,100 +751,12 @@ className='bla bla bla'
         type="button"
         onClick={() => {
           router.replace({
-            query: { ...router.query, topic: 'Jose Sarria' },
-          })
-          toggleDrawer();
-        }}
-      >
-       Jose Sarria
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, topic: 'Jude Patton' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Jude Patton
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, topic: 'Judy Grahn' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Judy Grahn
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, topic: 'Kaspar Saxena' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Kaspar Saxena
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, topic: 'Kate Bornstein' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Kate Bornstein
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
             query: { ...router.query, topic: 'Lee Brewster' },
           })
           toggleDrawer();
         }}
       >
         Lee Brewster
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, topic: 'Les Petites Bonbons' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Les Petites Bonbons
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, topic: 'Liz Eden' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Liz Eden
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, topic: 'Mario Martino' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Mario Martino
       </button>
       <button
         type="button"
@@ -1194,23 +795,34 @@ className='bla bla bla'
         type="button"
         onClick={() => {
           router.replace({
-            query: { ...router.query, topic: 'National Transsexual Counseling Unit' },
-          })
-          toggleDrawer();
-        }}
-      >
-       National Transsexual Counseling Unit
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
             query: { ...router.query, topic: 'Olivia Records' },
           })
           toggleDrawer();
         }}
       >
         Olivia Records
+      </button>
+      <button
+        type="button"
+        onClick={() => {
+          router.replace({
+            query: { ...router.query, topic: 'On Our Backs' },
+          })
+          toggleDrawer();
+        }}
+      >
+        On Our Backs
+      </button>
+      <button
+        type="button"
+        onClick={() => {
+          router.replace({
+            query: { ...router.query, topic: 'Pat Califia' },
+          })
+          toggleDrawer();
+        }}
+      >
+        Pat Califia
       </button>
       <button
         type="button"
@@ -1249,12 +861,56 @@ className='bla bla bla'
         type="button"
         onClick={() => {
           router.replace({
-            query: { ...router.query, topic: 'Rat' },
+            query: { ...router.query, topic: 'Radical Faeries' },
           })
           toggleDrawer();
         }}
       >
-        Rat
+        Radical Faeries
+      </button>
+      <button
+        type="button"
+        onClick={() => {
+          router.replace({
+            query: { ...router.query, topic: 'Radical Queens' },
+          })
+          toggleDrawer();
+        }}
+      >
+        Radical Queens
+      </button>
+      <button
+        type="button"
+        onClick={() => {
+          router.replace({
+            query: { ...router.query, topic: 'Reed Erickson' },
+          })
+          toggleDrawer();
+        }}
+      >
+        Reed Erickson
+      </button>
+      <button
+        type="button"
+        onClick={() => {
+          router.replace({
+            query: { ...router.query, topic: "Revolutionary People's Constitutional Convention" },
+          })
+          toggleDrawer();
+        }}
+      >
+        Revolutionary People's Constitutional Convention
+      </button>
+      <button
+        type="button"
+        onClick={() => {
+          router.replace({
+            query: { ...router.query, topic: 'Robin Morgan' },
+          })
+          toggleDrawer();
+        }}
+      >
+        Robin Morgan
       </button>
       <button
         type="button"
@@ -1266,17 +922,6 @@ className='bla bla bla'
         }}
       >
         Sandy Stone
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, topic: 'Sawago Takagi' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Sawago Takagi
       </button>
       <button
         type="button"
@@ -1304,28 +949,6 @@ className='bla bla bla'
         type="button"
         onClick={() => {
           router.replace({
-            query: { ...router.query, topic: 'Suzun David' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Suzun David
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, topic: 'Sylvester' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Sylvester
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
             query: { ...router.query, topic: 'Sylvia Rivera' },
           })
           toggleDrawer();
@@ -1343,17 +966,6 @@ className='bla bla bla'
         }}
       >
         Third World Gay Revolution
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, topic: "Tiger's Texaco" },
-          })
-          toggleDrawer();
-        }}
-      >
-        Tiger's Texaco
       </button>
       <button
         type="button"
@@ -1381,67 +993,12 @@ className='bla bla bla'
         type="button"
         onClick={() => {
           router.replace({
-            query: { ...router.query, topic: 'Transsexual Counseling Service' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Transsexual Counseling Service
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, topic: 'Transsexuals and Transvestites' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Transsexuals and Transvestites
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, topic: 'Transvestite Information Service' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Transvestite Information Service
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, topic: 'Tranvestia' },
-          })
-          toggleDrawer();
-        }}
-      >
-       Tranvestia
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
             query: { ...router.query, topic: 'Tri-Ess' },
           })
           toggleDrawer();
         }}
       >
        Tri-Ess
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, topic: 'Turnabout' },
-          })
-          toggleDrawer();
-        }}
-      >
-       Turnabout
       </button>
       <button
         type="button"
@@ -1458,28 +1015,14 @@ className='bla bla bla'
         type="button"
         onClick={() => {
           router.replace({
-            query: { ...router.query, topic: 'Vanessa Woolfe' },
+            query: { ...router.query, topic: 'We Wah & Bar Che Ampee' },
           })
           toggleDrawer();
         }}
       >
-        Vanessa Woolfe
+        We Wah & Bar Che Ampee
       </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, topic: 'Virginia Prince' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Virginia Prince
-      </button>
-
-
-
-
+ 
 
 
         </div>
@@ -1576,17 +1119,6 @@ className='bla bla bla'
         }}
       >
         Essay
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, type: 'Fiction' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Fiction
       </button>
       <button
         type="button"
@@ -1703,39 +1235,6 @@ className='bla bla bla'
         type="button"
         onClick={() => {
           router.replace({
-            query: { ...router.query, type: 'Notes' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Notes
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, type: 'Obituary' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Obituary
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, type: 'Petition' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Petition
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
             query: { ...router.query, type: 'Photo' },
           })
           toggleDrawer();
@@ -1764,17 +1263,6 @@ className='bla bla bla'
         }}
       >
         Press Release
-      </button>
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, type: 'Print' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Print
       </button>
       <button
         type="button"
@@ -1829,24 +1317,6 @@ className='bla bla bla'
       >
         Speech
       </button>
-
-
-
-
-
-      <button
-        type="button"
-        onClick={() => {
-          router.replace({
-            query: { ...router.query, type: 'Vinyl' },
-          })
-          toggleDrawer();
-        }}
-      >
-        Vinyl
-      </button>
-
-
 
 
 
