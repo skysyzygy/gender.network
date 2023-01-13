@@ -86,17 +86,33 @@ const Work = ({
   iiifviewerurl,
 }) => {
 
+  var declist
+  var loclist
+  var toplist
+  var typelist
 
-  const loclist = locations.join(", ")
-  const toplist = categories.join(", ")
-  const typelist = types.join(", ")
+  if (decades) {
+   declist = decades.join(", ")
+  }
+
+  if (locations) {
+   loclist = locations.join(", ")
+  } 
+
+  if (categories) {
+   toplist = categories.join(", ")
+  }
+
+  if (types) {
+   typelist = types.join(", ")
+  }
 
   const baseurl = 'https://gender-network.com/work'
-  console.log(baseurl)
-  console.log(slug.current)
+  // console.log(baseurl)
+  // console.log(slug.current)
 const slugurl = [baseurl, '/', slug.current].join(' ');
 const newslug = slugurl.replace(/\s/g, '');
-console.log(newslug)
+// console.log(newslug)
 
    return (
 
@@ -160,7 +176,7 @@ console.log(newslug)
   </div> }
    {decades && <div className="metacontainer">
     <h3>Decade</h3>
-  {decades}
+  {declist}
   </div> } 
   {categories && <div className="metacontainer">
     <h3>Topic</h3>
