@@ -195,6 +195,11 @@ console.log(globalproperties)
   const topicrecord = topicproperties[randomNumber5];
   const typerecord = typeproperties[randomNumber2];
 
+  console.log(record)
+  console.log(timerecord)
+  console.log(topicrecord)
+
+
   const serializers = {
     types: {
       code: (props) => (
