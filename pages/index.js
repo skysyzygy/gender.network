@@ -1,13 +1,12 @@
-import React, { useState, useEffect, useRef } from "react";
-import { urlFor, sanityClient } from "../sanity";
+import React, { useState, useEffect, useRef } from 'react'
+import { urlFor, sanityClient } from '../sanity'
 
-import HomeHeader from "../components/HomeHeader";
-import Header from "../components/Header";
-import Connect from "../components/Connect";
-import Connect2 from "../components/Connect2";
+import HomeHeader from "../components/HomeHeader"
+import Header from "../components/Header"
+import Connect from "../components/Connect"
+import Connect2 from "../components/Connect2"
 import dynamic from "next/dynamic";
-import Link from "next/link";
-import PortableText from "@sanity/block-content-to-react";
+import Link from 'next/link'
 
 
 const  BubbleRegion = dynamic(() => import('../components/Bubble1'), { ssr: false })
@@ -20,7 +19,7 @@ import Feedbacksticker from "../components/Feedbacksticker";
 
 
 
-const HomePage = ({ properties, infoproperties, globalproperties}) => {
+const HomePage = ({ properties}) => {
     // Random Tag Scripts
 
   // Random Region
@@ -198,12 +197,6 @@ var randomNumber5 = Math.floor(Math.random() * topicproperties.length);
 
 // const third = document.querySelector('#bubble :nth-child(1)');
 
-const buttonColor = "#" + infoproperties[0].leftbgbutton;
-const buttontextColor = "#" + infoproperties[0].lefttextbutton;
-
-const mystyle = {
-  color: buttontextColor,
-};
 
 
 
@@ -268,30 +261,25 @@ const mystyle = {
 }
 
 export const getStaticProps = async () => {
-  const query = `*[_type=="homepage"]`;
-  const properties = await sanityClient.fetch(query);
 
-  const infoquery = `*[_type=="homeinfo"]`;
-  const infoproperties = await sanityClient.fetch(infoquery);
 
-  const globalquery = `*[_type=="global"]`;
-  const globalproperties = await sanityClient.fetch(globalquery);
+  const query = `*[_type=="homepage"]`
+  const properties = await sanityClient.fetch(query)
+
 
   if (!properties) {
     return {
       props: null,
       notFound: true,
-    };
+    }
   } else {
     return {
       props: {
         properties,
-        infoproperties,
-        globalproperties
       },
-    };
+    }
   }
-};
+}
 
 
 
