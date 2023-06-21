@@ -1,12 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { urlFor, sanityClient } from '../sanity'
+import React, { useState, useEffect, useRef } from "react";
+import { urlFor, sanityClient } from "../sanity";
 
-import HomeHeader from "../components/HomeHeader"
-import Header from "../components/Header"
-import Connect from "../components/Connect"
-import Connect2 from "../components/Connect2"
+import HomeHeader from "../components/HomeHeader";
+import Header from "../components/Header";
+import Connect from "../components/Connect";
+import Connect2 from "../components/Connect2";
 import dynamic from "next/dynamic";
-import Link from 'next/link'
+import Link from "next/link";
+import PortableText from "@sanity/block-content-to-react";
 
 
 const  BubbleRegion = dynamic(() => import('../components/Bubble1'), { ssr: false })
@@ -19,7 +20,7 @@ import Feedbacksticker from "../components/Feedbacksticker";
 
 
 
-const HomePage = ({ properties}) => {
+const HomePage = ({ properties, infoproperties, globalproperties}) => {
     // Random Tag Scripts
 
   // Random Region
