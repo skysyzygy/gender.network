@@ -324,7 +324,7 @@ const HomePage = ({ properties, infoproperties, globalproperties }) => {
                 dangerouslySetInnerHTML={{ __html: randomTag4[randomFact4] }}
               />
 
-              <div className="tag">...</div>
+              <div className="tag">....</div>
             </div>
           </div>
         </div>
