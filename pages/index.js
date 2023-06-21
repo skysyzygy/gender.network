@@ -211,26 +211,7 @@ const mystyle = {
     <>
  <div className="homePage" >
 
- {globalproperties && globalproperties.map(
-          (
-            {
-              _id,
-              emaillink = "",
-              facebooklink = "",
-              iglink=""
-            },
-            index
-          ) => (
-            <div key={index}>
-              <Header
-                emaillink={emaillink}
-                facebooklink={facebooklink}
-                iglink={iglink}
-              />
-            </div>
-          )
-        )}
-        
+      <Header />
       <Feedbacksticker />
       <div className="sayhi hvr-bob">
       <Link href="/about" >
