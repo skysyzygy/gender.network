@@ -198,29 +198,6 @@ var randomNumber5 = Math.floor(Math.random() * topicproperties.length);
 
 // const third = document.querySelector('#bubble :nth-child(1)');
 
-const serializers = {
-  types: {
-    code: (props) => (
-      <pre data-language={props.node.language}>
-        <code>{props.node.code}</code>
-      </pre>
-    ),
-  },
-  marks: {
-    link: ({ mark, children }) => {
-      // Read https://css-tricks.com/use-target_blank/
-      const { blank, href } = mark;
-      return blank ? (
-        <a href={href} target="_blank" rel="noreferrer">
-          {children}
-        </a>
-      ) : (
-        <a href={href}>{children}</a>
-      );
-    },
-  },
-};
-
 const buttonColor = "#" + infoproperties[0].leftbgbutton;
 const buttontextColor = "#" + infoproperties[0].lefttextbutton;
 
@@ -236,34 +213,7 @@ const mystyle = {
 
       <Header />
 
-      {infoproperties && infoproperties.map(
-          (
-            {
-              _id,
-              homepagefeedback = "",
-              leftbgbutton = "",
-              lefttextbutton = "",
-              homepagesayhi =""
-            },
-            index
-          ) => (
-            <>
-            <div key={index}>
-             <div className="ovalsticker hvr-pulse" style={buttonColor && { backgroundColor: buttonColor}}>
-             <PortableText blocks={homepagefeedback} serializers={serializers} style={mystyle}/>
-         </div>
 
-            </div>
-             <div className="sayhi hvr-bob">
-          <Link href={homepagesayhi}>
-             <Image src="/Sayhi.png" width="250" height="125" />
-           </Link>
-       </div>
-            
-            </>
-
-          )
-        )} 
 
       <div className="homepagebg" >
 
