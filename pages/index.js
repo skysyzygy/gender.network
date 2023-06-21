@@ -198,12 +198,12 @@ var randomNumber5 = Math.floor(Math.random() * topicproperties.length);
 
 // const third = document.querySelector('#bubble :nth-child(1)');
 
-  const buttonColor = "#" + infoproperties[0].leftbgbutton;
-  const buttontextColor = "#" + infoproperties[0].lefttextbutton;
+const buttonColor = "#" + infoproperties[0].leftbgbutton;
+const buttontextColor = "#" + infoproperties[0].lefttextbutton;
 
-  const mystyle = {
-    color: buttontextColor,
-  };
+const mystyle = {
+  color: buttontextColor,
+};
 
 
 
