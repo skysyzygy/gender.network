@@ -211,7 +211,6 @@ const HomePage = ({ properties, infoproperties, globalproperties }) => {
     },
   };
 
-  console.log(infoproperties)
   const buttonColor = "#" + infoproperties[0].leftbgbutton;
   const buttontextColor = "#" + infoproperties[0].lefttextbutton;
 
@@ -222,7 +221,7 @@ const HomePage = ({ properties, infoproperties, globalproperties }) => {
 
   return (
     <>
-      <div className="homePage">
+      {/* <div className="homePage">
       {globalproperties && globalproperties.map(
           (
             {
@@ -328,7 +327,7 @@ const HomePage = ({ properties, infoproperties, globalproperties }) => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
