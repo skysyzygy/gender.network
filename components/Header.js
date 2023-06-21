@@ -19,7 +19,7 @@ import Drawer from 'react-modern-drawer'
 //import styles 👇
 import 'react-modern-drawer/dist/index.css'
 
- export default function Header() {
+ export default function Header(props) {
 
   const [isOpen, setIsOpen] = useState(false)
   const [isActive, setActive] = useState(false)
@@ -31,7 +31,7 @@ import 'react-modern-drawer/dist/index.css'
 
     return (
         <div className="headercontainer">
-                <Connect />
+                <Connect emaillink={props.emaillink} facebooklink={props.facebooklink} iglink={props.iglink} />
        <Customhead />
       <div className="mobilenav">
 

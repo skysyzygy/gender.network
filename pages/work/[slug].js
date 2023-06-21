@@ -84,6 +84,7 @@ const Work = ({
   types,
   similarWorks,
   iiifviewerurl,
+  globalproperties
 }) => {
 
   var declist
@@ -108,11 +109,14 @@ const Work = ({
   }
 
   const baseurl = 'https://gender-network.com/work'
-  // console.log(baseurl)
-  // console.log(slug.current)
+
 const slugurl = [baseurl, '/', slug.current].join(' ');
 const newslug = slugurl.replace(/\s/g, '');
-// console.log(newslug)
+
+const emaillink = globalproperties[0].emaillink
+const facebooklink = globalproperties[0].facebooklink
+const iglink = globalproperties[0].iglink
+
 
    return (
 
@@ -120,7 +124,7 @@ const newslug = slugurl.replace(/\s/g, '');
 <div id="fb-root"></div>
 <Script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v15.0" nonce="wefkaPwQ" />
 
-        <Headerslug title={title} coverphoto={coverphoto}  />
+        <Headerslug title={title} coverphoto={coverphoto} emaillink={emaillink} facebooklink={facebooklink} iglink={iglink} />
         <div className="Container">
         <div className="left">
 
@@ -206,7 +210,31 @@ const newslug = slugurl.replace(/\s/g, '');
 </div>
 
 
-<Footer />
+{globalproperties.map(
+          (
+            {
+              _id,
+              footertitle = "",
+              footermenu = "",
+              footercontact = "",
+              emaillink = "",
+              facebooklink = "",
+              iglink=""
+            },
+            index
+          ) => (
+            <div key={index}>
+              <Footer
+                footertitle={footertitle}
+                footermenu={footermenu}
+                footercontact={footercontact}
+                emaillink={emaillink}
+                facebooklink={facebooklink}
+                iglink={iglink}
+              />
+            </div>
+          )
+        )}
   </div>
    )
  
@@ -221,6 +249,9 @@ const newslug = slugurl.replace(/\s/g, '');
 
 
   const work = await sanityClient.fetch(query, { pageSlug })
+
+  const globalquery = `*[_type == "global" ]`;
+  const globalproperties = await sanityClient.fetch(globalquery);
 
   if (!work) {
     return {
@@ -246,6 +277,7 @@ const newslug = slugurl.replace(/\s/g, '');
         similarWorks: work.similarWorks,
         iiifviewerurl: work.iiifviewerurl,
         slug: work.slug,
+        globalproperties
   },
     }
   }

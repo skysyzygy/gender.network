@@ -908,6 +908,7 @@ padding-left:25px;
 
 .similarContainer{
   display:flex;
+  flex-wrap:wrap;
 }
 
 .similarThumb{
@@ -947,9 +948,10 @@ footer .left{
   margin-bottom:25px;
 }
 
+footer .menulinks,
 footer .menulinks a{
   font-family: Yale;
-  font-size:4em;
+  font-size:70px;
   font-weight:500;
   -webkit-text-stroke: 2px #000;
   color:#000;
@@ -967,19 +969,20 @@ footer .menulinks a{
 .ovalsticker{
   width:auto;
   padding: 2.5vh 5vw;
-background: #FAEF8D;
 box-shadow: 0px 3.0666px 3.0666px rgba(0, 0, 0, 0.25);
 position: fixed;
 z-index: 100;
 left: 30px;
 bottom: 100px;
 border-radius: 100%;
-color: #08d8bc;
 font-family: Yale;
 display: flex;
 align-items: center;
 justify-content: center;
 cursor: pointer;
+font-size: 3em;
+line-height: 1;
+font-weight: 900;
 }
 
 .ovalsticker a{
@@ -987,10 +990,9 @@ cursor: pointer;
 
 }
 
-.ovaltext{
-  font-size: 3em;
-  line-height: 1;
-  font-weight: 900;
+.ovalsticker p{
+  margin-block-end: 0em !important;
+
 }
 
 .sayhi{
@@ -1613,8 +1615,9 @@ padding-top: 50px;
     }
 
     .similarThumb{
-      width: 15vw;
-height: 15vw;
+      width: 35vw;
+height: 35vw;
+margin-bottom:12px;
 
     }
 

@@ -19,7 +19,7 @@ import Drawer from 'react-modern-drawer'
 //import styles 👇
 import 'react-modern-drawer/dist/index.css'
 
- export default function Headerslug(coverphoto, title) {
+ export default function Headerslug(props) {
 
   const [isOpen, setIsOpen] = useState(false)
   const [isActive, setActive] = useState(false)
@@ -31,24 +31,23 @@ import 'react-modern-drawer/dist/index.css'
 
     return (
         <div className="headercontainer">
-                <Connect />
+                <Connect emaillink={props.emaillink} facebooklink={props.facebooklink} iglink={props.iglink} />
                 <Head>
 <head dangerouslySetInnerHTML={{ __html: '<!--website BY ｒｉｔｕ ｇｈｉｙａ ~ ｗｗｗ.ｒ-ｉ-ｔ-ｕ.ｃｏｍ -->' }}>
       </head>
-<title>Gender.Network</title>
-        <meta property="og:title" name="twitter:title"  content="Gender.Network" key="title" />
+<title>{props.title && props.title}</title>
+        <meta property="og:title" name="twitter:title"  content={props.title && props.title} key="title" />
 
         <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"></meta>
         <link rel="icon" href="/favicon.ico" />
 <meta property="og:url" content="https://gender.network" />
-<meta property="og:image" content={coverphoto} />
+<meta property="og:image" content={props.coverphoto && props.coverphoto} />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
-<meta property="og:description"  name="description"
-  content={title} />
+<meta property="og:description"  name="description" content={props.notes && props.notes} />
   <meta name="google" content="notranslate" />
   <meta name="twitter:card" content="summary" />
-<meta name="twitter:image" content={coverphoto} />
+<meta name="twitter:image" content={props.coverphoto && props.coverphoto} />
 
 
       </Head>
