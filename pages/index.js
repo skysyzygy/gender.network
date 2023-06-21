@@ -212,11 +212,35 @@ const mystyle = {
  <div className="homePage" >
 
       <Header />
-      <Feedbacksticker />
-      <div className="sayhi hvr-bob">
-      <Link href="/about" >
-        <Image src="/Sayhi.png" width="250" height="125" />
-        </Link></div>
+
+      {infoproperties && infoproperties.map(
+          (
+            {
+              _id,
+              homepagefeedback = "",
+              leftbgbutton = "",
+              lefttextbutton = "",
+              homepagesayhi =""
+            },
+            index
+          ) => (
+            <>
+            <div key={index}>
+             <div className="ovalsticker hvr-pulse" style={buttonColor && { backgroundColor: buttonColor}}>
+             <PortableText blocks={homepagefeedback} serializers={serializers} style={mystyle}/>
+         </div>
+
+            </div>
+             <div className="sayhi hvr-bob">
+          <Link href={homepagesayhi}>
+             <Image src="/Sayhi.png" width="250" height="125" />
+           </Link>
+       </div>
+            
+            </>
+
+          )
+        )} 
 
       <div className="homepagebg" >
 
