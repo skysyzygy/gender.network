@@ -223,7 +223,7 @@ const HomePage = ({ properties, infoproperties, globalproperties }) => {
   return (
     <>
       <div className="homePage">
-      {globalproperties.map(
+      {globalproperties && globalproperties.map(
           (
             {
               _id,
@@ -243,7 +243,7 @@ const HomePage = ({ properties, infoproperties, globalproperties }) => {
           )
         )}
 
-        {infoproperties.map(
+        {infoproperties && infoproperties.map(
           (
             {
               _id,
@@ -256,7 +256,7 @@ const HomePage = ({ properties, infoproperties, globalproperties }) => {
           ) => (
             <>
             <div key={index}>
-             <div className="ovalsticker hvr-pulse" style={{ backgroundColor: buttonColor, color: buttontextColor}}>
+             <div className="ovalsticker hvr-pulse" style={buttonColor && { backgroundColor: buttonColor}}>
              <PortableText blocks={homepagefeedback} serializers={serializers} style={mystyle}/>
          </div>
 
