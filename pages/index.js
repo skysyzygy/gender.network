@@ -334,7 +334,7 @@ console.log(globalproperties)
                 dangerouslySetInnerHTML={{ __html: randomTag4[randomFact4] }}
               />
 
-              <div className="tag">....</div>
+              <div className="tag"><Link href="https://gender.network/fullindex">...</Link></div>
             </div>
           </div>
         </div>
