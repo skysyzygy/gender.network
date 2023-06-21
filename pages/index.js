@@ -1,26 +1,38 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { urlFor, sanityClient } from '../sanity'
+import React, { useState, useEffect, useRef } from "react";
+import { urlFor, sanityClient } from "../sanity";
 
-import HomeHeader from "../components/HomeHeader"
-import Header from "../components/Header"
-import Connect from "../components/Connect"
-import Connect2 from "../components/Connect2"
+import HomeHeader from "../components/HomeHeader";
+import Header from "../components/Header";
+import Connect from "../components/Connect";
+import Connect2 from "../components/Connect2";
 import dynamic from "next/dynamic";
-import Link from 'next/link'
+import Link from "next/link";
+import PortableText from "@sanity/block-content-to-react";
+
+const BubbleRegion = dynamic(() => import("../components/Bubble1"), {
+  ssr: false,
+});
+const BubbleTime = dynamic(() => import("../components/Bubble2"), {
+  ssr: false,
+});
+const BubbleTopic = dynamic(() => import("../components/Bubble3"), {
+  ssr: false,
+});
+const BubbleType = dynamic(() => import("../components/Bubble4"), {
+  ssr: false,
+});
+
+import Image from "next/image";
 
 
-const  BubbleRegion = dynamic(() => import('../components/Bubble1'), { ssr: false })
-const  BubbleTime = dynamic(() => import('../components/Bubble2'), { ssr: false })
-const  BubbleTopic = dynamic(() => import('../components/Bubble3'), { ssr: false })
-const  BubbleType = dynamic(() => import('../components/Bubble4'), { ssr: false })
-
-import Image from 'next/image'
-import Feedbacksticker from "../components/Feedbacksticker";
 
 
+const HomePage = ({ properties, infoproperties, globalproperties }) => {
 
-const HomePage = ({ properties}) => {
-    // Random Tag Scripts
+  console.log(properties)
+console.log(infoproperties)
+console.log(globalproperties)
+  // Random Tag Scripts
 
   // Random Region
 
@@ -36,24 +48,26 @@ const HomePage = ({ properties}) => {
     '<div><a href="/fullindex?location=New+Jersey">New Jersey</a></div>',
     '<div><a href="/fullindex?location=New+Mexico">New Mexico</a></div>',
     '<div><a href="/fullindex?location=North+Carolina">North Carolina</a></div>',
-        '<div><a href="/fullindex?location=Northeast">Northeast</a></div>',
+    '<div><a href="/fullindex?location=Northeast">Northeast</a></div>',
     '<div><a href="/fullindex?location=Northwest">Northwest</a></div>',
     '<div><a href="/fullindex?location=NYC">NYC</a></div>',
     '<div><a href="/fullindex?location=San+Diego">San Diego</a></div>',
     '<div><a href="/fullindex?location=San+Fransisco">San Fransisco</a></div>',
     '<div><a href="/fullindex?location=Seattle">Seattle</a></div>',
     '<div><a href="/fullindex?location=Southeast">Southeast</a></div>',
-        '<div><a href="/fullindex?location=Southwest">Southwest</a></div>',
+    '<div><a href="/fullindex?location=Southwest">Southwest</a></div>',
 
     '<div><a href="/fullindex?location=Tennessee">Tennessee</a></div>',
     '<div><a href="/fullindex?location=UK">UK</a></div>',
-    '<div><a href="/fullindex?location=Washington">Washington</a></div>'
-  ]
-  const out = []
-  const elements = 2
+    '<div><a href="/fullindex?location=Washington">Washington</a></div>',
+  ];
+  const out = [];
+  const elements = 2;
 
   for (let i = 0; i < elements; i++) {
-    out.push(randomTag1.splice(Math.floor(Math.random() * randomTag1.length), 1))
+    out.push(
+      randomTag1.splice(Math.floor(Math.random() * randomTag1.length), 1)
+    );
   }
 
   // Random Time
@@ -63,12 +77,11 @@ const HomePage = ({ properties}) => {
     '<div><a href="/fullindex?decade=1970s">1970s</a></div>',
     '<div><a href="/fullindex?decade=1980s">1980s</a></div>',
     '<div><a href="/fullindex?decade=1990s">1990s</a></div>',
-  ]
+  ];
 
   var randomFact2 = Math.floor(Math.random() * randomTag2.length);
 
   // Random Topic
-
 
   var randomTag3 = [
     '<div><a href="/fullindex?topic=Ballroom">Ballroom</a></div>',
@@ -79,11 +92,10 @@ const HomePage = ({ properties}) => {
     '<div><a href="/fullindex?topic=G.L.A.D.">G.L.A.D.</a></div>',
     '<div><a href="/fullindex?topic=Mo+B+Dick">Mo B Dick</a></div>',
     '<div><a href="/fullindex?topic=Tri-Ess">Tri-Ess</a></div>',
-  ]
+  ];
   var randomFact3 = Math.floor(Math.random() * randomTag3.length);
 
   // Random Medium
-
 
   var randomTag4 = [
     '<div><a href="/fullindex?type=Advertisement">Advertisement</a></div>',
@@ -110,178 +122,246 @@ const HomePage = ({ properties}) => {
     '<div><a href="/fullindex?type=Program">Program</a></div>',
     '<div><a href="/fullindex?type=Reference">Reference</a></div>',
     '<div><a href="/fullindex?type=Short+Story">Short Story</a></div>',
-    '<div><a href="/fullindex?type=Speech">Speech</a></div>'
-
-  ]
+    '<div><a href="/fullindex?type=Speech">Speech</a></div>',
+  ];
   var randomFact4 = Math.floor(Math.random() * randomTag4.length);
 
-  var randomHex = [
-    '#AEC9F1',
-    '#EBE2B3',
-    '#FBE1EB',
-    '#F5BB89'
-  ]
+  var randomHex = ["#AEC9F1", "#EBE2B3", "#FBE1EB", "#F5BB89"];
 
   var randomColor;
 
   function getRandom(min, max) {
-    const floatRandom = Math.random()
-  
-    const difference = max - min
-  
+    const floatRandom = Math.random();
+
+    const difference = max - min;
+
     // random between 0 and the difference
-    const random = Math.round(difference * floatRandom)
-  
-    const randomWithinRange = random + min
-  
-    return randomWithinRange
+    const random = Math.round(difference * floatRandom);
+
+    const randomWithinRange = random + min;
+
+    return randomWithinRange;
   }
-
-
 
   // React State
 
-  function shuffleArray ( array ) {
-    var counter = array.length, temp, index;
+  function shuffleArray(array) {
+    var counter = array.length,
+      temp,
+      index;
     // While there are elements in the array
-    while ( counter > 0 ) {
-        // Pick a random index
-        index = Math.floor( Math.random() * counter );
+    while (counter > 0) {
+      // Pick a random index
+      index = Math.floor(Math.random() * counter);
 
-        // Decrease counter by 1
-        counter--;
+      // Decrease counter by 1
+      counter--;
 
-        // And swap the last element with it
-        temp = array[ counter ];
-        array[ counter ] = array[ index ];
-        array[ index ] = temp;
+      // And swap the last element with it
+      temp = array[counter];
+      array[counter] = array[index];
+      array[index] = temp;
     }
     return array;
-}
+  }
 
-
-
-
-const regionproperties =  properties.filter(function(record) {
+  const regionproperties = properties.filter(function (record) {
     return record.group == "Region";
   });
 
-  const timeproperties =  properties.filter(function(record) {
+  const timeproperties = properties.filter(function (record) {
     return record.group == "Time";
   });
 
-  const topicproperties =  properties.filter(function(record) {
+  const topicproperties = properties.filter(function (record) {
     return record.group == "Topic";
   });
 
-  const typeproperties =  properties.filter(function(record) {
+  const typeproperties = properties.filter(function (record) {
     return record.group == "Type";
   });
 
   // location
   var randomNumber4 = Math.floor(Math.random() * regionproperties.length);
-// time
-var randomNumber3 = Math.floor(Math.random() * timeproperties.length);
-// type
-var randomNumber2 = Math.floor(Math.random() * typeproperties.length);
-// topic
-var randomNumber5 = Math.floor(Math.random() * topicproperties.length);
+  // time
+  var randomNumber3 = Math.floor(Math.random() * timeproperties.length);
+  // type
+  var randomNumber2 = Math.floor(Math.random() * typeproperties.length);
+  // topic
+  var randomNumber5 = Math.floor(Math.random() * topicproperties.length);
 
+  const record = regionproperties[randomNumber4];
+  const timerecord = timeproperties[randomNumber3];
+  const topicrecord = topicproperties[randomNumber5];
+  const typerecord = typeproperties[randomNumber2];
 
-  const record= regionproperties[randomNumber4];
-  const timerecord= timeproperties[randomNumber3];
-  const topicrecord= topicproperties[randomNumber5];
-  const typerecord= typeproperties[randomNumber2];
+  const serializers = {
+    types: {
+      code: (props) => (
+        <pre data-language={props.node.language}>
+          <code>{props.node.code}</code>
+        </pre>
+      ),
+    },
+    marks: {
+      link: ({ mark, children }) => {
+        // Read https://css-tricks.com/use-target_blank/
+        const { blank, href } = mark;
+        return blank ? (
+          <a href={href} target="_blank" rel="noreferrer">
+            {children}
+          </a>
+        ) : (
+          <a href={href}>{children}</a>
+        );
+      },
+    },
+  };
 
-// const bubble = document.getElementById('bubble');
+  const buttonColor = "#" + infoproperties[0].leftbgbutton;
+  const buttontextColor = "#" + infoproperties[0].lefttextbutton;
 
-// const third = document.querySelector('#bubble :nth-child(1)');
-
-
+  const mystyle = {
+    color: buttontextColor,
+  };
 
 
   return (
-    <>
- <div className="homePage" >
+    <> <div className="homePage">
+      {globalproperties && globalproperties.map(
+          (
+            {
+              _id,
+              emaillink = "",
+              facebooklink = "",
+              iglink=""
+            },
+            index
+          ) => (
+            <div key={_id}>
+              <Header
+                emaillink={emaillink && emaillink}
+                facebooklink={facebooklink && facebooklink}
+                iglink={iglink}
+              />
+            </div>
+          )
+        )}
 
-      <Header />
-      <Feedbacksticker />
-      <div className="sayhi hvr-bob">
-      <Link href="/about" >
-        <Image src="/Sayhi.png" width="250" height="125" />
-        </Link></div>
+        {infoproperties && infoproperties.map(
+          (
+            {
+              _id,
+              homepagefeedback = "",
+              leftbgbutton = "",
+              lefttextbutton = "",
+              homepagesayhi =""
+            },
+            index
+          ) => (
+            <>
+            <div key={_id}>
+             <div className="ovalsticker hvr-pulse" style={buttonColor && { backgroundColor: buttonColor}}>
+             <PortableText blocks={homepagefeedback && homepagefeedback} serializers={serializers} style={mystyle}/>
+         </div>
 
-      <div className="homepagebg" >
+            </div>
+             <div className="sayhi hvr-bob">
+          <Link href={homepagesayhi && homepagesayhi}>
+             <Image src="/Sayhi.png" width="250" height="125" />
+           </Link>
+       </div>
+            
+            </>
+
+          )
+        )} 
 
 
-        <div className="cloud" style={{ backgroundColor: randomHex[randomNumber3] }}>
+        <div className="homepagebg">
+          <div
+            className="cloud"
+            style={{ backgroundColor: randomHex[randomNumber3] }}
+          >
+            <div className="bubbles">
+              <BubbleRegion
+                title={record.title && record.title}
+                image={ record.image && record.image}
+                indexslug={record.indexslug && record.indexslug}
+              />
+              <BubbleTime
+                title={timerecord.title && timerecord.title}
+                image={ timerecord.image && timerecord.image}
+                indexslug={timerecord.indexslug && timerecord.indexslug}
+              />
+              <BubbleTopic
+                title={topicrecord.title && topicrecord.title}
+                image={ topicrecord.image && topicrecord.image}
+                indexslug={topicrecord.indexslug && topicrecord.indexslug}
+              />
+              <BubbleType
+                title={typerecord.title && typerecord.title}
+                image={ typerecord.image && typerecord.image}
+                indexslug={typerecord.indexslug && typerecord.indexslug}
+              />
+            </div>
 
-        <div className="bubbles">
-<BubbleRegion title={record.title} image={record.image}  indexslug={record.indexslug}/>
-<BubbleTime title={timerecord.title} image={timerecord.image} indexslug={timerecord.indexslug}/>
-<BubbleTopic  title={topicrecord.title} image={topicrecord.image} indexslug={topicrecord.indexslug}/>
-<BubbleType title={typerecord.title} image={typerecord.image} indexslug={typerecord.indexslug}/>
+            <div className="tag-gr">
+              <div
+                suppressHydrationWarning
+                className="tag region"
+                dangerouslySetInnerHTML={{ __html: out[0] }}
+              />
+              <div
+                suppressHydrationWarning
+                className="tag time"
+                dangerouslySetInnerHTML={{ __html: randomTag2[randomFact2] }}
+              />
+              <div
+                suppressHydrationWarning
+                className="tag topic"
+                dangerouslySetInnerHTML={{ __html: randomTag3[randomFact3] }}
+              />
 
+              <div
+                suppressHydrationWarning
+                className="tag type"
+                dangerouslySetInnerHTML={{ __html: randomTag4[randomFact4] }}
+              />
 
-                    </div>
-
-          <div className="tag-gr">
-
-            <div
-              suppressHydrationWarning className="tag region" dangerouslySetInnerHTML={{ __html: out[0] }}
-            />
-            <div
-              suppressHydrationWarning className="tag time" dangerouslySetInnerHTML={{ __html: randomTag2[randomFact2] }}
-            />
-            <div
-              suppressHydrationWarning className="tag topic" dangerouslySetInnerHTML={{ __html: randomTag3[randomFact3] }}
-            />
-
-            <div
-              suppressHydrationWarning className="tag type" dangerouslySetInnerHTML={{ __html: randomTag4[randomFact4] }}
-            />
-
-            <div className="tag">...</div>
-
+              <div className="tag">....</div>
+            </div>
           </div>
         </div>
-
-
-
-      </div>
-      </div>
-
-
-
-      </>
-
-  )
-  
-
-}
+      </div> 
+    </>
+  );
+};
 
 export const getStaticProps = async () => {
+  const query = `*[_type=="homepage"]`;
+  const properties = await sanityClient.fetch(query);
 
+  const infoquery = `*[_type=="homeinfo"]`;
+  const infoproperties = await sanityClient.fetch(infoquery);
 
-  const query = `*[_type=="homepage"]`
-  const properties = await sanityClient.fetch(query)
-
+  const globalquery = `*[_type=="global"]`;
+  const globalproperties = await sanityClient.fetch(globalquery);
 
   if (!properties) {
     return {
       props: null,
       notFound: true,
-    }
+    };
   } else {
     return {
       props: {
         properties,
+        infoproperties,
+        globalproperties
       },
-    }
+    };
   }
-}
-
-
-
+};
 
 export default HomePage
