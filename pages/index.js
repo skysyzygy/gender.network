@@ -198,6 +198,12 @@ var randomNumber5 = Math.floor(Math.random() * topicproperties.length);
 
 // const third = document.querySelector('#bubble :nth-child(1)');
 
+const buttonColor = "#" + infoproperties[0].leftbgbutton;
+const buttontextColor = "#" + infoproperties[0].lefttextbutton;
+
+const mystyle = {
+  color: buttontextColor,
+};
 
 
 
@@ -205,7 +211,26 @@ var randomNumber5 = Math.floor(Math.random() * topicproperties.length);
     <>
  <div className="homePage" >
 
-      <Header />
+ {globalproperties && globalproperties.map(
+          (
+            {
+              _id,
+              emaillink = "",
+              facebooklink = "",
+              iglink=""
+            },
+            index
+          ) => (
+            <div key={index}>
+              <Header
+                emaillink={emaillink}
+                facebooklink={facebooklink}
+                iglink={iglink}
+              />
+            </div>
+          )
+        )}
+        
       <Feedbacksticker />
       <div className="sayhi hvr-bob">
       <Link href="/about" >
