@@ -261,25 +261,30 @@ var randomNumber5 = Math.floor(Math.random() * topicproperties.length);
 }
 
 export const getStaticProps = async () => {
+  const query = `*[_type=="homepage"]`;
+  const properties = await sanityClient.fetch(query);
 
+  const infoquery = `*[_type=="homeinfo"]`;
+  const infoproperties = await sanityClient.fetch(infoquery);
 
-  const query = `*[_type=="homepage"]`
-  const properties = await sanityClient.fetch(query)
-
+  const globalquery = `*[_type=="global"]`;
+  const globalproperties = await sanityClient.fetch(globalquery);
 
   if (!properties) {
     return {
       props: null,
       notFound: true,
-    }
+    };
   } else {
     return {
       props: {
         properties,
+        infoproperties,
+        globalproperties
       },
-    }
+    };
   }
-}
+};
 
 
 
