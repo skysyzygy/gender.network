@@ -198,6 +198,29 @@ var randomNumber5 = Math.floor(Math.random() * topicproperties.length);
 
 // const third = document.querySelector('#bubble :nth-child(1)');
 
+const serializers = {
+  types: {
+    code: (props) => (
+      <pre data-language={props.node.language}>
+        <code>{props.node.code}</code>
+      </pre>
+    ),
+  },
+  marks: {
+    link: ({ mark, children }) => {
+      // Read https://css-tricks.com/use-target_blank/
+      const { blank, href } = mark;
+      return blank ? (
+        <a href={href} target="_blank" rel="noreferrer">
+          {children}
+        </a>
+      ) : (
+        <a href={href}>{children}</a>
+      );
+    },
+  },
+};
+
 const buttonColor = "#" + infoproperties[0].leftbgbutton;
 const buttontextColor = "#" + infoproperties[0].lefttextbutton;
 
