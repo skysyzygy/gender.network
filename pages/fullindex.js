@@ -9,7 +9,6 @@ import Exit from "../public/Xmark.svg";
 import Contribute from "../public/contribute.png";
 import Connect from "../components/Connect";
 import Customhead from "../components/Customhead";
-import shuffle from 'just-shuffle';
 
 import Head from "next/head";
 
