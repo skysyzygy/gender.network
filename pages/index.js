@@ -195,6 +195,9 @@ console.log(globalproperties)
   const topicrecord = topicproperties[randomNumber5];
   const typerecord = typeproperties[randomNumber2];
 
+  function regionbubble() { return {__html: out[0]}; };
+
+
 
   const serializers = {
     types: {
@@ -312,8 +315,8 @@ console.log(globalproperties)
               <div
               key={Math.random}
                 suppressHydrationWarning
-                className="tag region"
-                dangerouslySetInnerHTML={{ __html: out[0] }}
+                className="tag region" id="regionbubble"
+                dangerouslySetInnerHTML={regionbubble()}
               />
               <div
                             key={Math.random}
