@@ -9,6 +9,7 @@ import Exit from "../public/Xmark.svg";
 import Contribute from "../public/contribute.png";
 import Connect from "../components/Connect";
 import Customhead from "../components/Customhead";
+import shuffle from 'just-shuffle';
 
 import Head from "next/head";
 
@@ -101,6 +102,26 @@ function fullindex(q, properties, globalproperties) {
     setIsOpen2((prevState) => !prevState);
     setActive2(!isActive);
   };
+
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log('Count is now: ', count);
+  }, [count]);
+
+  const handleClick = event => {
+    setCount(count + 1);
+  };
+
+
+  function fisherYatesRandomize(arr) {
+    for (var i = arr.length - 1; i > 0; i--) {
+       var j = Math.floor(Math.random() * (i + 1));
+       [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+ }
+
 
   return (
     <>
@@ -1402,6 +1423,7 @@ function fullindex(q, properties, globalproperties) {
                 </Drawer>
               </div>
               <header>
+                <div className="constraint flexbetween">
                 <h1 className="link">
                   <Link href="/">Gender.Network</Link>
                 </h1>
@@ -1483,9 +1505,11 @@ function fullindex(q, properties, globalproperties) {
                     </Link>
                   </div>
                 </nav>
+                </div>
               </header>
             </div>
             <div className="filterheaders">
+              <div className="constraint">
               <button
                 id="button"
                 className={`${isActive ? "minus" : "add"}`}
@@ -1499,8 +1523,13 @@ function fullindex(q, properties, globalproperties) {
               >
                 Click to Filter
               </button>
-              {/* 
-        <div className="b2">Random ⟳</div> */}
+              <button
+                className="b3"
+                type="button"
+                onClick={shuffle([q.properties], {shuffleAll: true})}
+              >
+                Random
+              </button>
               <button
                 className="b3"
                 type="button"
@@ -1511,7 +1540,7 @@ function fullindex(q, properties, globalproperties) {
                 }}
               >
                 Reset
-              </button>
+              </button></div>
             </div>{" "}
           </div>
         </div>
@@ -1575,6 +1604,11 @@ function fullindex(q, properties, globalproperties) {
             columnsCountBreakPoints={{ 350: 1, 700: 2, 900: 3 }}
           >
             <Masonry columnsCount={3} gutter="35px">
+
+            {/* <div>
+      <h2>Count: {count}</h2>
+    </div> */}
+    
               {q.properties.map(
                 ({ _id, slug = "", coverphoto = "", title = "" }) => (
                   <Link passHref href="/work/[slug]" as={`/work/${slug}`}>
@@ -1592,7 +1626,7 @@ function fullindex(q, properties, globalproperties) {
                     (max-width: 900) 48vw,
                     31vw"
                             unoptimized
-                            style={{ width: "31vw", height: "auto" }}
+                            style={{ width: "100%", height: "auto" }}
                             alt={title}
                           />
                         )}

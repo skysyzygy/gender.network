@@ -52,8 +52,10 @@ const events = ({ mainproperties, properties, globalproperties }) => {
           )
         )}
       <div className="container">
+
         <div className="eventblock">
           <div className="eventtext">
+          <div className="constraint">
             {mainproperties.map((post) => (
               <div aria-selected="true" className="" key={post._id}>
                 <h2>
@@ -65,10 +67,14 @@ const events = ({ mainproperties, properties, globalproperties }) => {
                 </h2>
               </div>
             ))}
-          </div>
-          <h3 aria-selected="true">Upcoming</h3>
+          </div>          </div>
+
+          <h3 aria-selected="true">          
+              <div className="constraint">Upcoming</div>
+              </h3>
 
           {properties.map((post) => (
+                          <div className="constraint">
             <div className="eventGrid upcoming" key={post._id}>
               {post.upcoming &&
                 post.upcoming.map(
@@ -103,14 +109,16 @@ const events = ({ mainproperties, properties, globalproperties }) => {
                   )
                 )}
             </div>
+            </div>
+
           ))}
 
           <h3 className="past" aria-selected="true">
-            Past
+          <div className="constraint">Past</div>
           </h3>
 
           {properties.map((post) => (
-            <div className="eventGrid past" key={post._id}>
+                                      <div className="constraint">
               {post.past &&
                 post.past.map(
                   ({
@@ -120,6 +128,7 @@ const events = ({ mainproperties, properties, globalproperties }) => {
                     rsvptext = "",
                     rsvpurl = "",
                   }) => (
+                    <div className="eventGrid past" key={post._id}>
                     <div className="singleevent" key={_id}>
                       <div className="eventTitle" aria-selected="true">
                         <PortableText
@@ -140,7 +149,8 @@ const events = ({ mainproperties, properties, globalproperties }) => {
                           {rsvptext}
                         </a>
                       </div>
-                    </div>
+                    </div>            </div>
+
                   )
                 )}
 
@@ -154,6 +164,7 @@ const events = ({ mainproperties, properties, globalproperties }) => {
                 </div>
               )}
             </div>
+
           ))}
         </div>
       </div>

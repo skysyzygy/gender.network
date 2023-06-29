@@ -38,6 +38,7 @@ import PortableText from "@sanity/block-content-to-react";
  export default function Footer(props) {
     return (
 <footer>
+  <div className="constraint">
 <div className="flex between">
     <div className="footertitle">
         <Typing startDelay={1000}>{props.footertitle}</Typing>
@@ -59,6 +60,7 @@ import PortableText from "@sanity/block-content-to-react";
         <div><Link href={props.iglink} target="_blank"><span><Image src='/Instagram.png' height={74} width={220}/></span></Link></div>
    </div>
         </div>
+    </div>
     </div>
 </footer>
 

@@ -61,6 +61,7 @@ const about = ({ properties, globalproperties }) => {
       <div className="container">
         {properties.map((post) => (
           <div className="aboutshow" key={post._id}>
+            <div className="constraint">
             <div className="aboutblock textblock1">
               <div className="aboutheader">
                 <Aboutheader />
@@ -157,6 +158,7 @@ const about = ({ properties, globalproperties }) => {
                   </div>
                 </div>
               </div>
+            </div>
             </div>
           </div>
         ))}

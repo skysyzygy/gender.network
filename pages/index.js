@@ -195,10 +195,6 @@ console.log(globalproperties)
   const topicrecord = topicproperties[randomNumber5];
   const typerecord = typeproperties[randomNumber2];
 
-  console.log(record)
-  console.log(timerecord)
-  console.log(topicrecord)
-
 
   const serializers = {
     types: {
@@ -312,29 +308,36 @@ console.log(globalproperties)
             </div>
 
             <div className="tag-gr">
+              <div className="constrainttags">
               <div
+              key={Math.random}
                 suppressHydrationWarning
                 className="tag region"
                 dangerouslySetInnerHTML={{ __html: out[0] }}
               />
               <div
+                            key={Math.random}
                 suppressHydrationWarning
                 className="tag time"
                 dangerouslySetInnerHTML={{ __html: randomTag2[randomFact2] }}
               />
               <div
+                            key={Math.random}
                 suppressHydrationWarning
                 className="tag topic"
                 dangerouslySetInnerHTML={{ __html: randomTag3[randomFact3] }}
               />
 
               <div
+                          key={Math.random}
+
                 suppressHydrationWarning
                 className="tag type"
                 dangerouslySetInnerHTML={{ __html: randomTag4[randomFact4] }}
               />
 
               <div className="tag"><Link href="https://gender.network/fullindex">...</Link></div>
+            </div>
             </div>
           </div>
         </div>

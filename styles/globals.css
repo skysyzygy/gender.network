@@ -381,7 +381,7 @@ height: fit-content;
 
 }
 
-.filterheaders div,
+
 .filterheaders button,
 .filteredButtons button{
   padding: 1vh 1vw;
@@ -453,9 +453,11 @@ height: fit-content;
   /* column-count: 3; */
   width: 97vw;
   /* justify-content: space-around; */
-  margin: 2vh 1.5vw;
+ 
+  margin: 2vh auto;
   height: 75vh;
   overflow: auto;
+  max-width: 1600px;
 }
 
 /* width */
@@ -760,7 +762,7 @@ border-bottom:1px solid black;
 .eventGrid{
   display: inline-grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  width:100vw;
+  width:100%;
 }
 
 .hidden{
@@ -845,10 +847,11 @@ div[role=radiogroup]{
 
 .itemPage .Container{
   width: 97vw;
-  margin: 1.5vw;
+  margin: 1.5vw auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  max-width:1600px;
 }
 
 
@@ -893,7 +896,7 @@ padding-left:25px;
 .itemtitle{
   font-size:2em;
   font-family: 'HelveticaB';
-  width: 45vw;
+  width: 40vw;
 }
 
 .itemtitle, .itemheader{
@@ -1200,14 +1203,38 @@ display:block;
   margin-right:1.5vh;
 }
 
+.constraint{
+
+  max-width: 1600px;
+  width: 97vw;
+  margin: auto;
+
+}
+
+.constrainttags{
+  padding: 0 1vw;
+  display: flex;
+  width: 97vw;
+  max-width: 1600px;
+  margin: auto;
+}
+
+.flexbetween{
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+
 .workGrid{
   margin:8px auto 15px auto;
   width:97vw;
+  max-width:1600px;
 }
 
 .workGridx{
   width: 97vw;
   margin: 0 auto 10vh auto;
+  max-width:1600px;
 }
 
 .buttoncontainer button{
@@ -1378,6 +1405,17 @@ transition: all 0.25s;
 
   .mobilenav{
     display:block;
+  }
+
+  .flexbetween,
+  .constraint{
+    display:block;
+    margin:0;
+    width:auto;
+  }
+
+  .itemtitle{
+    width:auto;
   }
 
   .homePage header,

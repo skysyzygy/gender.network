@@ -1411,6 +1411,7 @@ console.log(q.globalproperties)
                 </Drawer>
               </div>
               <header>
+              <div className="constraint flexbetween">
                 <h1 className="link">
                   <Link href="/">Gender.Network</Link>
                 </h1>
@@ -1492,9 +1493,11 @@ console.log(q.globalproperties)
                     </Link>
                   </div>
                 </nav>
+                </div>
               </header>
             </div>
             <div className="filterheaders">
+            <div className="constraint">
               <button
                 id="button"
                 className={`${isActive ? "minus" : "add"}`}
@@ -1520,7 +1523,7 @@ console.log(q.globalproperties)
                 }}
               >
                 Reset
-              </button>
+                </button></div>
             </div>{" "}
           </div>
         </div>

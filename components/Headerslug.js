@@ -84,6 +84,7 @@ import 'react-modern-drawer/dist/index.css'
             </Drawer>
             </div>
 <header>
+<div className="constraint flexbetween">
 
         <h1 className="link" ><Link href="/">Gender.Network</Link></h1>
         <nav>
@@ -95,8 +96,7 @@ import 'react-modern-drawer/dist/index.css'
             <Link href="/events"><div className="linkgroup rt"><div className="checkbox"> <span>[</span> <span className="selected4"><Image src={Exit} alt="Selected" width="25px" height="25px" /></span> <span>]</span> </div>Events</div></Link>
             </div>
         </nav>
-
-       </header>   
+</div>       </header>   
        </div>
        
   
