@@ -595,10 +595,7 @@ height: fit-content;
     font-size:1.2em;
 
 }
-/* 
-.workContainer, .workContainer img{
-  width: 100% !important;
-} */
+
 
 .workCard:hover{
 }
@@ -1223,6 +1220,10 @@ display:block;
   display: flex;
   justify-content: space-between;
   margin: auto;
+}
+
+.workContainer img{
+  width:100%;
 }
 
 .workGrid{
