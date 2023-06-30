@@ -1223,7 +1223,7 @@ display:block;
 }
 
 .workContainer img{
-  width:100%;
+  width:100% !important;
 }
 
 .workGrid{
