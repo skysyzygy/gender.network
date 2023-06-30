@@ -102,24 +102,14 @@ function fullindex(q, properties, globalproperties) {
     setActive2(!isActive);
   };
 
-  const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    console.log('Count is now: ', count);
-  }, [count]);
-
-  const handleClick = event => {
-    setCount(count + 1);
-  };
-
-
-  function fisherYatesRandomize(arr) {
-    for (var i = arr.length - 1; i > 0; i--) {
-       var j = Math.floor(Math.random() * (i + 1));
-       [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-    return arr;
- }
+//   function fisherYatesRandomize(arr) {
+//     for (var i = arr.length - 1; i > 0; i--) {
+//        var j = Math.floor(Math.random() * (i + 1));
+//        [arr[i], arr[j]] = [arr[j], arr[i]];
+//     }
+//     return arr;
+//  }
 
 
   return (
