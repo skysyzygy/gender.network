@@ -135,6 +135,7 @@ const about = ({ properties, globalproperties }) => {
                     width={495}
                     height={110}
                     alt="Retro font that says Funders"
+                    className="licensing"
                   />
                   <PortableText
                     className="textbody"

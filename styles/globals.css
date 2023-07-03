@@ -1417,6 +1417,12 @@ transition: all 0.25s;
 
   .itemtitle{
     width:auto;
+    font-size:1.7em,
+  }
+
+  .itemtitle,
+  .itemheader{
+    margin-bottom:5px;
   }
 
   .homePage header,
@@ -1486,7 +1492,11 @@ header nav{
 }
 
 .connectBtn{
-  font-size: 1.8em;
+  font-size: 1.3em;
+}
+
+.licensing img{
+  width:380px !important;
 }
 
 .sayhi{
@@ -1681,7 +1691,7 @@ div[role=radiogroup]{
   display:block !important;
 }
 .c-heKnQH-ijqASy-css{
-  height:500px !important;
+  height:350px !important;
 }
 
 /* IIIF Viewer settings - end */
