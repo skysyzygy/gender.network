@@ -219,11 +219,19 @@ header .selected4{
   visibility:hidden;
 }
 
-.indexPage .selected1,
-.storiesPage .selected2,
-.aboutPage .selected3,
-.eventsPage .selected4{
+span.selected1:hover,
+header .checkbox .selected2:hover,
+header .checkbox .selected3:hover,
+header .checkbox .selected4:hover{
   visibility: visible !important;
+
+}
+
+.checkbox:hover .selected1,
+.checkbox:hover .selected2,
+.checkbox:hover .selected3,
+.checkbox:hover .selected4{
+ visibility: visible !important;
 }
 
 .homePage header{
@@ -628,14 +636,28 @@ height: fit-content;
 .storiesPage header,
 .itemPage header,
 .aboutPage header,
-.eventsPage header{
+.eventsPage header,
+.pagenotfound header{
     border-bottom:1px solid black;
 }
 
-/* .aboutshow,
-.eventblock{
-  padding-top: 90px;
-} */
+.pagenotfound .container{
+  min-height: 80vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #eacee8;
+  font-family: Yale;
+  text-align:center;
+  -webkit-text-stroke: 1px #000;
+  color: #000;
+  paint-order: stroke fill;
+  font-size:70px;
+}
+
+.pagenotfound .container a{
+  border-bottom: 4px solid black;
+}
 
 .aboutPage .container{
   background-color: #F0FBAC;
@@ -954,7 +976,7 @@ footer .menulinks a{
   font-family: Yale;
   font-size:70px;
   font-weight:500;
-  -webkit-text-stroke: 2px #000;
+  -webkit-text-stroke: 1px #000;
   color:#000;
   paint-order: stroke fill;
   line-height: 1.25;
@@ -984,6 +1006,7 @@ cursor: pointer;
 font-size: 3em;
 line-height: 1;
 font-weight: 900;
+background-color: #FAEF8D;
 }
 
 .ovalsticker a{
@@ -1435,7 +1458,8 @@ transition: all 0.25s;
   .storiesPage header,
   .itemPage header,
   .aboutPage header,
-  .eventsPage header{
+  .eventsPage header,
+  .pagenotfound header{
     flex-direction: row-reverse;
   }
 
@@ -1445,6 +1469,10 @@ transition: all 0.25s;
     background-color: #F2EFa5 !important;
     border-top:none !important;
   }
+
+  .pagenotfound .container{
+    min-height: 40vh;
+}
 
   .eventsPage h2 {
 

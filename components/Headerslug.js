@@ -31,7 +31,6 @@ import 'react-modern-drawer/dist/index.css'
 
     return (
         <div className="headercontainer">
-                <Connect emaillink={props.emaillink} facebooklink={props.facebooklink} iglink={props.iglink} />
                 <Head>
 <head dangerouslySetInnerHTML={{ __html: '<!--website BY ｒｉｔｕ ｇｈｉｙａ ~ ｗｗｗ.ｒ-ｉ-ｔ-ｕ.ｃｏｍ -->' }}>
       </head>

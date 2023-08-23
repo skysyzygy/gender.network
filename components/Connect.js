@@ -19,7 +19,6 @@
   const Connect = (props) => {
     const [openModal, setModal] = useState(false);
 
-    console.log(props.emaillink)
 
     
     const clickconnect = () => {

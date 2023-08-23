@@ -103,14 +103,6 @@ function fullindex(q, properties, globalproperties) {
   };
 
 
-//   function fisherYatesRandomize(arr) {
-//     for (var i = arr.length - 1; i > 0; i--) {
-//        var j = Math.floor(Math.random() * (i + 1));
-//        [arr[i], arr[j]] = [arr[j], arr[i]];
-//     }
-//     return arr;
-//  }
-
 
   return (
     <>
@@ -1625,8 +1617,11 @@ function fullindex(q, properties, globalproperties) {
                   </Link>
                 )
               )}
+
+{q.globalproperties.map(
+                ({ _id, submitlink = "" }) => (
               <div className="submitMore workCard">
-                <Link href="/about">
+                <Link href={submitlink}>
                   <Image
                     src={Missing}
                     className="missing"
@@ -1637,7 +1632,7 @@ function fullindex(q, properties, globalproperties) {
                     style={{ width: "80%", height: "auto" }}
                   />
                 </Link>
-              </div>
+              </div>))}
             </Masonry>
           </ResponsiveMasonry>
         </>
@@ -1696,35 +1691,35 @@ export async function getServerSideProps(context) {
   q = `*[_type=="work"] | order(title asc) `;
 
   if (location && decade && topic && type) {
-    q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades && '${topic}' in categories && '${type}' in types]{coverphoto, "slug": slug.current, title} | order(title asc) `;
+    q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades && '${topic}' in categories && '${type}' in types]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
   } else if (location && decade && topic && !type) {
-    q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades && '${topic}' in categories]{coverphoto, "slug": slug.current, title} | order(title asc) `;
+    q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades && '${topic}' in categories]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
   } else if (location && decade && !topic && type) {
-    q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades && '${type}' in types]{coverphoto, "slug": slug.current, title} | order(title asc) `;
+    q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades && '${type}' in types]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
   } else if (location && !decade && topic && type) {
-    q = `*[_type=="work" && '${location}' in locations && '${type}' in types && '${topic}' in categories]{coverphoto, "slug": slug.current, title} | order(title asc) `;
+    q = `*[_type=="work" && '${location}' in locations && '${type}' in types && '${topic}' in categories]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
   } else if (location && decade && !topic && !type) {
-    q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades]{coverphoto, "slug": slug.current, title} | order(title asc) `;
+    q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
   } else if (!location && decade && topic && type) {
-    q = `*[_type=="work" && '${decade}' in decades && '${topic}' in categories && '${type}' in types]{coverphoto, "slug": slug.current, title} | order(title asc) `;
+    q = `*[_type=="work" && '${decade}' in decades && '${topic}' in categories && '${type}' in types]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
   } else if (!location && !decade && topic && type) {
-    q = `*[_type=="work" && '${topic}' in categories && '${type}' in types]{coverphoto, "slug": slug.current, title} | order(title asc) `;
+    q = `*[_type=="work" && '${topic}' in categories && '${type}' in types]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
   } else if (location && topic && !decade && !type) {
-    q = `*[_type=="work" && '${location}' in locations && '${topic}' in categories]{coverphoto, "slug": slug.current, title} | order(title asc) `;
+    q = `*[_type=="work" && '${location}' in locations && '${topic}' in categories]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
   } else if (decade && topic && !location && !type) {
-    q = `*[_type=="work" && '${decade}' in decades && '${topic}' in categories]{coverphoto, "slug": slug.current, title} | order(title asc) `;
+    q = `*[_type=="work" && '${decade}' in decades && '${topic}' in categories]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
   } else if (location && type && !decade && !topic) {
-    q = `*[_type=="work" && '${location}' in locations && '${type}' in types]{coverphoto, "slug": slug.current, title} | order(title asc) `;
+    q = `*[_type=="work" && '${location}' in locations && '${type}' in types]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
   } else if (decade) {
-    q = `*[_type=="work" && '${decade}' in decades]{coverphoto, "slug": slug.current, title} | order(title asc) `;
+    q = `*[_type=="work" && '${decade}' in decades]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
   } else if (topic) {
-    q = `*[_type=="work" && '${topic}' in  categories]{coverphoto, "slug": slug.current, title} | order(title asc) `;
+    q = `*[_type=="work" && '${topic}' in  categories]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
   } else if (location) {
-    q = `*[_type=="work" && '${location}' in  locations]{coverphoto, "slug": slug.current, title}| order(title asc) `;
+    q = `*[_type=="work" && '${location}' in  locations]{coverphoto, "slug": slug.current, title}| order(_createdAt desc) `;
   } else if (type) {
-    q = `*[_type=="work" && '${type}' in  types]{coverphoto, "slug": slug.current, title} | order(title asc) `;
+    q = `*[_type=="work" && '${type}' in  types]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
   } else {
-    q = `*[_type=="work"]{coverphoto, "slug": slug.current, title} | order(title asc) `;
+    q = `*[_type=="work"]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
   }
   // const q = `*[count((categories)[@ in '${tag}']) == 2] | order(title asc) `
   const properties = await sanityClient.fetch(q);

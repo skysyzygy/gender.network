@@ -1588,8 +1588,9 @@ console.log(q.globalproperties)
           >
             <Masonry columnsCount={3} gutter="35px">
               {q.properties.map(
-                ({ _id, slug = "", coverphoto = "", title = "" }) => (
-                  <Link passHref href="/work/[slug]" as={`/work/${slug}`}>
+                ({ _id, coverphoto = "", storyurl = "" }) => (
+                  <>
+                 { storyurl && <Link passHref href={storyurl}>
                     <div className="workCard">
                       <div className="workContainer">
                         {coverphoto && (
@@ -1611,11 +1612,15 @@ console.log(q.globalproperties)
                       </div>
                       {title}
                     </div>
-                  </Link>
+                  </Link> }
+                  </>
                 )
               )}
+
+              {q.globalproperties.map(
+                ({ _id, submitlink = "" }) => (
               <div className="submitMore workCard">
-                <Link href="/about">
+                <Link href={submitlink}>
                   <Image
                     src={Missing}
                     className="missing"
@@ -1626,7 +1631,7 @@ console.log(q.globalproperties)
                     style={{ width: "80%", height: "auto" }}
                   />
                 </Link>
-              </div>
+              </div>))}
             </Masonry>
           </ResponsiveMasonry>
         </>
