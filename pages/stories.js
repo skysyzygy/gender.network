@@ -104,12 +104,6 @@ function stories(q, properties, globalproperties) {
     setActive2(!isActive);
   };
 
-  console.log(properties)
-console.log(q.globalproperties)
-// const menuColor = globalproperties[0].emaillink;
-
-// console.log(menuColor)
-
 
   return (
     <>
@@ -1588,9 +1582,9 @@ console.log(q.globalproperties)
           >
             <Masonry columnsCount={3} gutter="35px">
               {q.properties.map(
-                ({ _id, coverphoto = "", storyurl = "" }) => (
+                ({ _id, coverphoto = "", storyurl = "", title="" }) => (
                   <>
-                 { storyurl && <Link passHref href={storyurl}>
+                  <Link passHref href={storyurl}>
                     <div className="workCard">
                       <div className="workContainer">
                         {coverphoto && (
@@ -1612,7 +1606,30 @@ console.log(q.globalproperties)
                       </div>
                       {title}
                     </div>
-                  </Link> }
+                  </Link>
+                 {/* { storyurl && <Link passHref href={storyurl}>
+                    <div className="workCard">
+                      <div className="workContainer">
+                        {coverphoto && (
+                          <Image
+                            src={coverphoto}
+                            loading="lazy"
+                            placeholder="blur"
+                            blurDataURL="data:image/gif;base64,R0lGODlhAQABAPAAAOvis////yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+                            width="0"
+                            height="0"
+                            sizes="(max-width: 700) 98vw,
+                    (max-width: 900) 48vw,
+                    31vw"
+                            unoptimized
+                            style={{ width: "31vw", height: "auto" }}
+                            alt={title}
+                          />
+                        )}
+                      </div>
+                      {title}
+                    </div>
+                  </Link> } */}
                   </>
                 )
               )}
