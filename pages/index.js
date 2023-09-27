@@ -153,7 +153,7 @@ const HomePage = ({ properties, infoproperties, globalproperties, locationproper
                <BubbleRegion
                 title={locationrecord.title && locationrecord.title}
                 image={locationrecord.image && locationrecord.image}
-                indexslug={`/fullindexnew?location=${locationrecord._id}&locationtitle=${locationrecord.title}`}        
+                indexslug={`/fullindex?location=${locationrecord._id}&locationtitle=${locationrecord.title}`}        
               /> 
                <BubbleTime
                 title={decaderecord.title && decaderecord.title}
