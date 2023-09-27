@@ -160,7 +160,7 @@ const HomePage = ({ properties, infoproperties, globalproperties, locationproper
                <BubbleTopic
                 title={topicrecord.title && topicrecord.title}
                 image={topicrecord.image && topicrecord.image}
-                indexslug={topicrecord._id && `/fullindex?topic=${topicrecord._id}&topictitle${topicrecord.title}`}
+                indexslug={topicrecord._id && `/fullindex?topic=${topicrecord._id}&topictitle=${topicrecord.title}`}
               />
               <BubbleType
                 title={typesrecord.title && typesrecord.title}
