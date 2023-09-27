@@ -1050,6 +1050,10 @@ background-color: #fffef5;
 
 /* bubbles */
 
+.cloud{
+  z-index:-1;
+}
+
 .bubble{
   position:fixed;
   cursor:pointer;

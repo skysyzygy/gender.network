@@ -56,7 +56,6 @@ const HomePage = ({ properties, infoproperties, globalproperties, locationproper
   const typesrecord = typesproperties[typerandomnumber];
   const typesrecord2 = typesproperties[typerandomnumber2];
 
-  console.log(locationrecord)
 
   const serializers = {
     types: {
@@ -68,7 +67,6 @@ const HomePage = ({ properties, infoproperties, globalproperties, locationproper
     },
     marks: {
       link: ({ mark, children }) => {
-        // Read https://css-tricks.com/use-target_blank/
         const { blank, href } = mark;
         return blank ? (
           <a href={href} target="_blank" rel="noreferrer">
@@ -83,6 +81,8 @@ const HomePage = ({ properties, infoproperties, globalproperties, locationproper
 
   const buttonColor = "#" + infoproperties[0].leftbgbutton;
   const buttontextColor = "#" + infoproperties[0].lefttextbutton;
+
+  console.log(randomHex[randomcolor])
 
   const mystyle = {
     color: buttontextColor,
@@ -145,7 +145,8 @@ const HomePage = ({ properties, infoproperties, globalproperties, locationproper
           <div
             className="cloud"
             style={{ backgroundColor: randomHex[randomcolor] }}
-          >
+          >            </div>
+
             <div className="bubbles">
                <BubbleRegion
                 title={locationrecord.title && locationrecord.title}
@@ -167,7 +168,6 @@ const HomePage = ({ properties, infoproperties, globalproperties, locationproper
                 image={typesrecord.image && typesrecord.image}
                 indexslug={typesrecord._id && `/fullindex?type=${typesrecord._id}&typetitle=${typesrecord.title}`}
               />  
-            </div>
 
           </div>
         </div>
