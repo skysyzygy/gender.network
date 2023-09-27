@@ -172,6 +172,28 @@ const HomePage = ({ properties, infoproperties, globalproperties, locationproper
               />  
 
           </div>
+
+          <div className="tag-gr">
+              <div className="constrainttags" suppressHydrationWarning>
+                <div className="tag region">
+                <Link suppressHydrationWarning href={`/fullindex?location=${locationrecord2._id}&locationtitle=${locationrecord2.title}`}>
+                  {locationrecord2.title}</Link>
+                  </div>
+                  <div className="tag time">
+                  <Link suppressHydrationWarning href={`/fullindex?decade=${decaderecord2._id}&decadetitle=${decaderecord2.title}`}>
+                  {decaderecord2.title}</Link>
+                  </div>
+                  <div className="tag topic">
+                  <Link suppressHydrationWarning href={`/fullindex?topic=${topicrecord2._id}&topictitle=${topicrecord2.title}`}>
+                  {topicrecord2.title}</Link>
+                  </div>
+                  <div className="tag type">
+                  <Link suppressHydrationWarning href={`/fullindex?type=${typesrecord2._id}&typetitle=${typesrecord2.title}`}>
+                  {typesrecord2.title}</Link>
+                  </div>
+              <div className="tag"><Link href="https://gender.network/fullindex">...</Link></div>
+            </div>
+            </div>
         </div>
       </div> 
     </>
