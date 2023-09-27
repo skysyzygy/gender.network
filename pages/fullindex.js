@@ -39,18 +39,18 @@ const rgbDataURL = (r, g, b) =>
     triplet(0, r, g) + triplet(b, 255, 255)
   }/yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==`;
 
-function fullindex(q, properties, globalproperties) {
+function fullindex(q, properties, globalproperties, locationproperties, decadeproperties, tagproperties, typesproperties) {
   const router = useRouter();
 
-  const { location, decade, topic, type } = router.query;
+  const { location, locationtitle, decade, decadetitle, topic, topictitle, type, typetitle } = router.query;
 
   function change_textlocation(variable) {
     document.getElementById("locationbtn").innerHTML = variable;
   }
 
-  function remove_textlocation() {
-    document.getElementById("locationbtn").innerHTML = "";
-  }
+ function remove_textlocation() {
+     document.getElementById("locationbtn").innerHTML = "";
+   }
 
   function change_texttime(variable) {
     document.getElementById("timebtn").innerHTML = variable;
@@ -103,6 +103,7 @@ function fullindex(q, properties, globalproperties) {
   };
 
 
+console.log(location)
 
   return (
     <>
@@ -118,1238 +119,116 @@ function fullindex(q, properties, globalproperties) {
               <div className="col1a">
                 <div className="heading">Location</div>
                 <div className="list region">
-                  <button
+                {q.locationproperties.map( ({
+              _id,
+              title = "",
+              slug=""
+            },
+            index
+          ) => (
+            <div key={index}>
+                    <button
+                    id="locationselect"
                     type="button"
+                    value={title}
                     onClick={() => {
                       router.replace({
-                        query: { ...router.query, location: "Chicago" },
+                        query: { ...router.query, location: `${_id}`, locationtitle:  `${title}`},
                       });
                       toggleDrawer();
+                      
                     }}
                   >
-                    Chicago
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, location: "DC" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    DC
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, location: "Detroit" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Detroit
+                    {title}
                   </button>
 
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, location: "Florida" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Florida
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, location: "India" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    India
-                  </button>
+            </div>
+          )
+        )} 
 
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, location: "Los Angeles" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Los Angeles
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, location: "Louisiana" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Louisiana
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, location: "Minneapolis" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Minneapolis
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, location: "New Jersey" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    New Jersey
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, location: "New Mexico" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    New Mexico
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, location: "North Carolina" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    North Carolina
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, location: "Northeast" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Northeast
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, location: "Northwest" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Northwest
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, location: "NYC" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    NYC
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, location: "San Diego" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    San Diego
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, location: "San Fransisco" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    San Fransisco
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, location: "Seattle" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Seattle
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, location: "Southeast" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Southeast
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, location: "Southwest" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Southwest
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, location: "Tennessee" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Tennessee
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, location: "UK" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    UK
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, location: "Washington" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Washington
-                  </button>
                 </div>
                 <div className="heading">Decade</div>
                 <div className="list time">
-                  <button
+                {q.decadeproperties.map( ({
+              _id,
+              title = "",
+              slug=""
+            },
+            index
+          ) => (
+            <div key={index}>
+                               <button
                     type="button"
                     onClick={() => {
                       router.replace({
-                        query: { ...router.query, decade: "1960s" },
+                        query: { ...router.query, decade: `${_id}`, decadetitle:  `${title}`},
                       });
                       toggleDrawer();
                     }}
                   >
-                    1960s
+                    {title}
                   </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, decade: "1970s" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    1970s
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, decade: "1980s" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    1980s
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, decade: "1990s" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    1990s
-                  </button>
+            </div>
+          )
+        )} 
                 </div>
               </div>
 
               <div className="col2a">
                 <div className="heading">Topic</div>
                 <div className="list topic">
-                  <button
+                {q.topicproperties.map( ({
+              _id,
+              title = "",
+              slug=""
+            },
+            index
+          ) => (
+            <div key={index}>
+                               <button
                     type="button"
                     onClick={() => {
                       router.replace({
-                        query: {
-                          ...router.query,
-                          topic: "American Coalition for Transperience",
-                        },
+                        query: { ...router.query, topic: `${_id}`, topictitle:  `${title}` },
                       });
                       toggleDrawer();
                     }}
                   >
-                    American Coalition for Transperience
+                    {title}
                   </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: {
-                          ...router.query,
-                          topic: "Angela Keyes Douglas",
-                        },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Angela Keyes Douglas
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Anguksuar" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Anguksuar
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Ballroom" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Ballroom
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: {
-                          ...router.query,
-                          topic: "Bay Area Gay Liberation",
-                        },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Bay Area Gay Liberation
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Bebe Scarpie" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Bebe Scarpie
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Beth Elliiot" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Beth Elliiot
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Black Panthers" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Black Panthers
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: {
-                          ...router.query,
-                          topic: "Christopher Street Liberation Day",
-                        },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Christopher Street Liberation Day
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Cockettes" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Cockettes
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Colette Goudie" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Colette Goudie
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Dee Farmer" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Dee Farmer
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Drag Magazine" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Drag Magazine
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Effeminists" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Effeminists
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: {
-                          ...router.query,
-                          topic: "Erickson Education Foundation",
-                        },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Erickson Education Foundation
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Eve Adams" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Eve Adams
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "FBI" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    FBI
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Flaming Faggots" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Flaming Faggots
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: {
-                          ...router.query,
-                          topic: "Foundation for Personality Expression",
-                        },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Foundation for Personality Expression
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "G.L.A.D." },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    G.L.A.D.
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: {
-                          ...router.query,
-                          topic: "Gay Activist Alliance",
-                        },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Gay Activist Alliance
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: {
-                          ...router.query,
-                          topic: "Gay Liberation Front",
-                        },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Gay Liberation Front
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Goldie Glitters" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Goldie Glitters
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Greer Lankton" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Greer Lankton
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Imperial Court" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Imperial Court
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: {
-                          ...router.query,
-                          topic: "Intertribal Berdache Society",
-                        },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Intertribal Berdache Society
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Jackie Curtis" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Jackie Curtis
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Jamison Green" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Jamison Green
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Johnny Science" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Johnny Science
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Lee Brewster" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Lee Brewster
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Marsha P. Johnson" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Marsha P. Johnson
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Men Against Sexism" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Men Against Sexism
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Mo B Dick" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Mo B Dick
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Olivia Records" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Olivia Records
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "On Our Backs" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    On Our Backs
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Pat Califia" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Pat Califia
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Pudgy Roberts" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Pudgy Roberts
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Pyramid Club" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Pyramid Club
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: {
-                          ...router.query,
-                          topic: "Queens Liberation Front",
-                        },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Queens Liberation Front
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Radical Faeries" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Radical Faeries
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Radical Queens" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Radical Queens
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Reed Erickson" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Reed Erickson
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: {
-                          ...router.query,
-                          topic:
-                            "Revolutionary People's Constitutional Convention",
-                        },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Revolutionary People's Constitutional Convention
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Robin Morgan" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Robin Morgan
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Sandy Stone" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Sandy Stone
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Stormé De Larverie" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Stormé De Larverie
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: {
-                          ...router.query,
-                          topic: "Street Transvestite Action Revolutionaries",
-                        },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Street Transvestite Action Revolutionaries
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Sylvia Rivera" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Sylvia Rivera
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: {
-                          ...router.query,
-                          topic: "Third World Gay Revolution",
-                        },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Third World Gay Revolution
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: {
-                          ...router.query,
-                          topic: "Tracey Africa Norman",
-                        },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Tracey Africa Norman
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: {
-                          ...router.query,
-                          topic: "Transsexual Action Organization",
-                        },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Transsexual Action Organization
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, topic: "Tri-Ess" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Tri-Ess
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: {
-                          ...router.query,
-                          topic: "United Ebony Council",
-                        },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    United Ebony Council
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: {
-                          ...router.query,
-                          topic: "We Wah & Bar Che Ampee",
-                        },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    We Wah & Bar Che Ampee
-                  </button>
+            </div>
+          )
+        )}
                 </div>
               </div>
 
               <div className="col3a">
                 <div className="heading">Type</div>
                 <div className="list type">
-                  <button
+                {q.typesproperties.map( ({
+              _id,
+              title = "",
+              slug=""
+            },
+            index
+          ) => (
+            <div key={index}>
+                               <button
                     type="button"
                     onClick={() => {
                       router.replace({
-                        query: { ...router.query, type: "Advertisement" },
+                        query: { ...router.query, type: `${_id}`, typetitle:  `${title}` },
                       });
                       toggleDrawer();
                     }}
                   >
-                    Advertisement
+                    {title}
                   </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, type: "Art" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Art
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, type: "Book" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Book
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, type: "Cartoon" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Cartoon
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, type: "Catalog" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Catalog
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, type: "Collage" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Collage
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, type: "Drawing" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Drawing
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, type: "Essay" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Essay
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, type: "Flyer" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Flyer
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, type: "Interview" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Interview
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, type: "Letter" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Letter
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, type: "Lyrics" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Lyrics
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, type: "Magazine" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Magazine
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, type: "Manifesto" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Manifesto
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, type: "Manuscript" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Manuscript
-                  </button>
+            </div>
+          )
+        )}
 
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, type: "Movie" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Movie
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, type: "Newsletter" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Newsletter
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, type: "Newspaper" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Newspaper
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, type: "Photo" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Photo
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, type: "Poem" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Poem
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, type: "Press Release" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Press Release
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, type: "Program" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Program
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, type: "Reference" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Reference
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, type: "Short Story" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Short Story
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => {
-                      router.replace({
-                        query: { ...router.query, type: "Speech" },
-                      });
-                      toggleDrawer();
-                    }}
-                  >
-                    Speech
-                  </button>
+                  
                 </div>
                 <div className="hey">Hey!</div>
                 <br></br>
@@ -1504,13 +383,7 @@ function fullindex(q, properties, globalproperties) {
               >
                 Click to Filter
               </button>
-              {/* <button
-                className="b3"
-                type="button"
-                onClick={shuffle([q.properties], {shuffleAll: true})}
-              >
-                Random
-              </button> */}
+
               <button
                 className="b3"
                 type="button"
@@ -1527,43 +400,48 @@ function fullindex(q, properties, globalproperties) {
         </div>
 
         <>
-          <div className=" workGrid buttoncontainer">
-            {location && (
+           <div className=" workGrid buttoncontainer">
+
+
+             {location && (
               <div
                 id="locationbtn"
                 onClick={() => {
                   delete router.query.location;
+                  delete router.query.locationtitle;
                   router.push(router);
                   remove_textlocation();
                 }}
               >
-                <button>{location}</button>
+                <button>{locationtitle}</button>
               </div>
-            )}
+            )} 
 
             {decade && (
               <div
                 id="timebtn"
                 onClick={() => {
                   delete router.query.decade;
+                  delete router.query.decadetitle;
                   router.push(router);
                   remove_texttime();
                 }}
               >
-                <button>{decade}</button>
+                <button>{decadetitle}</button>
               </div>
-            )}
+            )} 
 
             {topic && (
               <div
                 id="catbtn"
                 onClick={() => {
                   delete router.query.topic;
+                  delete router.query.topictitle;
                   router.push(router);
                   remove_textcat();
                 }}
               >
-                <button>{topic}</button>
+                <button>{topictitle}</button>
               </div>
             )}
 
@@ -1572,27 +450,26 @@ function fullindex(q, properties, globalproperties) {
                 id="typebtn"
                 onClick={() => {
                   delete router.query.type;
+                  delete router.query.typetitle;
                   router.push(router);
                   remove_textcat();
                 }}
               >
-                <button>{type}</button>
+                <button>{typetitle}</button>
               </div>
             )}
-          </div>
+          </div> 
           <ResponsiveMasonry
             className="workGridx"
             columnsCountBreakPoints={{ 350: 1, 700: 2, 900: 3 }}
           >
             <Masonry columnsCount={3} gutter="35px">
 
-            {/* <div>
-      <h2>Count: {count}</h2>
-    </div> */}
     
-              {q.properties.map(
+              {q.properties && q.properties.map(
                 ({ _id, slug = "", coverphoto = "", title = "" }) => (
-                  <Link passHref href="/work/[slug]" as={`/work/${slug}`}>
+                  <>
+                  {slug && <Link passHref href="/work/[slug]" as={`/work/${slug}`}>
                     <div className="workCard">
                       <div className="workContainer">
                         {coverphoto && (
@@ -1614,9 +491,10 @@ function fullindex(q, properties, globalproperties) {
                       </div>
                       {title}
                     </div>
-                  </Link>
+                  </Link> }
+                  </>
                 )
-              )}
+              )} 
 
 {q.globalproperties.map(
                 ({ _id, submitlink = "" }) => (
@@ -1632,7 +510,7 @@ function fullindex(q, properties, globalproperties) {
                     style={{ width: "80%", height: "auto" }}
                   />
                 </Link>
-              </div>))}
+              </div>))} 
             </Masonry>
           </ResponsiveMasonry>
         </>
@@ -1685,54 +563,72 @@ export async function getServerSideProps(context) {
   topic = context.query["topic"];
   type = context.query["type"];
 
-  // const query = `*[_type=="work"] | order(title asc) `
-  // const q = `*[_type=="work" && '${decade}' in decades] | order(title asc) `
+
   var q;
-  q = `*[_type=="work"] | order(title asc) `;
+  q = `*[_type=="work"]| order(_createdAt desc) `;
+
 
   if (location && decade && topic && type) {
-    q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades && '${topic}' in categories && '${type}' in types]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
+    q = `*[_type=="work" && references('${location}') && references('${decade}') && references('${topic}') && references('${type}')]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
   } else if (location && decade && topic && !type) {
-    q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades && '${topic}' in categories]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
+    q = `*[_type=="work" && references('${location}') && references('${decade}') && references('${topic}')]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
   } else if (location && decade && !topic && type) {
-    q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades && '${type}' in types]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
+    q = `*[_type=="work" && references('${location}') && references('${decade}') && references('${type}')]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
   } else if (location && !decade && topic && type) {
-    q = `*[_type=="work" && '${location}' in locations && '${type}' in types && '${topic}' in categories]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
+    q = `*[_type=="work" && references('${location}') && references('${topic}') && references('${type}']{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
   } else if (location && decade && !topic && !type) {
-    q = `*[_type=="work" && '${location}' in locations && '${decade}' in decades]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
+    q = `*[_type=="work" && references('${location}') && references('${decade}') ]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
   } else if (!location && decade && topic && type) {
-    q = `*[_type=="work" && '${decade}' in decades && '${topic}' in categories && '${type}' in types]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
+    q = `*[_type=="work" && references('${decade}') && references('${topic}') && references('${type}')]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
   } else if (!location && !decade && topic && type) {
-    q = `*[_type=="work" && '${topic}' in categories && '${type}' in types]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
+    q = `*[_type=="work" && references('${topic}') && references('${type}')]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
   } else if (location && topic && !decade && !type) {
-    q = `*[_type=="work" && '${location}' in locations && '${topic}' in categories]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
+    q = `*[_type=="work" && references('${location}') && references('${topic}') ]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
   } else if (decade && topic && !location && !type) {
-    q = `*[_type=="work" && '${decade}' in decades && '${topic}' in categories]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
+    q = `*[_type=="work" && references('${decade}') && references('${topic}')]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
   } else if (location && type && !decade && !topic) {
-    q = `*[_type=="work" && '${location}' in locations && '${type}' in types]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
+    q = `*[_type=="work" && references('${location}') && references('${type}')]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
   } else if (decade) {
-    q = `*[_type=="work" && '${decade}' in decades]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
+    q = `*[_type=="work" && references('${decade}')]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
   } else if (topic) {
-    q = `*[_type=="work" && '${topic}' in  categories]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
+    q = `*[_type=="work" && references('${topic}')]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
   } else if (location) {
-    q = `*[_type=="work" && '${location}' in  locations]{coverphoto, "slug": slug.current, title}| order(_createdAt desc) `;
+    q = `*[_type=="work" && references('${location}')]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
   } else if (type) {
-    q = `*[_type=="work" && '${type}' in  types]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
+    q = `*[_type=="work" && references('${type}')]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
   } else {
     q = `*[_type=="work"]{coverphoto, "slug": slug.current, title} | order(_createdAt desc) `;
   }
+
+
   // const q = `*[count((categories)[@ in '${tag}']) == 2] | order(title asc) `
   const properties = await sanityClient.fetch(q);
 
   const globalquery = `*[_type == "global" ]`;
   const globalproperties = await sanityClient.fetch(globalquery);
 
+  const locationquery = `*[_type == "location" ]{_id, "slug": slug.current, title} | order(title asc) `;
+  const locationproperties = await sanityClient.fetch(locationquery);
 
-  if (!properties.length) {
+  const decadequery = `*[_type == "decade" ]{_id, "slug": slug.current, title} | order(title asc) `;
+  const decadeproperties = await sanityClient.fetch(decadequery);
+
+  const topicquery = `*[_type == "topic" ]{_id, "slug": slug.current, title} | order(title asc) `;
+  const topicproperties = await sanityClient.fetch(topicquery);
+
+  const typesquery = `*[_type == "types" ]{_id, "slug": slug.current, title} | order(title asc) `;
+  const typesproperties = await sanityClient.fetch(typesquery);
+
+
+  if (!globalproperties.length) {
     return {
       props: {
         properties: [],
-        globalproperties: []
+        globalproperties: [],
+        locationproperties: [],
+        decadeproperties: [],
+        topicproperties: [],
+        typesproperties: []
       },
     };
   } else {
@@ -1740,6 +636,10 @@ export async function getServerSideProps(context) {
       props: {
         properties,
         globalproperties,
+        locationproperties,
+        decadeproperties,
+        topicproperties,
+        typesproperties
       },
     };
   }

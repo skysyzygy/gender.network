@@ -27,36 +27,51 @@ import Image from "next/image";
 
 
 
-const HomePage = ({ properties, infoproperties, globalproperties, locationproperties, decadeproperties, topicproperties, typesproperties }) => {
+const HomePage = ({ properties, infoproperties, globalproperties }) => {
 
   var randomHex = ["#E3E36A", "#058ED9", "#AEC9F1", "#EBE2B3", "#DD4781", "#F5BB89"];
 
 
+  const regionproperties = properties.filter(function (record) {
+    return record.group == "Region";
+  });
+
+  const timeproperties = properties.filter(function (record) {
+    return record.group == "Time";
+  });
+
+  const topicproperties = properties.filter(function (record) {
+    return record.group == "Topic";
+  });
+
+  const typeproperties = properties.filter(function (record) {
+    return record.group == "Type";
+  });
+
   //bg color
   var randomcolor = Math.floor(Math.random() * randomHex.length);
   // location
-  var locationrandomnumber = Math.floor(Math.random() * locationproperties.length);
-  var locationrandomnumber2 = Math.floor(Math.random() * locationproperties.length);
+  var randomregionnumber = Math.floor(Math.random() * regionproperties.length);
+  var randomregionnumber2 = Math.floor(Math.random() * regionproperties.length);
   // time
-  var decaderandomnumber = Math.floor(Math.random() * decadeproperties.length);
-  var decaderandomnumber2 = Math.floor(Math.random() * decadeproperties.length);
-    // topic
-    var topicrandomnumber = Math.floor(Math.random() * topicproperties.length);
-    var topicrandomnumber2 = Math.floor(Math.random() * topicproperties.length);  
+  var randomtimenumber = Math.floor(Math.random() * timeproperties.length);
+  var randomtimenumber2 = Math.floor(Math.random() * timeproperties.length);
   // type
-  var typerandomnumber = Math.floor(Math.random() * typesproperties.length);
-  var typerandomnumber2 = Math.floor(Math.random() * typesproperties.length);
+  var randomtypenumber = Math.floor(Math.random() * typeproperties.length);
+  var randomtypenumber2 = Math.floor(Math.random() * typeproperties.length);
+  // topic
+  var randomtopicnumber = Math.floor(Math.random() * topicproperties.length);
+  var randomtopicnumber2 = Math.floor(Math.random() * topicproperties.length);
 
-  const locationrecord = locationproperties[locationrandomnumber];
-  const locationrecord2 = locationproperties[locationrandomnumber2];
-  const decaderecord = decadeproperties[decaderandomnumber];
-  const decaderecord2 = decadeproperties[decaderandomnumber2];
-  const topicrecord = topicproperties[topicrandomnumber];
-  const topicrecord2 = topicproperties[topicrandomnumber2];
-  const typesrecord = typesproperties[typerandomnumber];
-  const typesrecord2 = typesproperties[typerandomnumber2];
+  const record = regionproperties[randomregionnumber];
+  const record2 = regionproperties[randomregionnumber2];
+  const timerecord = timeproperties[randomtimenumber];
+  const timerecord2 = timeproperties[randomtimenumber2];
+  const typerecord = typeproperties[randomtypenumber];
+  const typerecord2 = typeproperties[randomtypenumber2];
+  const topicrecord = topicproperties[randomtopicnumber];
+  const topicrecord2 = topicproperties[randomtopicnumber2];
 
-  console.log(locationrecord)
 
   const serializers = {
     types: {
@@ -147,28 +162,45 @@ const HomePage = ({ properties, infoproperties, globalproperties, locationproper
             style={{ backgroundColor: randomHex[randomcolor] }}
           >
             <div className="bubbles">
-               <BubbleRegion
-                title={locationrecord.title && locationrecord.title}
-                image={locationrecord.image && locationrecord.image}
-                indexslug={`/fullindexnew?location=${locationrecord._id}&locationtitle=${locationrecord.title}`}        
-              /> 
-               <BubbleTime
-                title={decaderecord.title && decaderecord.title}
-                image={decaderecord.image && decaderecord.image}
-                indexslug={decaderecord._id && `/fullindex?decade=${decaderecord._id}&decadetitle=${decaderecord.title}`}
+              <BubbleRegion
+                title={record.title && record.title}
+                image={ record.image && record.image}
+                indexslug={record.indexslug && record.indexslug}
               />
-               <BubbleTopic
+              <BubbleTime
+                title={timerecord.title && timerecord.title}
+                image={ timerecord.image && timerecord.image}
+                indexslug={timerecord.indexslug && timerecord.indexslug}
+              />
+              <BubbleTopic
                 title={topicrecord.title && topicrecord.title}
-                image={topicrecord.image && topicrecord.image}
-                indexslug={topicrecord._id && `/fullindex?topic=${topicrecord._id}&topictitle${topicrecord.title}`}
+                image={ topicrecord.image && topicrecord.image}
+                indexslug={topicrecord.indexslug && topicrecord.indexslug}
               />
               <BubbleType
-                title={typesrecord.title && typesrecord.title}
-                image={typesrecord.image && typesrecord.image}
-                indexslug={typesrecord._id && `/fullindex?type=${typesrecord._id}&typetitle=${typesrecord.title}`}
-              />  
+                title={typerecord.title && typerecord.title}
+                image={ typerecord.image && typerecord.image}
+                indexslug={typerecord.indexslug && typerecord.indexslug}
+              />
             </div>
 
+            <div className="tag-gr">
+              <div className="constrainttags" suppressHydrationWarning>
+                <div className="tag region">
+                <Link suppressHydrationWarning href={record2.indexslug}>{record2.title}</Link>
+                  </div>
+                  <div className="tag time">
+                <Link suppressHydrationWarning href={timerecord2.indexslug}>{timerecord2.title}</Link>
+                  </div>
+                  <div className="tag topic">
+                <Link suppressHydrationWarning href={topicrecord2.indexslug}>{topicrecord2.title}</Link>
+                  </div>
+                  <div className="tag type">
+                <Link suppressHydrationWarning href={typerecord2.indexslug}>{typerecord2.title}</Link>
+                  </div>
+              <div className="tag"><Link href="https://gender.network/fullindex">...</Link></div>
+            </div>
+            </div>
           </div>
         </div>
       </div> 
@@ -177,17 +209,8 @@ const HomePage = ({ properties, infoproperties, globalproperties, locationproper
 };
 
 export const getStaticProps = async () => {
-  const locationquery = `*[_type == "location" && (defined(image)) ]{_id, title, image} | order(title asc) `;
-  const locationproperties = await sanityClient.fetch(locationquery);
-
-  const decadequery = `*[_type == "decade" && (defined(image)) ]{_id, title, image} | order(title asc) `;
-  const decadeproperties = await sanityClient.fetch(decadequery);
-
-  const topicquery = `*[_type == "topic" && (defined(image)) ]{_id, title, image} | order(title asc) `;
-  const topicproperties = await sanityClient.fetch(topicquery);
-
-  const typesquery = `*[_type == "types" && (defined(image)) ]{_id, title, image} | order(title asc) `;
-  const typesproperties = await sanityClient.fetch(typesquery);
+  const query = `*[_type=="homepage"]`;
+  const properties = await sanityClient.fetch(query);
 
   const infoquery = `*[_type=="homeinfo"]`;
   const infoproperties = await sanityClient.fetch(infoquery);
@@ -195,7 +218,7 @@ export const getStaticProps = async () => {
   const globalquery = `*[_type=="global"]`;
   const globalproperties = await sanityClient.fetch(globalquery);
 
-  if (!infoproperties) {
+  if (!properties) {
     return {
       props: null,
       notFound: true,
@@ -203,12 +226,9 @@ export const getStaticProps = async () => {
   } else {
     return {
       props: {
+        properties,
         infoproperties,
-        globalproperties,
-        locationproperties,
-        decadeproperties,
-        topicproperties,
-        typesproperties
+        globalproperties
       },
     };
   }

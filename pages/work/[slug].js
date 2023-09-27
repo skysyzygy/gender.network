@@ -82,6 +82,10 @@ const Work = ({
   decades,
   categories,
   types,
+  locations1,
+  decades1,
+  topics1,
+  types1,
   similarWorks,
   iiifviewerurl,
   globalproperties
@@ -116,6 +120,7 @@ const newslug = slugurl.replace(/\s/g, '');
 const emaillink = globalproperties[0].emaillink
 const facebooklink = globalproperties[0].facebooklink
 const iglink = globalproperties[0].iglink
+
 
 
    return (
@@ -174,7 +179,41 @@ const iglink = globalproperties[0].iglink
     <h3>Collection</h3>
   {collection}
   </div> }
-  {locations && <div className="metacontainer">
+ {locations1 && <div className="metacontainer">
+  <h3>Location</h3>
+  {locations1.map(({ _id, slug = "", title = "" }) => (
+    <span key="_id">
+      <a href={`/fullindex?location=${_id}&locationtitle=${title}`} >{title}</a>
+    </span>
+ ))}
+  </div> }
+   {decades1 && <div className="metacontainer">
+    <h3>Decade</h3>
+    {decades1.map(({ _id, slug = "", title = "" }) => (
+    <span key="_id">
+      <a href={`/fullindex?decade=${_id}&decadetitle=${title}`} >{title}</a>
+    </span>
+ ))}
+  </div> } 
+  {topics1 && <div className="metacontainer">
+    <h3>Topic</h3>
+    {topics1.map(({ _id, slug = "", title = "" }) => (
+    <span key="_id">
+      <a href={`/fullindex?topic=${_id}&topictitle=${title}`} >{title}</a>
+    </span>
+ ))}
+  </div> }
+  {types1 && <div className="metacontainer">
+    <h3>Type</h3>
+    {types1.map(({ _id, slug = "", title = "" }) => (
+    <span key="_id">
+      <a href={`/fullindex?type=${_id}&typetitle=${title}`} >{title}</a>
+    </span>
+ ))}
+  </div> } 
+
+  
+{/* {locations && <div className="metacontainer">
     <h3>Location</h3>
   {loclist}
   </div> }
@@ -189,7 +228,7 @@ const iglink = globalproperties[0].iglink
   {types && <div className="metacontainer">
     <h3>Type</h3>
   {typelist}
-  </div> }
+  </div> } */}
 
   {similarWorks && <div className="metacontainer">
   <h3>Similar Works</h3>
@@ -244,7 +283,7 @@ const iglink = globalproperties[0].iglink
   const pageSlug = pageContext.query.slug
 
   const query = `*[ _type == "work" && slug.current == $pageSlug][0]{
-    title, creator, publisher, date, coverphoto, coverphoto2, notes, archive, collection, locations, decades, categories, types, similarWorks[]->, iiifviewerurl, slug
+    title, creator, publisher, date, coverphoto, coverphoto2, notes, archive, collection, locations, decades, categories, types, locations1[]->{_id, title, "slug": slug.current}, decades1[]->{_id, title, "slug": slug.current}, topics1[]->{_id, title, "slug": slug.current}, types1[]->{_id, title, "slug": slug.current}, similarWorks[]->, iiifviewerurl, slug
   }`
 
 
@@ -274,6 +313,10 @@ const iglink = globalproperties[0].iglink
         decades: work.decades,
         categories: work.categories,
         types: work.types,
+        locations1: work.locations1,
+        decades1: work.decades1,
+        topics1: work.topics1,
+        types1: work.types1,
         similarWorks: work.similarWorks,
         iiifviewerurl: work.iiifviewerurl,
         slug: work.slug,
