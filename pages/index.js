@@ -22,6 +22,10 @@ const BubbleType = dynamic(() => import("../components/Bubble4"), {
   ssr: false,
 });
 
+const Cloudbg = dynamic(() => import("../components/Cloudbg"), {
+  ssr: false,
+});
+
 import Image from "next/image";
 
 
@@ -82,7 +86,6 @@ const HomePage = ({ properties, infoproperties, globalproperties, locationproper
   const buttonColor = "#" + infoproperties[0].leftbgbutton;
   const buttontextColor = "#" + infoproperties[0].lefttextbutton;
 
-  console.log(randomHex[randomcolor])
 
   const mystyle = {
     color: buttontextColor,
@@ -142,11 +145,10 @@ const HomePage = ({ properties, infoproperties, globalproperties, locationproper
 
 
         <div className="homepagebg">
-          <div
-            className="cloud"
-            style={{ backgroundColor: randomHex[randomcolor] }}
-          >            </div>
 
+          <Cloudbg color={randomHex[randomcolor]}
+
+          />
             <div className="bubbles">
                <BubbleRegion
                 title={locationrecord.title && locationrecord.title}

@@ -3,7 +3,7 @@ function Cloudbg(props) {
       <>
          <div
             className="cloud"
-            style={{ backgroundColor: randomHex[randomcolor] }}
+            style={{ backgroundColor: props.color }}
           >            </div>
   </>
   )
