@@ -5,22 +5,16 @@ import HomeHeader from "../components/HomeHeader";
 import Header from "../components/Header";
 import Connect from "../components/Connect";
 import Connect2 from "../components/Connect2";
+
+import Bubble1 from "../components/Bubble1";
+import Bubble2 from "../components/Bubble2";
+import Bubble3 from "../components/Bubble3";
+import Bubble4 from "../components/Bubble4";
+
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import PortableText from "@sanity/block-content-to-react";
 
-const BubbleRegion = dynamic(() => import("../components/Bubble1"), {
-  ssr: false,
-});
-const BubbleTime = dynamic(() => import("../components/Bubble2"), {
-  ssr: false,
-});
-const BubbleTopic = dynamic(() => import("../components/Bubble3"), {
-  ssr: false,
-});
-const BubbleType = dynamic(() => import("../components/Bubble4"), {
-  ssr: false,
-});
 
 const Cloudbg = dynamic(() => import("../components/Cloudbg"), {
   ssr: false,
@@ -33,33 +27,42 @@ import Image from "next/image";
 
 const HomePage = ({ properties, infoproperties, globalproperties, locationproperties, decadeproperties, topicproperties, typesproperties }) => {
 
+  const [locationrecord, setlocationrecord] = useState('');
+  const [locationrecord2, setlocationrecord2] = useState('');
+  const [decaderecord, setdecaderecord] = useState('');
+  const [decaderecord2, setdecaderecord2] = useState('');
+  const [topicrecord, settopicrecord] = useState('');
+  const [topicrecord2, settopicrecord2] = useState('');
+  const [typesrecord, settypesrecord] = useState('');
+  const [typesrecord2, settypesrecord2] = useState('');
+
+
+  useEffect(() => {
+    var locationrandomnumber = Math.floor(Math.random() * locationproperties.length);
+    var locationrandomnumber2 = Math.floor(Math.random() * locationproperties.length);
+    var decaderandomnumber = Math.floor(Math.random() * decadeproperties.length);
+    var decaderandomnumber2 = Math.floor(Math.random() * decadeproperties.length);
+    var topicrandomnumber = Math.floor(Math.random() * topicproperties.length);
+    var topicrandomnumber2 = Math.floor(Math.random() * topicproperties.length);
+    var typerandomnumber = Math.floor(Math.random() * typesproperties.length);
+    var typerandomnumber2 = Math.floor(Math.random() * typesproperties.length);
+
+    setlocationrecord(locationproperties[locationrandomnumber]);
+    setlocationrecord2(locationproperties[locationrandomnumber2]);
+    setdecaderecord(decadeproperties[decaderandomnumber]);
+    setdecaderecord2(decadeproperties[decaderandomnumber2]);
+    settopicrecord(topicproperties[topicrandomnumber]);
+    settopicrecord2(topicproperties[topicrandomnumber2]);
+    settypesrecord(typesproperties[typerandomnumber]);
+    settypesrecord2(typesproperties[typerandomnumber2]);
+
+  }, []);
+
   var randomHex = ["#E3E36A", "#058ED9", "#AEC9F1", "#EBE2B3", "#DD4781", "#F5BB89"];
 
 
   //bg color
   var randomcolor = Math.floor(Math.random() * randomHex.length);
-  // location
-  var locationrandomnumber = Math.floor(Math.random() * locationproperties.length);
-  var locationrandomnumber2 = Math.floor(Math.random() * locationproperties.length);
-  // time
-  var decaderandomnumber = Math.floor(Math.random() * decadeproperties.length);
-  var decaderandomnumber2 = Math.floor(Math.random() * decadeproperties.length);
-    // topic
-    var topicrandomnumber = Math.floor(Math.random() * topicproperties.length);
-    var topicrandomnumber2 = Math.floor(Math.random() * topicproperties.length);  
-  // type
-  var typerandomnumber = Math.floor(Math.random() * typesproperties.length);
-  var typerandomnumber2 = Math.floor(Math.random() * typesproperties.length);
-
-  const locationrecord = locationproperties[locationrandomnumber];
-  const locationrecord2 = locationproperties[locationrandomnumber2];
-  const decaderecord = decadeproperties[decaderandomnumber];
-  const decaderecord2 = decadeproperties[decaderandomnumber2];
-  const topicrecord = topicproperties[topicrandomnumber];
-  const topicrecord2 = topicproperties[topicrandomnumber2];
-  const typesrecord = typesproperties[typerandomnumber];
-  const typesrecord2 = typesproperties[typerandomnumber2];
-
 
   const serializers = {
     types: {
@@ -149,58 +152,59 @@ const HomePage = ({ properties, infoproperties, globalproperties, locationproper
           <Cloudbg color={randomHex[randomcolor]}
 
           />
-            <div className="bubbles">
-               <BubbleRegion
+            <div className="bubbles" >
+                <Bubble1
                 title={locationrecord.title && locationrecord.title}
-                image={locationrecord.image && locationrecord.image}
+                image={locationrecord.image && urlFor(locationrecord.image).url()}
                 indexslug={`/fullindex?location=${locationrecord._id}&locationtitle=${locationrecord.title}`}        
               /> 
-               <BubbleTime
+               <Bubble2
                 title={decaderecord.title && decaderecord.title}
-                image={decaderecord.image && decaderecord.image}
+                image={decaderecord.image && urlFor(decaderecord.image).url()}
                 indexslug={decaderecord._id && `/fullindex?decade=${decaderecord._id}&decadetitle=${decaderecord.title}`}
               />
-               <BubbleTopic
+               <Bubble3
                 title={topicrecord.title && topicrecord.title}
-                image={topicrecord.image && topicrecord.image}
+                image={topicrecord.image && urlFor(topicrecord.image).url()}
                 indexslug={topicrecord._id && `/fullindex?topic=${topicrecord._id}&topictitle=${topicrecord.title}`}
-              />
-              <BubbleType
+              /> 
+
+               <Bubble4 
                 title={typesrecord.title && typesrecord.title}
-                image={typesrecord.image && typesrecord.image}
+                image={typesrecord.image && urlFor(typesrecord.image).url()}
                 indexslug={typesrecord._id && `/fullindex?type=${typesrecord._id}&typetitle=${typesrecord.title}`}
-              />  
+              />   
 
           </div>
 
-          <div className="tag-gr">
-              <div className="constrainttags" suppressHydrationWarning>
+         <div className="tag-gr">
+              <div className="constrainttags" >
                 <div className="tag region">
-                <Link suppressHydrationWarning href={`/fullindex?location=${locationrecord2._id}&locationtitle=${locationrecord2.title}`}>
+                <Link  href={`/fullindex?location=${locationrecord2._id}&locationtitle=${locationrecord2.title}`}>
                   {locationrecord2.title}</Link>
                   </div>
                   <div className="tag time">
-                  <Link suppressHydrationWarning href={`/fullindex?decade=${decaderecord2._id}&decadetitle=${decaderecord2.title}`}>
+                  <Link  href={`/fullindex?decade=${decaderecord2._id}&decadetitle=${decaderecord2.title}`}>
                   {decaderecord2.title}</Link>
                   </div>
                   <div className="tag topic">
-                  <Link suppressHydrationWarning href={`/fullindex?topic=${topicrecord2._id}&topictitle=${topicrecord2.title}`}>
+                  <Link  href={`/fullindex?topic=${topicrecord2._id}&topictitle=${topicrecord2.title}`}>
                   {topicrecord2.title}</Link>
                   </div>
                   <div className="tag type">
-                  <Link suppressHydrationWarning href={`/fullindex?type=${typesrecord2._id}&typetitle=${typesrecord2.title}`}>
+                  <Link  href={`/fullindex?type=${typesrecord2._id}&typetitle=${typesrecord2.title}`}>
                   {typesrecord2.title}</Link>
                   </div>
               <div className="tag"><Link href="https://gender.network/fullindex">...</Link></div>
             </div>
-            </div>
+            </div> 
         </div>
       </div> 
     </>
   );
 };
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const locationquery = `*[_type == "location" && (defined(image)) ]{_id, title, image} | order(title asc) `;
   const locationproperties = await sanityClient.fetch(locationquery);
 

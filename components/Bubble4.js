@@ -38,7 +38,7 @@ function Bubble4(props) {
   <div id="bubble"   className="bubble bubble4" style={{bottom: `${getRandom(10, 35)}vh`, right: `${getRandom(2, 8)}vw`}}>
   <div className="label type">{props.title}</div>
 <div  className="innerimg" >
-<img src={urlFor(props.image).url()} layout="fill" />
+   <img src={props.image} layout="fill" /> 
 </div>
 </div>
 </a>
