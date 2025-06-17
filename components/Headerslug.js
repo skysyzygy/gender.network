@@ -37,7 +37,7 @@ import 'react-modern-drawer/dist/index.css'
 <title>{props.title && props.title}</title>
         <meta property="og:title" name="twitter:title"  content={props.title && props.title} key="title" />
 
-        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"></meta>
+        <meta charSet="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"></meta>
         <link rel="icon" href="/favicon.ico" />
 <meta property="og:url" content="https://gender.network" />
 <meta property="og:image" content={props.coverphoto && props.coverphoto} />
