@@ -102,9 +102,6 @@ function fullindex(q, properties, globalproperties, locationproperties, decadepr
     setActive2(!isActive);
   };
 
-
-console.log(location)
-
   return (
     <>
       <div className={`indexPage ${isActive ? "fixed" : "normal"}`}>
