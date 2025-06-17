@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
-import Arrow from '../public/ScrollTop.svg';
-import Image from 'next/image'
+import Image from 'next/image';
+import { useEffect, useState } from "react";
 
 
 const ScrollToTop = () => {

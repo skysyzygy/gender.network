@@ -4,12 +4,11 @@
  * @jest-environment jsdom
  */
 
- import Link from 'next/link'
- import { useRouter } from 'next/router'
- import Image from 'next/image'
- import Exit from '../public/Xmark.svg';
- import Head from 'next/head'
- import Connect from "../components/Connect"
+ import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
+import Connect from "../components/Connect";
+import Exit from '../public/Xmark.svg';
 
 
  export default function FilterHeader({ isActive, toggleDrawer, slideUp, slideDown }) {

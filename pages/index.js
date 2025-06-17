@@ -1,19 +1,16 @@
-import React, { useState, useEffect, useRef } from "react";
-import { urlFor, sanityClient } from "../sanity";
+import { useEffect, useState } from "react";
+import { sanityClient, urlFor } from "../sanity";
 
-import HomeHeader from "../components/HomeHeader";
 import Header from "../components/Header";
-import Connect from "../components/Connect";
-import Connect2 from "../components/Connect2";
 
 import Bubble1 from "../components/Bubble1";
 import Bubble2 from "../components/Bubble2";
 import Bubble3 from "../components/Bubble3";
 import Bubble4 from "../components/Bubble4";
 
+import PortableText from "@sanity/block-content-to-react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import PortableText from "@sanity/block-content-to-react";
 
 
 const Cloudbg = dynamic(() => import("../components/Cloudbg"), {

@@ -2,20 +2,15 @@
  * @jest-environment jsdom
  */
 
- import React, { useState, useEffect } from 'react'
- import Image from 'next/image'
- import Link from 'next/link'
- import { useRouter } from 'next/router'
- import { sanityClient,  urlFor } from '../../sanity'
  import PortableText from '@sanity/block-content-to-react'
- import Headerslug from "../../components/Headerslug"
- import ItemHeader from "../../components/ItemHeader"
- import Drawer from 'react-modern-drawer'
- import 'react-modern-drawer/dist/index.css'
- import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
- import Footer from "../../components/Footer"
- import dynamic from "next/dynamic";
- import Script from 'next/script'
+import dynamic from "next/dynamic"
+import Link from 'next/link'
+import Script from 'next/script'
+import 'react-modern-drawer/dist/index.css'
+import Footer from "../../components/Footer"
+import Headerslug from "../../components/Headerslug"
+import ItemHeader from "../../components/ItemHeader"
+import { sanityClient } from '../../sanity'
 
 const CloverIIIF = dynamic(() => import("@samvera/clover-iiif"), {
   ssr: false,

@@ -3,21 +3,19 @@
 /**
  * @jest-environment jsdom
  */
-import React, { useState, useEffect } from 'react'
+import { useState } from 'react';
 
- import Link from 'next/link'
- import { useRouter } from 'next/router'
- import Image from 'next/image'
- import Exit from '../public/Xmark.svg';
- import Head from 'next/head'
- import Connect from "../components/Connect"
- import Customhead from "../components/Customhead"
+ import Image from 'next/image';
+import Link from 'next/link';
+import Connect from "../components/Connect";
+import Customhead from "../components/Customhead";
+import Exit from '../public/Xmark.svg';
 
 // import component 👇
-import Drawer from 'react-modern-drawer'
+import Drawer from 'react-modern-drawer';
 
 //import styles 👇
-import 'react-modern-drawer/dist/index.css'
+import 'react-modern-drawer/dist/index.css';
 
  export default function Header(props) {
 

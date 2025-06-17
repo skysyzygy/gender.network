@@ -2,27 +2,20 @@
  * @jest-environment jsdom
  */
 
-import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Exit from "../public/Xmark.svg";
-import Contribute from "../public/contribute.png";
-import Connect from "../components/Connect";
+import React, { useState } from "react";
 import Customhead from "../components/Customhead";
+import Exit from "../public/Xmark.svg";
 
-import Head from "next/head";
 
-import { sanityClient, urlFor } from "../sanity";
-import PortableText from "@sanity/block-content-to-react";
-import Header from "../components/Header";
-import FilterHeader from "../components/FilterHeader";
+import { useRouter } from "next/router";
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-import Arrow from "../public/Arrowdown.svg";
-import Missing from "../public/Missingcard.png";
 import Footer from "../components/Footer";
-import { useRouter } from "next/router";
+import Missing from "../public/Missingcard.png";
+import { sanityClient } from "../sanity";
 
 
 

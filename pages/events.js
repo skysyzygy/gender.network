@@ -1,8 +1,7 @@
-import Header from "../components/Header";
-import { urlFor, sanityClient } from "../sanity";
 import PortableText from "@sanity/block-content-to-react";
-import Link from "next/link";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
+import { sanityClient } from "../sanity";
 
 const serializers = {
   types: {

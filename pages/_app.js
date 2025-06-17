@@ -1,7 +1,6 @@
-import '../styles/globals.css'
-import Script from 'next/script'
-import {QueryClientProvider, QueryClient} from 'react-query'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Script from 'next/script';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import '../styles/globals.css';
 
 
 const queryClient = new QueryClient()

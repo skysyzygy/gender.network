@@ -4,13 +4,11 @@
  * @jest-environment jsdom
  */
 
- import Link from 'next/link'
- import { useRouter } from 'next/router'
- import Image from 'next/image'
- import Exit from '../public/Xmark.svg';
- import { TypeAnimation } from 'react-type-animation';
- import ScrollToTop from './ScrollToTop';
-import PortableText from "@sanity/block-content-to-react";
+ import PortableText from "@sanity/block-content-to-react";
+import Image from 'next/image';
+import Link from 'next/link';
+import { TypeAnimation } from 'react-type-animation';
+import ScrollToTop from './ScrollToTop';
 
  const serializers = {
     types: {

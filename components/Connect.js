@@ -3,15 +3,9 @@
 /**
  * @jest-environment jsdom
  */
- import React, { useState, useEffect } from "react";
+ import { useState } from "react";
 
- import Link from 'next/link'
- import { useRouter } from 'next/router'
- import Image from 'next/image'
- import Exit from '../public/Xmark.svg';
- import Head from 'next/head'
- import Swal from 'sweetalert2'
- import withReactContent from 'sweetalert2-react-content'
+ import Swal from 'sweetalert2';
 
 
  

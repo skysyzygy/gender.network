@@ -2,13 +2,12 @@
  * @jest-environment jsdom
  */
 
-import React from "react";
-import Image from "next/image";
-import { urlFor, sanityClient } from "../sanity";
 import PortableText from "@sanity/block-content-to-react";
-import Header from "../components/Header";
+import Image from "next/image";
 import Aboutheader from "../components/Aboutheader";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
+import { sanityClient } from "../sanity";
 
 const serializers = {
   types: {
