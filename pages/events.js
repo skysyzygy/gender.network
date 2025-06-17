@@ -118,7 +118,8 @@ const events = ({ mainproperties, properties, globalproperties }) => {
           </h3>
 
           {properties.map((post) => (
-                                      <div className="constraint">
+              <div className="constraint">
+              <div className="eventGrid past" key={post._id}>
               {post.past &&
                 post.past.map(
                   ({
@@ -128,7 +129,6 @@ const events = ({ mainproperties, properties, globalproperties }) => {
                     rsvptext = "",
                     rsvpurl = "",
                   }) => (
-                    <div className="eventGrid past" key={post._id}>
                     <div className="singleevent" key={_id}>
                       <div className="eventTitle" aria-selected="true">
                         <PortableText
@@ -149,20 +149,18 @@ const events = ({ mainproperties, properties, globalproperties }) => {
                           {rsvptext}
                         </a>
                       </div>
-                    </div>            </div>
-
+                    </div>            
                   )
                 )}
 
               {!post.past && (
-                <div className="eventGrid past">
                   <div className="singleevent">
                     <div className="eventTime">Nothing Yet . . .</div>
-                  </div>
-                  <div className="singleevent hidden">Nothing yet...</div>
-                  <div className="singleevent hidden">Nothing yet...</div>
-                </div>
-              )}
+                  </div>)}
+              {!post.past && <div className="singleevent"/>}
+              {!post.past && <div className="singleevent"/>}
+              
+            </div>
             </div>
 
           ))}
