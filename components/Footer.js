@@ -8,7 +8,7 @@
  import { useRouter } from 'next/router'
  import Image from 'next/image'
  import Exit from '../public/Xmark.svg';
- import Typing from 'react-typing-animation';
+ import { TypeAnimation } from 'react-type-animation';
  import ScrollToTop from './ScrollToTop';
 import PortableText from "@sanity/block-content-to-react";
 
@@ -41,7 +41,7 @@ import PortableText from "@sanity/block-content-to-react";
   <div className="constraint">
 <div className="flex between">
     <div className="footertitle">
-        <Typing startDelay={1000}>{props.footertitle}</Typing>
+        <TypeAnimation sequence={[1000,props.footertitle]}/>
     </div>
     <ScrollToTop />
    </div>
