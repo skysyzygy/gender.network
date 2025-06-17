@@ -34,3 +34,6 @@ Temporary Items
 # iCloud generated files
 *.icloud
 
+# Node/NEXT files 
+node_modules
+.next
