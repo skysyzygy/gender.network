@@ -1225,6 +1225,7 @@ display:block;
   min-height: 420px;
   min-width:420px;
   position: relative;
+  object-fit: cover;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
