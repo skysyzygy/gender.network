@@ -195,7 +195,7 @@ const HomePage = ({ properties, infoproperties, globalproperties, locationproper
                   <Link  href={`/fullindex?type=${typesrecord2._id}&typetitle=${typesrecord2.title}`}>
                   {typesrecord2.title}</Link>
                   </div>
-              <div className="tag"><Link href="https://gender.network/fullindex">...</Link></div>
+              <div className="tag"><Link href="/fullindex">...</Link></div>
             </div>
             </div> 
         </div>
