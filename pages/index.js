@@ -17,10 +17,12 @@ const Cloudbg = dynamic(() => import("../components/Cloudbg"), {
   ssr: false,
 });
 
+
+export const config = {
+  runtime: 'experimental-edge',
+}
+
 import Image from "next/image";
-
-
-
 
 const HomePage = ({ properties, infoproperties, globalproperties, locationproperties, decadeproperties, topicproperties, typesproperties }) => {
 

@@ -16,6 +16,10 @@ const CloverIIIF = dynamic(() => import("@samvera/clover-iiif"), {
   ssr: false,
 });
 
+export const config = {
+  runtime: 'experimental-edge',
+}
+
  
 const serializers = {
   types: {

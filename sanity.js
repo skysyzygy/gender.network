@@ -1,6 +1,5 @@
-import { createClient, createPortableTextComponent} from "next-sanity"
 import createImageUrlBuilder from '@sanity/image-url'
-import sanityClientPkg from "@sanity/client";
+import { createClient } from "@sanity/client";
 
 const config = {
   /**
@@ -13,8 +12,7 @@ const config = {
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
   useCdn: process.env.NODE_ENV === "production",
-  apiVersion: '2022-10-27', // use a UTC date string
-  useCdn: true
+  apiVersion: '2025-06-18' // use a UTC date string
   /**
    * Set useCdn to `false` if your application require the freshest possible
    * data always (potentially slightly slower and a bit more expensive).
@@ -33,7 +31,7 @@ const config = {
 
 
 // Set up the client for fetching data in the getProps page functions
-export const sanityClient = sanityClientPkg(config);
+export const sanityClient = createClient(config);
 
 /**
  * Set up a helper function for generating Image URLs with only the asset reference data in your documents.

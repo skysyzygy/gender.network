@@ -17,6 +17,9 @@ import Footer from "../components/Footer";
 import Missing from "../public/Missingcard.png";
 import { sanityClient } from "../sanity";
 
+export const config = {
+  runtime: 'experimental-edge',
+}
 
 
 // Pixel GIF code adapted from https://stackoverflow.com/a/33919020/266535

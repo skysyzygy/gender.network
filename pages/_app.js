@@ -1,9 +1,8 @@
 import Script from 'next/script';
-import { QueryClient, QueryClientProvider } from 'react-query';
+// import { QueryClient, QueryClientProvider } from 'react-query';
 import '../styles/globals.css';
 
-
-const queryClient = new QueryClient()
+// const queryClient = new QueryClient()
 
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }) {
@@ -24,11 +23,11 @@ export default function MyApp({ Component, pageProps }) {
         `}
       </Script>
 
-    <QueryClientProvider client={queryClient}>
+    {/* <QueryClientProvider client={queryClient}> */}
 
       <Component {...pageProps} />
 
-    </QueryClientProvider>
+    {/* </QueryClientProvider> */}
     </>
   
   )

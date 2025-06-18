@@ -9,6 +9,11 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { sanityClient } from "../sanity";
 
+export const config = {
+  runtime: 'experimental-edge',
+}
+
+
 const serializers = {
   types: {
     code: (props) => (
