@@ -838,30 +838,29 @@ border-bottom:1px solid black;
 /* IIIF Viewer settings - start */
 
 
-.clover-iiif header {
+.clover-viewer header {
   width: 73vw;
 }
 
+.clover-viewer-content {
+  position: relative
+}
 
-div[role=radiogroup]{
+.clover-viewer-media-wrapper {
+  position: absolute;
+  top: 3rem;
+  right: 1rem;
+}
+
+.clover-viewer-media-wrapper div[role=radiogroup]{
   flex-direction: column;
   height:80vh;
-}
-.c-gKYThq{
-  flex-direction:row !important;
+  margin-top: 3rem;
 }
 
-
-.c-gPRcLX figure {
-  margin: 0px;
-  width: 10vw;
+.clover-viewer-header, .clover-viewer-media-search {
+  display: none;
 }
-
-.c-JElJV {
-  display:none !important;
-}
-
-
 
 /* IIIF Viewer settings - end */
 

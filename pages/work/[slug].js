@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
- import PortableText from '@sanity/block-content-to-react'
+import PortableText from '@sanity/block-content-to-react'
 import dynamic from "next/dynamic"
 import Link from 'next/link'
 import Script from 'next/script'
@@ -12,9 +12,12 @@ import Headerslug from "../../components/Headerslug"
 import ItemHeader from "../../components/ItemHeader"
 import { sanityClient } from '../../sanity'
 
-const CloverIIIF = dynamic(() => import("@samvera/clover-iiif"), {
-  ssr: false,
-});
+const CloverIIIF = dynamic(
+  () => import("@samvera/clover-iiif").then((Clover) => Clover.Viewer),
+  {
+    ssr: false,
+  }
+);
 
  
 const serializers = {
@@ -41,8 +44,7 @@ const serializers = {
 const options = {
     // Primary title (Manifest label) for top level canvas.  Defaults to true
     showTitle: false,
-    showInformationToggle: false,
-    renderAbout: false,
+    informationPanel: false,
   
     // IIIF Badge and popover containing options.  Defaults to true
     showIIIFBadge: false,
@@ -51,7 +53,7 @@ const options = {
     // ignoreCaptionLabels: ['Chapters'],
   
     // Override canvas background color, defaults to #1a1d1e
-    canvasHeight: "1100px",
+    //canvasHeight: "1100px",
     canvasBackgroundColor: "#ffffff",
     // Set canvas zooming onScoll (this defaults to false)
     // openSeadragon: {
@@ -140,7 +142,7 @@ const iglink = globalproperties[0].iglink
 
 
 
- {iiifviewerurl && <CloverIIIF id={iiifviewerurl} options={options} />}
+ {iiifviewerurl && <CloverIIIF iiifContent={iiifviewerurl} options={options} />}
 <br></br>
  <div className="fb-comments" data-href={newslug} data-width="600" data-numposts="10"></div>
 
