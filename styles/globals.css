@@ -837,11 +837,6 @@ border-bottom:1px solid black;
 
 /* IIIF Viewer settings - start */
 
-
-.clover-viewer header {
-  width: 73vw;
-}
-
 .clover-viewer-content {
   position: relative !important;
 }
@@ -854,7 +849,6 @@ border-bottom:1px solid black;
 
 .clover-viewer-media-wrapper div[role=radiogroup]{
   flex-direction: column;
-  height:80vh;
   margin-top: 3rem;
 }
 
