@@ -56,11 +56,11 @@ const options = {
     //canvasHeight: "1100px",
     canvasBackgroundColor: "#ffffff",
     // Set canvas zooming onScoll (this defaults to false)
-    // openSeadragon: {
-    //   gestureSettingsMouse: {
-    //     scrollToZoom: true,
-    //   }
-    // }
+    openSeadragon: {
+      gestureSettingsMouse: {
+        scrollToZoom: true,
+      }
+    }
   }
 
 
