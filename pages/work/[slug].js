@@ -53,7 +53,7 @@ const options = {
     // ignoreCaptionLabels: ['Chapters'],
   
     // Override canvas background color, defaults to #1a1d1e
-    //canvasHeight: "1100px",
+    canvasHeight: "850px",
     canvasBackgroundColor: "#ffffff",
     // Set canvas zooming onScoll (this defaults to false)
     openSeadragon: {
