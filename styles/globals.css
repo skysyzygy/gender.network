@@ -843,11 +843,11 @@ border-bottom:1px solid black;
 }
 
 .clover-viewer-content {
-  position: relative
+  position: relative !important;
 }
 
 .clover-viewer-media-wrapper {
-  position: absolute;
+  position: absolute !important;
   top: 3rem;
   right: 1rem;
 }
@@ -859,7 +859,7 @@ border-bottom:1px solid black;
 }
 
 .clover-viewer-header, .clover-viewer-media-search {
-  display: none;
+  display: none !important;
 }
 
 /* IIIF Viewer settings - end */
