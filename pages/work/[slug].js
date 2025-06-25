@@ -279,7 +279,7 @@ const iglink = globalproperties[0].iglink
  export const getServerSideProps = async (pageContext) => {
   const pageSlug = pageContext.query.slug
 
-  const query = `*[ _type == "work" && slug.current == $pageSlug][0]{
+  const query = `*[ _type == "work" && lower(slug.current) == lower($pageSlug)][0]{
     title, creator, publisher, date, coverphoto, coverphoto2, notes, archive, collection, locations, decades, categories, types, locations1[]->{_id, title, "slug": slug.current}, decades1[]->{_id, title, "slug": slug.current}, topics1[]->{_id, title, "slug": slug.current}, types1[]->{_id, title, "slug": slug.current}, similarWorks[]->, iiifviewerurl, slug
   }`
 
